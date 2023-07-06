@@ -1,0 +1,1162 @@
+object DtmDsps: TDtmDsps
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 309
+  HorizontalOffset = 179
+  VerticalOffset = 35
+  Width = 411
+  PPI = 96
+  object ZQtabela: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    AutoCalcFields = False
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, '
+      '       quantparc, codjun, contacorrente, numcarteira, numcontrato, datavecimento, '
+      '       datavencparc, valparc, valhonor, taxaref, obs, nomeescritorio, '
+      '       dddescritorio, telescritorio, nomecliente, endcliente, num, complemnto, '
+      '       bairro, municipio, unidadefed, cepcliente, complecep, dddcliente, '
+      '       telcliente, valoracordo, datavencult, parcelaplanoultimopag, '
+      '       cpfcnpjcliente, cpfcnpjfilialcliente, controlecpfcnpjcliente, '
+      '       codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, '
+      '       dataaprovacao, nomeoperador, chaveprim, camporetarq, nomeavalista1, '
+      '       nomeavalista2, valorconfessado, indacordo, cpfavalista1, cpfavalista2, '
+      '       ctrlav1, ctrlav2, filav1, filav2,idcontrato'
+      '  FROM "TB_CAD_REM" order by chaveprim'
+    )
+    Params = <>
+    UpdateMode = umUpdateAll
+    left = 176
+    top = 56
+    object ZQtabelatepreg: TStringField
+      FieldKind = fkData
+      FieldName = 'tepreg'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelaato: TStringField
+      FieldKind = fkData
+      FieldName = 'ato'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelacpfadmescrirtorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfadmescrirtorio'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 589824
+    end
+    object ZQtabelanumacordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'numacordo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 720896
+    end
+    object ZQtabeladataacordo: TStringField
+      FieldKind = fkData
+      FieldName = 'dataacordo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelaquantped: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantped'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object ZQtabelaquantparc: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantparc'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object ZQtabelacodjun: TFloatField
+      FieldKind = fkData
+      FieldName = 'codjun'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object ZQtabelacontacorrente: TFloatField
+      FieldKind = fkData
+      FieldName = 'contacorrente'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 458752
+    end
+    object ZQtabelanumcarteira: TStringField
+      FieldKind = fkData
+      FieldName = 'numcarteira'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQtabelanumcontrato: TFloatField
+      FieldKind = fkData
+      FieldName = 'numcontrato'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 589824
+    end
+    object ZQtabeladatavecimento: TStringField
+      FieldKind = fkData
+      FieldName = 'datavecimento'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabeladatavencparc: TStringField
+      FieldKind = fkData
+      FieldName = 'datavencparc'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelavalparc: TFloatField
+      FieldKind = fkData
+      FieldName = 'valparc'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 1114114
+    end
+    object ZQtabelavalhonor: TFloatField
+      FieldKind = fkData
+      FieldName = 'valhonor'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 1114114
+    end
+    object ZQtabelataxaref: TStringField
+      FieldKind = fkData
+      FieldName = 'taxaref'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelaobs: TStringField
+      FieldKind = fkData
+      FieldName = 'obs'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 176
+    end
+    object ZQtabelanomeescritorio: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeescritorio'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabeladddescritorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'dddescritorio'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object ZQtabelatelescritorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'telescritorio'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 589824
+    end
+    object ZQtabelanomecliente: TStringField
+      FieldKind = fkData
+      FieldName = 'nomecliente'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelaendcliente: TStringField
+      FieldKind = fkData
+      FieldName = 'endcliente'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelanum: TStringField
+      FieldKind = fkData
+      FieldName = 'num'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 28
+    end
+    object ZQtabelacomplemnto: TStringField
+      FieldKind = fkData
+      FieldName = 'complemnto'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelabairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelamunicipio: TStringField
+      FieldKind = fkData
+      FieldName = 'municipio'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object ZQtabelaunidadefed: TStringField
+      FieldKind = fkData
+      FieldName = 'unidadefed'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelacepcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'cepcliente'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327680
+    end
+    object ZQtabelacomplecep: TFloatField
+      FieldKind = fkData
+      FieldName = 'complecep'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 196608
+    end
+    object ZQtabeladddcliente: TStringField
+      FieldKind = fkData
+      FieldName = 'dddcliente'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQtabelatelcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'telcliente'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655360
+    end
+    object ZQtabelavaloracordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoracordo'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 1114114
+    end
+    object ZQtabeladatavencult: TStringField
+      FieldKind = fkData
+      FieldName = 'datavencult'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelaparcelaplanoultimopag: TFloatField
+      FieldKind = fkData
+      FieldName = 'parcelaplanoultimopag'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object ZQtabelacpfcnpjcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfcnpjcliente'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655360
+    end
+    object ZQtabelacpfcnpjfilialcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfcnpjfilialcliente'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object ZQtabelacontrolecpfcnpjcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'controlecpfcnpjcliente'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 131072
+    end
+    object ZQtabelacodmeiopagamento: TFloatField
+      FieldKind = fkData
+      FieldName = 'codmeiopagamento'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 196608
+    end
+    object ZQtabelavaloriof: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoriof'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 1114114
+    end
+    object ZQtabelataxajuros: TFloatField
+      FieldKind = fkData
+      FieldName = 'taxajuros'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '###.##'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZQtabelaacordoaprovadopelodarc: TStringField
+      FieldKind = fkData
+      FieldName = 'acordoaprovadopelodarc'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabeladataaprovacao: TStringField
+      FieldKind = fkData
+      FieldName = 'dataaprovacao'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelanomeoperador: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeoperador'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object ZQtabelanomeavalista1: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeavalista1'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelanomeavalista2: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeavalista2'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelacamporetarq: TStringField
+      FieldKind = fkData
+      FieldName = 'camporetarq'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object ZQtabelacpfavalista1: TStringField
+      FieldKind = fkData
+      FieldName = 'cpfavalista1'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object ZQtabelacpfavalista2: TStringField
+      FieldKind = fkData
+      FieldName = 'cpfavalista2'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object ZQtabelavalorconfessado: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorconfessado'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object ZQtabelaindacordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'indacordo'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 131072
+    end
+    object ZQtabelachaveprim: TFloatField
+      FieldKind = fkData
+      FieldName = 'chaveprim'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZQtabelactrlav1: TStringField
+      FieldKind = fkData
+      FieldName = 'ctrlav1'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelactrlav2: TStringField
+      FieldKind = fkData
+      FieldName = 'ctrlav2'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelafilav1: TStringField
+      FieldKind = fkData
+      FieldName = 'filav1'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQtabelafilav2: TStringField
+      FieldKind = fkData
+      FieldName = 'filav2'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQtabelaidcontrato: TFloatField
+      FieldKind = fkData
+      FieldName = 'idcontrato'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655360
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_CAD_REM"'
+      'WHERE'
+      '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_CAD_REM"'
+      '  (tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, quantparc, '
+      '   codjun, contacorrente, numcarteira, numcontrato, datavecimento, datavencparc, '
+      '   valparc, valhonor, taxaref, obs, nomeescritorio, dddescritorio, telescritorio, '
+      '   nomecliente, endcliente, num, complemnto, bairro, municipio, unidadefed, '
+      '   cepcliente, complecep, dddcliente, telcliente, valoracordo, datavencult, '
+      '   parcelaplanoultimopag, cpfcnpjcliente, cpfcnpjfilialcliente, controlecpfcnpjcliente, '
+      '   codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, dataaprovacao, '
+      '   nomeoperador, chaveprim, camporetarq, nomeavalista1, nomeavalista2, '
+      '   valorconfessado, indacordo, cpfavalista1, cpfavalista2, ctrlav1, ctrlav2, '
+      '   filav1, filav2, idcontrato)'
+      'VALUES'
+      '  (:tepreg, :ato, :cpfadmescrirtorio, :numacordo, :dataacordo, :quantped, '
+      '   :quantparc, :codjun, :contacorrente, :numcarteira, :numcontrato, :datavecimento, '
+      '   :datavencparc, :valparc, :valhonor, :taxaref, :obs, :nomeescritorio, '
+      '   :dddescritorio, :telescritorio, :nomecliente, :endcliente, :num, :complemnto, '
+      '   :bairro, :municipio, :unidadefed, :cepcliente, :complecep, :dddcliente, '
+      '   :telcliente, :valoracordo, :datavencult, :parcelaplanoultimopag, :cpfcnpjcliente, '
+      '   :cpfcnpjfilialcliente, :controlecpfcnpjcliente, :codmeiopagamento, :valoriof, '
+      '   :taxajuros, :acordoaprovadopelodarc, :dataaprovacao, :nomeoperador, '
+      '   :chaveprim, :camporetarq, :nomeavalista1, :nomeavalista2, :valorconfessado, '
+      '   :indacordo, :cpfavalista1, :cpfavalista2, :ctrlav1, :ctrlav2, :filav1, '
+      '   :filav2, :idcontrato)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_CAD_REM" SET'
+      '  tepreg = :tepreg,'
+      '  ato = :ato,'
+      '  cpfadmescrirtorio = :cpfadmescrirtorio,'
+      '  numacordo = :numacordo,'
+      '  dataacordo = :dataacordo,'
+      '  quantped = :quantped,'
+      '  quantparc = :quantparc,'
+      '  codjun = :codjun,'
+      '  contacorrente = :contacorrente,'
+      '  numcarteira = :numcarteira,'
+      '  numcontrato = :numcontrato,'
+      '  datavecimento = :datavecimento,'
+      '  datavencparc = :datavencparc,'
+      '  valparc = :valparc,'
+      '  valhonor = :valhonor,'
+      '  taxaref = :taxaref,'
+      '  obs = :obs,'
+      '  nomeescritorio = :nomeescritorio,'
+      '  dddescritorio = :dddescritorio,'
+      '  telescritorio = :telescritorio,'
+      '  nomecliente = :nomecliente,'
+      '  endcliente = :endcliente,'
+      '  num = :num,'
+      '  complemnto = :complemnto,'
+      '  bairro = :bairro,'
+      '  municipio = :municipio,'
+      '  unidadefed = :unidadefed,'
+      '  cepcliente = :cepcliente,'
+      '  complecep = :complecep,'
+      '  dddcliente = :dddcliente,'
+      '  telcliente = :telcliente,'
+      '  valoracordo = :valoracordo,'
+      '  datavencult = :datavencult,'
+      '  parcelaplanoultimopag = :parcelaplanoultimopag,'
+      '  cpfcnpjcliente = :cpfcnpjcliente,'
+      '  cpfcnpjfilialcliente = :cpfcnpjfilialcliente,'
+      '  controlecpfcnpjcliente = :controlecpfcnpjcliente,'
+      '  codmeiopagamento = :codmeiopagamento,'
+      '  valoriof = :valoriof,'
+      '  taxajuros = :taxajuros,'
+      '  acordoaprovadopelodarc = :acordoaprovadopelodarc,'
+      '  dataaprovacao = :dataaprovacao,'
+      '  nomeoperador = :nomeoperador,'
+      '  chaveprim = :chaveprim,'
+      '  camporetarq = :camporetarq,'
+      '  nomeavalista1 = :nomeavalista1,'
+      '  nomeavalista2 = :nomeavalista2,'
+      '  valorconfessado = :valorconfessado,'
+      '  indacordo = :indacordo,'
+      '  cpfavalista1 = :cpfavalista1,'
+      '  cpfavalista2 = :cpfavalista2,'
+      '  ctrlav1 = :ctrlav1,'
+      '  ctrlav2 = :ctrlav2,'
+      '  filav1 = :filav1,'
+      '  filav2 = :filav2,'
+      '  idcontrato = :idcontrato'
+      'WHERE'
+      '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg))'
+    )
+    UseSequenceFieldForRefreshSQL = True
+    left = 205
+    top = 152
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'tepreg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfadmescrirtorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantped'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codjun'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contacorrente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcarteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavecimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavencparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valhonor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'taxaref'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obs'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dddescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomecliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'num'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complemnto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'municipio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'unidadefed'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cepcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complecep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dddcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valoracordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavencult'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'parcelaplanoultimopag'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfcnpjcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfcnpjfilialcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'controlecpfcnpjcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codmeiopagamento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valoriof'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'taxajuros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'acordoaprovadopelodarc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataaprovacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeoperador'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'chaveprim'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'camporetarq'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeavalista1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeavalista2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorconfessado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'indacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfavalista1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfavalista2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ctrlav1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ctrlav2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'filav1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'filav2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_tepreg'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQContrato: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL2
+    SQL.Strings = (
+      'SELECT idcontrato, numcontrato, dataelaboracao, valortotalacordo,retornolido'
+      '  FROM "TB_CONTRATO"'
+      ' ORDER BY numcontrato'
+    )
+    Params = <>
+    left = 312
+    top = 61
+    object ZQContratoidcontrato: TLongintField
+      FieldKind = fkData
+      FieldName = 'idcontrato'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQContratonumcontrato: TLongintField
+      FieldKind = fkData
+      FieldName = 'numcontrato'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQContratodataelaboracao: TDateField
+      FieldKind = fkData
+      FieldName = 'dataelaboracao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQContratovalortotalacordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotalacordo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 8
+    end
+    object ZQContratoretornolido: TBooleanField
+      FieldKind = fkData
+      FieldName = 'retornolido'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+  end
+  object ZUpdateSQL2: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_CONTRATO"'
+      'WHERE'
+      '  "TB_CONTRATO".idcontrato = :OLD_idcontrato'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_CONTRATO"'
+      '  (idcontrato, numcontrato, dataelaboracao, valortotalacordo, retornolido)'
+      'VALUES'
+      '  (:idcontrato, :numcontrato, :dataelaboracao, :valortotalacordo, :retornolido)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_CONTRATO" SET'
+      '  idcontrato = :idcontrato,'
+      '  numcontrato = :numcontrato,'
+      '  dataelaboracao = :dataelaboracao,'
+      '  valortotalacordo = :valortotalacordo,'
+      '  retornolido = :retornolido'
+      'WHERE'
+      '  "TB_CONTRATO".idcontrato = :OLD_idcontrato'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 310
+    top = 166
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataelaboracao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valortotalacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'retornolido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idcontrato'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQueryExclui: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    Params = <>
+    left = 427
+    top = 147
+  end
+  object ZQueryAtualiza: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    Params = <>
+    left = 435
+    top = 18
+  end
+end

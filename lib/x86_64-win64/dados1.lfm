@@ -1,0 +1,744 @@
+object DtmDrcNovo: TDtmDrcNovo
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 312
+  HorizontalOffset = 398
+  VerticalOffset = 170
+  Width = 426
+  object QueryHeader: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL1
+    CachedUpdates = True
+    SQL.Strings = (
+      'SELECT fixo1, nomeempresa, datarepasse, fixo2, numlote, fixo3'
+      '  FROM public."TB_DRC_HEADER"'
+      'ORDER BY numlote desc'
+    )
+    Params = <>
+    WhereMode = wmWhereAll
+    Left = 41
+    Top = 46
+    object QueryHeaderfixo1: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo1'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object QueryHeaderdatarepasse: TDateField
+      FieldKind = fkData
+      FieldName = 'datarepasse'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QueryHeadernomeempresa: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeempresa'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object QueryHeaderfixo2: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo2'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 76
+    end
+    object QueryHeadernumlote: TLongintField
+      FieldKind = fkData
+      FieldName = 'numlote'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QueryHeaderfixo3: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo3'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 708
+    end
+  end
+  object QueryRegistros: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL2
+    SQL.Strings = (
+      'SELECT agencia, conta, carteira, contrato, dtvencimento, dtremessa, '
+      '       id_mo_lp, dtpagamento, valorinicial, valoratualizado, valorrecebido, '
+      '       valorjuros, valormulta, valorhonorario, valordespesas, valordebito, '
+      '       valorrepasse, siglaempresa, tipopc, numagenciaecontacedente, '
+      '       numeroboleto, valorecebidocli,numlote,registro'
+      '  FROM public."TB_DRC_REG"'
+      'where numlote=:numlote'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end>
+    Left = 168
+    Top = 48
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end>
+    object QueryRegistrosagencia: TFloatField
+      FieldKind = fkData
+      FieldName = 'agencia'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object QueryRegistrosconta: TFloatField
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 458752
+    end
+    object QueryRegistroscontrato: TFloatField
+      FieldKind = fkData
+      FieldName = 'contrato'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 458752
+    end
+    object QueryRegistroscarteira: TStringField
+      FieldKind = fkData
+      FieldName = 'carteira'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object QueryRegistrosdtvencimento: TDateField
+      FieldKind = fkData
+      FieldName = 'dtvencimento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QueryRegistrosid_mo_lp: TStringField
+      FieldKind = fkData
+      FieldName = 'id_mo_lp'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object QueryRegistrosdtremessa: TDateField
+      FieldKind = fkData
+      FieldName = 'dtremessa'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QueryRegistrosdtpagamento: TDateField
+      FieldKind = fkData
+      FieldName = 'dtpagamento'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QueryRegistrosvalorinicial: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorinicial'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '#0.00'
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvaloratualizado: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoratualizado'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalorrecebido: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorrecebido'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalorjuros: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorjuros'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalormulta: TFloatField
+      FieldKind = fkData
+      FieldName = 'valormulta'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalorhonorario: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorhonorario'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalordespesas: TFloatField
+      FieldKind = fkData
+      FieldName = 'valordespesas'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalordebito: TFloatField
+      FieldKind = fkData
+      FieldName = 'valordebito'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosvalorrepasse: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorrepasse'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosnumagenciaecontacedente: TStringField
+      FieldKind = fkData
+      FieldName = 'numagenciaecontacedente'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 52
+    end
+    object QueryRegistrosvalorecebidocli: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorecebidocli'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QueryRegistrosnumlote: TLongintField
+      FieldKind = fkData
+      FieldName = 'numlote'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QueryRegistrossiglaempresa: TStringField
+      FieldKind = fkData
+      FieldName = 'siglaempresa'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object QueryRegistrosnumeroboleto: TStringField
+      FieldKind = fkData
+      FieldName = 'numeroboleto'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 48
+    end
+    object QueryRegistrostipopc: TStringField
+      FieldKind = fkData
+      FieldName = 'tipopc'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object QueryRegistrosregistro: TLongintField
+      FieldKind = fkData
+      FieldName = 'registro'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object QueryRegistrosvalortemp: TCurrencyField
+      FieldKind = fkCalculated
+      FieldName = 'valortemp'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object QueryTrailler: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    SQL.Strings = (
+      'SELECT fixo1, numerolote, datarepasse, fixo2, quantregistros, totalrepassado, '
+      '       fixo3'
+      '  FROM public."TB_DRC_TRAIL"'
+    )
+    Params = <>
+    Left = 288
+    Top = 48
+    object QueryTraillerfixo1: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo1'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object QueryTraillernumerolote: TFloatField
+      FieldKind = fkData
+      FieldName = 'numerolote'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 458752
+    end
+    object QueryTraillerdatarepasse: TDateField
+      FieldKind = fkData
+      FieldName = 'datarepasse'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object QueryTraillerfixo2: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo2'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 76
+    end
+    object QueryTraillerquantregistros: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantregistros'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 589824
+    end
+    object QueryTraillertotalrepassado: TFloatField
+      FieldKind = fkData
+      FieldName = 'totalrepassado'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 4
+    end
+    object QueryTraillerfixo3: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo3'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 772
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_DRC_HEADER"'
+      'WHERE'
+      '  "TB_DRC_HEADER".numlote = :OLD_numlote'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_DRC_HEADER"'
+      '  (fixo1, nomeempresa, datarepasse, fixo2, numlote, fixo3)'
+      'VALUES'
+      '  (:fixo1, :nomeempresa, :datarepasse, :fixo2, :numlote, :fixo3)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_DRC_HEADER" SET'
+      '  fixo1 = :fixo1,'
+      '  nomeempresa = :nomeempresa,'
+      '  datarepasse = :datarepasse,'
+      '  fixo2 = :fixo2,'
+      '  numlote = :numlote,'
+      '  fixo3 = :fixo3'
+      'WHERE'
+      '  "TB_DRC_HEADER".numlote = :OLD_numlote'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 41
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'fixo1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datarepasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixo2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixo3'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numlote'
+        ParamType = ptUnknown
+      end>
+  end
+  object QueryExcluiReg: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    Params = <>
+    Left = 168
+    Top = 192
+  end
+  object QueryExcluirLote: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    Params = <>
+    Left = 40
+    Top = 201
+  end
+  object ZUpdateSQL2: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_DRC_REG"'
+      'WHERE'
+      '  "TB_DRC_REG".registro = :OLD_registro'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_DRC_REG"'
+      '  (agencia, conta, carteira, contrato, dtvencimento, dtremessa, id_mo_lp, '
+      '   dtpagamento, valorinicial, valoratualizado, valorrecebido, valorjuros, '
+      '   valormulta, valorhonorario, valordespesas, valordebito, valorrepasse, '
+      '   siglaempresa, tipopc, valorecebidocli, numlote, numeroboleto, numagenciaecontacedente)'
+      'VALUES'
+      '  (:agencia, :conta, :carteira, :contrato, :dtvencimento, :dtremessa, :id_mo_lp, '
+      '   :dtpagamento, :valorinicial, :valoratualizado, :valorrecebido, :valorjuros, '
+      '   :valormulta, :valorhonorario, :valordespesas, :valordebito, :valorrepasse, '
+      '   :siglaempresa, :tipopc, :valorecebidocli, :numlote, :numeroboleto, :numagenciaecontacedente)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_DRC_REG" SET'
+      '  agencia = :agencia,'
+      '  conta = :conta,'
+      '  carteira = :carteira,'
+      '  contrato = :contrato,'
+      '  dtvencimento = :dtvencimento,'
+      '  dtremessa = :dtremessa,'
+      '  id_mo_lp = :id_mo_lp,'
+      '  dtpagamento = :dtpagamento,'
+      '  valorinicial = :valorinicial,'
+      '  valoratualizado = :valoratualizado,'
+      '  valorrecebido = :valorrecebido,'
+      '  valorjuros = :valorjuros,'
+      '  valormulta = :valormulta,'
+      '  valorhonorario = :valorhonorario,'
+      '  valordespesas = :valordespesas,'
+      '  valordebito = :valordebito,'
+      '  valorrepasse = :valorrepasse,'
+      '  siglaempresa = :siglaempresa,'
+      '  tipopc = :tipopc,'
+      '  valorecebidocli = :valorecebidocli,'
+      '  numlote = :numlote,'
+      '  numeroboleto = :numeroboleto,'
+      '  numagenciaecontacedente = :numagenciaecontacedente'
+      'WHERE'
+      '  "TB_DRC_REG".registro = :OLD_registro'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 276
+    Top = 131
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'agencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'conta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'carteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtvencimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtremessa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'id_mo_lp'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtpagamento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorinicial'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valoratualizado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorrecebido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorjuros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valormulta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorhonorario'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valordespesas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valordebito'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorrepasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'siglaempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tipopc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorecebidocli'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numeroboleto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numagenciaecontacedente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_registro'
+        ParamType = ptUnknown
+      end>
+  end
+  object QuerySoma: TZReadOnlyQuery
+    Connection = DtmConexao.DbConexaoPg
+    SQL.Strings = (
+      'SELECT  sum(valorrecebido) as valorrectotal  , sum(valorhonorario) as valorhonototal, sum(valorrepasse) as valorreptotal  '
+      'FROM public."TB_DRC_REG"'
+      'where numlote=:numlote'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end>
+    Options = []
+    Left = 302
+    Top = 218
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end>
+    object QuerySomavalorrectotal: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorrectotal'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QuerySomavalorhonototal: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorhonototal'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+    object QuerySomavalorreptotal: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorreptotal'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Currency = True
+      Precision = 2
+    end
+  end
+end

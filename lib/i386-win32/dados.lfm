@@ -1,0 +1,807 @@
+object DtmDrc: TDtmDrc
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 373
+  HorizontalOffset = 126
+  VerticalOffset = 51
+  Width = 490
+  PPI = 96
+  object tbdrc: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    AutoCalcFields = False
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT "idReg", "TipoInscEmpresa", cnpjcpf, precn1, indempre, numcontrole, '
+      '       prenc2, idtituloabanco, usobanco1, usobanco2, indrateio, prenc3, '
+      '       carteira, idocorrencia, dataocorencia, numerodoc, idtitulobanco, '
+      '       datavenctitulo, valortitulo, bancocobrador, agenciacobradora, '
+      '       especietitulo, outrasdespesas, jurosatraso, iofdevido, despesascontrole, '
+      '       abatconcedido, descconcedido, valorpago, juromora, outrocreditos, '
+      '       brancos1, motivoocorrencia, datacredito, origempagamento, brancos2, '
+      '       chequebradesco, motivorejeicao, brancos3, nuncartorio, numprotocolo, '
+      '       brancos4, numsequencial'
+      '  FROM public."TB_PRET_CONTAS"'
+    )
+    Params = <>
+    left = 136
+    top = 24
+    object tbdrcidReg: TFloatField
+      FieldKind = fkData
+      FieldName = 'idReg'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 65536
+    end
+    object tbdrcTipoInscEmpresa: TFloatField
+      FieldKind = fkData
+      FieldName = 'TipoInscEmpresa'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 131072
+    end
+    object tbdrccnpjcpf: TFloatField
+      FieldKind = fkData
+      FieldName = 'cnpjcpf'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 917506
+    end
+    object tbdrcprecn1: TStringField
+      FieldKind = fkData
+      FieldName = 'precn1'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object tbdrcindempre: TStringField
+      FieldKind = fkData
+      FieldName = 'indempre'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 68
+    end
+    object tbdrcnumcontrole: TStringField
+      FieldKind = fkData
+      FieldName = 'numcontrole'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object tbdrcprenc2: TFloatField
+      FieldKind = fkData
+      FieldName = 'prenc2'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 524288
+    end
+    object tbdrcidtituloabanco: TStringField
+      FieldKind = fkData
+      FieldName = 'idtituloabanco'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 48
+    end
+    object tbdrcusobanco1: TFloatField
+      FieldKind = fkData
+      FieldName = 'usobanco1'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655360
+    end
+    object tbdrcusobanco2: TStringField
+      FieldKind = fkData
+      FieldName = 'usobanco2'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 48
+    end
+    object tbdrcindrateio: TStringField
+      FieldKind = fkData
+      FieldName = 'indrateio'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbdrcprenc3: TFloatField
+      FieldKind = fkData
+      FieldName = 'prenc3'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 131072
+    end
+    object tbdrccarteira: TFloatField
+      FieldKind = fkData
+      FieldName = 'carteira'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 65536
+    end
+    object tbdrcidocorrencia: TFloatField
+      FieldKind = fkData
+      FieldName = 'idocorrencia'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 131072
+    end
+    object tbdrcdataocorencia: TFloatField
+      FieldKind = fkData
+      FieldName = 'dataocorencia'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 393216
+    end
+    object tbdrcnumerodoc: TStringField
+      FieldKind = fkData
+      FieldName = 'numerodoc'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object tbdrcidtitulobanco: TStringField
+      FieldKind = fkData
+      FieldName = 'idtitulobanco'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object tbdrcdatavenctitulo: TFloatField
+      FieldKind = fkData
+      FieldName = 'datavenctitulo'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 393216
+    end
+    object tbdrcvalortitulo: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortitulo'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcbancocobrador: TFloatField
+      FieldKind = fkData
+      FieldName = 'bancocobrador'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 196608
+    end
+    object tbdrcagenciacobradora: TFloatField
+      FieldKind = fkData
+      FieldName = 'agenciacobradora'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327680
+    end
+    object tbdrcespecietitulo: TStringField
+      FieldKind = fkData
+      FieldName = 'especietitulo'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object tbdrcoutrasdespesas: TFloatField
+      FieldKind = fkData
+      FieldName = 'outrasdespesas'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcjurosatraso: TFloatField
+      FieldKind = fkData
+      FieldName = 'jurosatraso'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrciofdevido: TFloatField
+      FieldKind = fkData
+      FieldName = 'iofdevido'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcdespesascontrole: TFloatField
+      FieldKind = fkData
+      FieldName = 'despesascontrole'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcabatconcedido: TFloatField
+      FieldKind = fkData
+      FieldName = 'abatconcedido'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcdescconcedido: TFloatField
+      FieldKind = fkData
+      FieldName = 'descconcedido'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcvalorpago: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorpago'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcjuromora: TFloatField
+      FieldKind = fkData
+      FieldName = 'juromora'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcoutrocreditos: TFloatField
+      FieldKind = fkData
+      FieldName = 'outrocreditos'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 851968
+    end
+    object tbdrcbrancos1: TStringField
+      FieldKind = fkData
+      FieldName = 'brancos1'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object tbdrcmotivoocorrencia: TStringField
+      FieldKind = fkData
+      FieldName = 'motivoocorrencia'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object tbdrcdatacredito: TFloatField
+      FieldKind = fkData
+      FieldName = 'datacredito'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 393216
+    end
+    object tbdrcorigempagamento: TFloatField
+      FieldKind = fkData
+      FieldName = 'origempagamento'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 196608
+    end
+    object tbdrcbrancos2: TStringField
+      FieldKind = fkData
+      FieldName = 'brancos2'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object tbdrcchequebradesco: TFloatField
+      FieldKind = fkData
+      FieldName = 'chequebradesco'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 262144
+    end
+    object tbdrcmotivorejeicao: TFloatField
+      FieldKind = fkData
+      FieldName = 'motivorejeicao'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 655360
+    end
+    object tbdrcbrancos3: TStringField
+      FieldKind = fkData
+      FieldName = 'brancos3'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object tbdrcnuncartorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'nuncartorio'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 131072
+    end
+    object tbdrcnumprotocolo: TStringField
+      FieldKind = fkData
+      FieldName = 'numprotocolo'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object tbdrcbrancos4: TFloatField
+      FieldKind = fkData
+      FieldName = 'brancos4'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 917504
+    end
+    object tbdrcnumsequencial: TLongintField
+      FieldKind = fkData
+      FieldName = 'numsequencial'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_PRET_CONTAS"'
+      'WHERE'
+      '  "TB_PRET_CONTAS".numsequencial = :OLD_numsequencial'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_PRET_CONTAS"'
+      '  ("idReg", "TipoInscEmpresa",cnpjcpf, precn1, indempre, numcontrole, prenc2, '
+      '   idtituloabanco, usobanco1, usobanco2, indrateio, prenc3, carteira, idocorrencia, '
+      '   dataocorencia, numerodoc, idtitulobanco, datavenctitulo, valortitulo, '
+      '   bancocobrador, agenciacobradora, especietitulo, outrasdespesas, jurosatraso, '
+      '   iofdevido, despesascontrole, abatconcedido, descconcedido, valorpago, '
+      '   juromora, outrocreditos, brancos1, motivoocorrencia, datacredito, origempagamento, '
+      '   brancos2, chequebradesco, motivorejeicao, brancos3, nuncartorio, numprotocolo, '
+      '   brancos4)'
+      'VALUES'
+      '  (:idReg, :TipoInscEmpresa, :cnpjcpf, :precn1, :indempre, :numcontrole, '
+      '   :prenc2, :idtituloabanco, :usobanco1, :usobanco2, :indrateio, :prenc3, '
+      '   :carteira, :idocorrencia, :dataocorencia, :numerodoc, :idtitulobanco, '
+      '   :datavenctitulo, :valortitulo, :bancocobrador, :agenciacobradora, :especietitulo, '
+      '   :outrasdespesas, :jurosatraso, :iofdevido, :despesascontrole, :abatconcedido, '
+      '   :descconcedido, :valorpago, :juromora, :outrocreditos, :brancos1, :motivoocorrencia, '
+      '   :datacredito, :origempagamento, :brancos2, :chequebradesco, :motivorejeicao, '
+      '   :brancos3, :nuncartorio, :numprotocolo, :brancos4)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_PRET_CONTAS" SET'
+      '  idReg = :idReg,'
+      '  TipoInscEmpresa = :TipoInscEmpresa,'
+      '  cnpjcpf = :cnpjcpf,'
+      '  precn1 = :precn1,'
+      '  indempre = :indempre,'
+      '  numcontrole = :numcontrole,'
+      '  prenc2 = :prenc2,'
+      '  idtituloabanco = :idtituloabanco,'
+      '  usobanco1 = :usobanco1,'
+      '  usobanco2 = :usobanco2,'
+      '  indrateio = :indrateio,'
+      '  prenc3 = :prenc3,'
+      '  carteira = :carteira,'
+      '  idocorrencia = :idocorrencia,'
+      '  dataocorencia = :dataocorencia,'
+      '  numerodoc = :numerodoc,'
+      '  idtitulobanco = :idtitulobanco,'
+      '  datavenctitulo = :datavenctitulo,'
+      '  valortitulo = :valortitulo,'
+      '  bancocobrador = :bancocobrador,'
+      '  agenciacobradora = :agenciacobradora,'
+      '  especietitulo = :especietitulo,'
+      '  outrasdespesas = :outrasdespesas,'
+      '  jurosatraso = :jurosatraso,'
+      '  iofdevido = :iofdevido,'
+      '  despesascontrole = :despesascontrole,'
+      '  abatconcedido = :abatconcedido,'
+      '  descconcedido = :descconcedido,'
+      '  valorpago = :valorpago,'
+      '  juromora = :juromora,'
+      '  outrocreditos = :outrocreditos,'
+      '  brancos1 = :brancos1,'
+      '  motivoocorrencia = :motivoocorrencia,'
+      '  datacredito = :datacredito,'
+      '  origempagamento = :origempagamento,'
+      '  brancos2 = :brancos2,'
+      '  chequebradesco = :chequebradesco,'
+      '  motivorejeicao = :motivorejeicao,'
+      '  brancos3 = :brancos3,'
+      '  nuncartorio = :nuncartorio,'
+      '  numprotocolo = :numprotocolo,'
+      '  brancos4 = :brancos4'
+      'WHERE'
+      '  "TB_PRET_CONTAS".numsequencial = :OLD_numsequencial'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 216
+    top = 24
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idReg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'TipoInscEmpresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cnpjcpf'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'precn1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'indempre'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrole'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'prenc2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idtituloabanco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'usobanco1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'usobanco2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'indrateio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'prenc3'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'carteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idocorrencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataocorencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numerodoc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idtitulobanco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavenctitulo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valortitulo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bancocobrador'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'agenciacobradora'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'especietitulo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'outrasdespesas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'jurosatraso'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'iofdevido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'despesascontrole'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'abatconcedido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descconcedido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorpago'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'juromora'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'outrocreditos'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'brancos1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'motivoocorrencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datacredito'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'origempagamento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'brancos2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'chequebradesco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'motivorejeicao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'brancos3'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nuncartorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numprotocolo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'brancos4'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numsequencial'
+        ParamType = ptUnknown
+      end>
+  end
+end

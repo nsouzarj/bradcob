@@ -1,0 +1,25 @@
+object DtmConexao: TDtmConexao
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 150
+  HorizontalOffset = 88
+  VerticalOffset = 42
+  Width = 150
+  PPI = 96
+  object DbConexaoPg: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    HostName = '192.168.0.32'
+    Port = 5432
+    Database = 'dbcob'
+    User = 'postgres'
+    Password = 'nso1810'
+    Protocol = 'postgresql-9'
+    LibraryLocation = 'C:\bradcob\drivers\libpq.dll'
+    left = 96
+    top = 63
+  end
+end

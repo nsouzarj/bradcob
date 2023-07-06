@@ -1,0 +1,287 @@
+object DtaModArqRet: TDtaModArqRet
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 321
+  HorizontalOffset = 257
+  VerticalOffset = 97
+  Width = 585
+  PPI = 96
+  object TbArqRet: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT idseq, agencia, conta, carteira, contrato, dvcto_pcela, valorbaixado, '
+      '       tipobaixa, data_baixa, cpfadvogado'
+      '  FROM "TB_ARQ_PAGTO"'
+    )
+    Params = <>
+    left = 72
+    top = 64
+    object TbArqRetidseq: TLongintField
+      FieldKind = fkData
+      FieldName = 'idseq'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object TbArqRetagencia: TFloatField
+      FieldKind = fkData
+      FieldName = 'agencia'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 327680
+    end
+    object TbArqRetconta: TFloatField
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 458752
+    end
+    object TbArqRetcarteira: TStringField
+      FieldKind = fkData
+      FieldName = 'carteira'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object TbArqRetcontrato: TFloatField
+      FieldKind = fkData
+      FieldName = 'contrato'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 524288
+    end
+    object TbArqRetdvcto_pcela: TDateField
+      FieldKind = fkData
+      FieldName = 'dvcto_pcela'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object TbArqRetvalorbaixado: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorbaixado'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 983042
+    end
+    object TbArqRettipobaixa: TStringField
+      FieldKind = fkData
+      FieldName = 'tipobaixa'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object TbArqRetdata_baixa: TDateField
+      FieldKind = fkData
+      FieldName = 'data_baixa'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object TbArqRetcpfadvogado: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfadvogado'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 589824
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_ARQ_PAGTO"'
+      'WHERE'
+      '  "TB_ARQ_PAGTO".idseq = :OLD_idseq AND'
+      '  (("TB_ARQ_PAGTO".agencia IS NULL AND :OLD_agencia IS NULL) OR ("TB_ARQ_PAGTO".agencia = :OLD_agencia)) AND'
+      '  (("TB_ARQ_PAGTO".conta IS NULL AND :OLD_conta IS NULL) OR ("TB_ARQ_PAGTO".conta = :OLD_conta)) AND'
+      '  (("TB_ARQ_PAGTO".carteira IS NULL AND :OLD_carteira IS NULL) OR ("TB_ARQ_PAGTO".carteira = :OLD_carteira)) AND'
+      '  (("TB_ARQ_PAGTO".contrato IS NULL AND :OLD_contrato IS NULL) OR ("TB_ARQ_PAGTO".contrato = :OLD_contrato)) AND'
+      '  (("TB_ARQ_PAGTO".dvcto_pcela IS NULL AND :OLD_dvcto_pcela IS NULL) OR ("TB_ARQ_PAGTO".dvcto_pcela = :OLD_dvcto_pcela)) AND'
+      '  (("TB_ARQ_PAGTO".valorbaixado IS NULL AND :OLD_valorbaixado IS NULL) OR ("TB_ARQ_PAGTO".valorbaixado = :OLD_valorbaixado)) AND'
+      '  (("TB_ARQ_PAGTO".tipobaixa IS NULL AND :OLD_tipobaixa IS NULL) OR ("TB_ARQ_PAGTO".tipobaixa = :OLD_tipobaixa)) AND'
+      '  (("TB_ARQ_PAGTO".data_baixa IS NULL AND :OLD_data_baixa IS NULL) OR ("TB_ARQ_PAGTO".data_baixa = :OLD_data_baixa)) AND'
+      '  (("TB_ARQ_PAGTO".cpfadvogado IS NULL AND :OLD_cpfadvogado IS NULL) OR ("TB_ARQ_PAGTO".cpfadvogado = :OLD_cpfadvogado))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_ARQ_PAGTO"'
+      '  (idseq, agencia, conta, carteira, contrato, dvcto_pcela, valorbaixado, '
+      '   tipobaixa, data_baixa, cpfadvogado)'
+      'VALUES'
+      '  (:idseq, :agencia, :conta, :carteira, :contrato, :dvcto_pcela, :valorbaixado, '
+      '   :tipobaixa, :data_baixa, :cpfadvogado)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_ARQ_PAGTO" SET'
+      '  idseq = :idseq,'
+      '  agencia = :agencia,'
+      '  conta = :conta,'
+      '  carteira = :carteira,'
+      '  contrato = :contrato,'
+      '  dvcto_pcela = :dvcto_pcela,'
+      '  valorbaixado = :valorbaixado,'
+      '  tipobaixa = :tipobaixa,'
+      '  data_baixa = :data_baixa,'
+      '  cpfadvogado = :cpfadvogado'
+      'WHERE'
+      '  "TB_ARQ_PAGTO".idseq = :OLD_idseq AND'
+      '  (("TB_ARQ_PAGTO".agencia IS NULL AND :OLD_agencia IS NULL) OR ("TB_ARQ_PAGTO".agencia = :OLD_agencia)) AND'
+      '  (("TB_ARQ_PAGTO".conta IS NULL AND :OLD_conta IS NULL) OR ("TB_ARQ_PAGTO".conta = :OLD_conta)) AND'
+      '  (("TB_ARQ_PAGTO".carteira IS NULL AND :OLD_carteira IS NULL) OR ("TB_ARQ_PAGTO".carteira = :OLD_carteira)) AND'
+      '  (("TB_ARQ_PAGTO".contrato IS NULL AND :OLD_contrato IS NULL) OR ("TB_ARQ_PAGTO".contrato = :OLD_contrato)) AND'
+      '  (("TB_ARQ_PAGTO".dvcto_pcela IS NULL AND :OLD_dvcto_pcela IS NULL) OR ("TB_ARQ_PAGTO".dvcto_pcela = :OLD_dvcto_pcela)) AND'
+      '  (("TB_ARQ_PAGTO".valorbaixado IS NULL AND :OLD_valorbaixado IS NULL) OR ("TB_ARQ_PAGTO".valorbaixado = :OLD_valorbaixado)) AND'
+      '  (("TB_ARQ_PAGTO".tipobaixa IS NULL AND :OLD_tipobaixa IS NULL) OR ("TB_ARQ_PAGTO".tipobaixa = :OLD_tipobaixa)) AND'
+      '  (("TB_ARQ_PAGTO".data_baixa IS NULL AND :OLD_data_baixa IS NULL) OR ("TB_ARQ_PAGTO".data_baixa = :OLD_data_baixa)) AND'
+      '  (("TB_ARQ_PAGTO".cpfadvogado IS NULL AND :OLD_cpfadvogado IS NULL) OR ("TB_ARQ_PAGTO".cpfadvogado = :OLD_cpfadvogado))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 69
+    top = 174
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idseq'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'agencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'conta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'carteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dvcto_pcela'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorbaixado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tipobaixa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'data_baixa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfadvogado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idseq'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_agencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_conta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_carteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_contrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dvcto_pcela'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_valorbaixado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_tipobaixa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_data_baixa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cpfadvogado'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQuery1: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    Params = <>
+    left = 196
+    top = 80
+  end
+end

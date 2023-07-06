@@ -1,0 +1,2452 @@
+object DtmDsps: TDtmDsps
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 309
+  HorizontalOffset = 0
+  VerticalOffset = 308
+  Width = 675
+  object ZQtabela: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    AutoCalcFields = False
+    OnCalcFields = ZQtabelaCalcFields
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT  tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, quantparc, codjun, '
+      'contacorrente, numcarteira, numcontrato, datavecimento, datavencparc, valparc, valhonor,'
+      ' taxaref, obs, nomeescritorio, dddescritorio, telescritorio, nomecliente, endcliente, num, '
+      'complemnto, bairro, municipio, unidadefed, cepcliente, complecep, dddcliente, telcliente,'
+      ' valoracordo, datavencult, parcelaplanoultimopag, cpfcnpjcliente, cpfcnpjfilialcliente, '
+      'controlecpfcnpjcliente, codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, '
+      'dataaprovacao, nomeoperador, chaveprim, camporetarq, nomeavalista1, nomeavalista2, '
+      'valorconfessado, indacordo, cpfavalista1, cpfavalista2, ctrlav1, ctrlav2, filav1, filav2, idcontrato, '
+      'quantidadedegarantias, codigoregistroveiculo, cgarntveic, vgrantveic, renanveic, placaveic, uffabveic, '
+      'anofabveic, uflicveic, chassirmarc, chassiveic, antprodtveic, contrantveic, marcaveic, modeloveic,'
+      ' corveic, porteveic, codigoregistroimoveis, cgarntimov, vgarntimov, garntlogdr, garntnrologdr,'
+      ' garntcompllogdr, garntbairrologdr, garntcepimov, mcircunsimov, comarcaimov, nmatrimov, '
+      'nregimov, averbacaoimov, nlivroimov, nfolhaimov, dregimov, codigoregistrobens, cgarntbens, '
+      'garntdescrbens, codigoregistrooutros, cgarntoutros, garntvgarntoutros'
+      '   FROM "TB_CAD_REM" order by chaveprim'
+    )
+    Params = <>
+    UpdateMode = umUpdateAll
+    WhereMode = wmWhereAll
+    Options = []
+    Left = 176
+    Top = 56
+    object ZQtabelatepreg: TStringField
+      FieldKind = fkData
+      FieldName = 'tepreg'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelaato: TStringField
+      FieldKind = fkData
+      FieldName = 'ato'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelacpfadmescrirtorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfadmescrirtorio'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 589824
+    end
+    object ZQtabelanumacordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'numacordo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 720896
+    end
+    object ZQtabeladataacordo: TStringField
+      FieldKind = fkData
+      FieldName = 'dataacordo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelaquantped: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantped'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelaquantparc: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantparc'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelacodjun: TFloatField
+      FieldKind = fkData
+      FieldName = 'codjun'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelacontacorrente: TFloatField
+      FieldKind = fkData
+      FieldName = 'contacorrente'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 458752
+    end
+    object ZQtabelanumcarteira: TStringField
+      FieldKind = fkData
+      FieldName = 'numcarteira'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQtabelanumcontrato: TFloatField
+      FieldKind = fkData
+      FieldName = 'numcontrato'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 589824
+    end
+    object ZQtabeladatavecimento: TStringField
+      FieldKind = fkData
+      FieldName = 'datavecimento'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabeladatavencparc: TStringField
+      FieldKind = fkData
+      FieldName = 'datavencparc'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelavalparc: TFloatField
+      FieldKind = fkData
+      FieldName = 'valparc'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 1114114
+    end
+    object ZQtabelavalhonor: TFloatField
+      FieldKind = fkData
+      FieldName = 'valhonor'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 1114114
+    end
+    object ZQtabelataxaref: TStringField
+      FieldKind = fkData
+      FieldName = 'taxaref'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelaobs: TStringField
+      FieldKind = fkData
+      FieldName = 'obs'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 176
+    end
+    object ZQtabelanomeescritorio: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeescritorio'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabeladddescritorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'dddescritorio'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelatelescritorio: TFloatField
+      FieldKind = fkData
+      FieldName = 'telescritorio'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 589824
+    end
+    object ZQtabelanomecliente: TStringField
+      FieldKind = fkData
+      FieldName = 'nomecliente'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelaendcliente: TStringField
+      FieldKind = fkData
+      FieldName = 'endcliente'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelanum: TStringField
+      FieldKind = fkData
+      FieldName = 'num'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 28
+    end
+    object ZQtabelacomplemnto: TStringField
+      FieldKind = fkData
+      FieldName = 'complemnto'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelabairro: TStringField
+      FieldKind = fkData
+      FieldName = 'bairro'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelamunicipio: TStringField
+      FieldKind = fkData
+      FieldName = 'municipio'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object ZQtabelaunidadefed: TStringField
+      FieldKind = fkData
+      FieldName = 'unidadefed'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelacepcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'cepcliente'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327680
+    end
+    object ZQtabelacomplecep: TFloatField
+      FieldKind = fkData
+      FieldName = 'complecep'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabeladddcliente: TStringField
+      FieldKind = fkData
+      FieldName = 'dddcliente'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQtabelatelcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'telcliente'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655360
+    end
+    object ZQtabelavaloracordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoracordo'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 1114114
+    end
+    object ZQtabeladatavencult: TStringField
+      FieldKind = fkData
+      FieldName = 'datavencult'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelaparcelaplanoultimopag: TFloatField
+      FieldKind = fkData
+      FieldName = 'parcelaplanoultimopag'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelacpfcnpjcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfcnpjcliente'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655360
+    end
+    object ZQtabelacpfcnpjfilialcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'cpfcnpjfilialcliente'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelacontrolecpfcnpjcliente: TFloatField
+      FieldKind = fkData
+      FieldName = 'controlecpfcnpjcliente'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 131072
+    end
+    object ZQtabelacodmeiopagamento: TFloatField
+      FieldKind = fkData
+      FieldName = 'codmeiopagamento'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelavaloriof: TFloatField
+      FieldKind = fkData
+      FieldName = 'valoriof'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 1114114
+    end
+    object ZQtabelataxajuros: TFloatField
+      FieldKind = fkData
+      FieldName = 'taxajuros'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = ',0.00;-,0.00'
+      Currency = True
+      Precision = 2
+    end
+    object ZQtabelaacordoaprovadopelodarc: TStringField
+      FieldKind = fkData
+      FieldName = 'acordoaprovadopelodarc'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabeladataaprovacao: TStringField
+      FieldKind = fkData
+      FieldName = 'dataaprovacao'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelanomeoperador: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeoperador'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object ZQtabelanomeavalista1: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeavalista1'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelanomeavalista2: TStringField
+      FieldKind = fkData
+      FieldName = 'nomeavalista2'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object ZQtabelacamporetarq: TStringField
+      FieldKind = fkData
+      FieldName = 'camporetarq'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
+    object ZQtabelacpfavalista1: TStringField
+      FieldKind = fkData
+      FieldName = 'cpfavalista1'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object ZQtabelacpfavalista2: TStringField
+      FieldKind = fkData
+      FieldName = 'cpfavalista2'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object ZQtabelavalorconfessado: TFloatField
+      FieldKind = fkData
+      FieldName = 'valorconfessado'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 983042
+    end
+    object ZQtabelaindacordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'indacordo'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 131072
+    end
+    object ZQtabelachaveprim: TFloatField
+      FieldKind = fkData
+      FieldName = 'chaveprim'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 2
+    end
+    object ZQtabelactrlav1: TStringField
+      FieldKind = fkData
+      FieldName = 'ctrlav1'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelactrlav2: TStringField
+      FieldKind = fkData
+      FieldName = 'ctrlav2'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelafilav1: TStringField
+      FieldKind = fkData
+      FieldName = 'filav1'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQtabelafilav2: TStringField
+      FieldKind = fkData
+      FieldName = 'filav2'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object ZQtabelaidcontrato: TFloatField
+      FieldKind = fkData
+      FieldName = 'idcontrato'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655360
+    end
+    object ZQtabelatotal: TCurrencyField
+      FieldKind = fkCalculated
+      FieldName = 'total'
+      Index = 56
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQtabelaquantidadedegarantias: TFloatField
+      FieldKind = fkData
+      FieldName = 'quantidadedegarantias'
+      Index = 57
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 131072
+    end
+    object ZQtabelacodigoregistroveiculo: TStringField
+      FieldKind = fkData
+      FieldName = 'codigoregistroveiculo'
+      Index = 58
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelacgarntveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'cgarntveic'
+      Index = 59
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelavgrantveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'vgrantveic'
+      Index = 60
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 1179648
+    end
+    object ZQtabelarenanveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'renanveic'
+      Index = 61
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 720896
+    end
+    object ZQtabelaplacaveic: TStringField
+      FieldKind = fkData
+      FieldName = 'placaveic'
+      Index = 62
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 28
+    end
+    object ZQtabelauffabveic: TStringField
+      FieldKind = fkData
+      FieldName = 'uffabveic'
+      Index = 63
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelaanofabveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'anofabveic'
+      Index = 64
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelauflicveic: TStringField
+      FieldKind = fkData
+      FieldName = 'uflicveic'
+      Index = 65
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object ZQtabelachassirmarc: TFloatField
+      FieldKind = fkData
+      FieldName = 'chassirmarc'
+      Index = 66
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 65536
+    end
+    object ZQtabelachassiveic: TStringField
+      FieldKind = fkData
+      FieldName = 'chassiveic'
+      Index = 67
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelaantprodtveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'antprodtveic'
+      Index = 68
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelacontrantveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'contrantveic'
+      Index = 69
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 589824
+    end
+    object ZQtabelamarcaveic: TStringField
+      FieldKind = fkData
+      FieldName = 'marcaveic'
+      Index = 70
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelamodeloveic: TStringField
+      FieldKind = fkData
+      FieldName = 'modeloveic'
+      Index = 71
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelacorveic: TStringField
+      FieldKind = fkData
+      FieldName = 'corveic'
+      Index = 72
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelaporteveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'porteveic'
+      Index = 73
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 65536
+    end
+    object ZQtabelacodigoregistroimoveis: TStringField
+      FieldKind = fkData
+      FieldName = 'codigoregistroimoveis'
+      Index = 74
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelacgarntimov: TFloatField
+      FieldKind = fkData
+      FieldName = 'cgarntimov'
+      Index = 75
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelavgarntimov: TFloatField
+      FieldKind = fkData
+      FieldName = 'vgarntimov'
+      Index = 76
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 1179648
+    end
+    object ZQtabelagarntlogdr: TStringField
+      FieldKind = fkData
+      FieldName = 'garntlogdr'
+      Index = 77
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelagarntnrologdr: TFloatField
+      FieldKind = fkData
+      FieldName = 'garntnrologdr'
+      Index = 78
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 327680
+    end
+    object ZQtabelagarntcompllogdr: TStringField
+      FieldKind = fkData
+      FieldName = 'garntcompllogdr'
+      Index = 79
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object ZQtabelagarntbairrologdr: TStringField
+      FieldKind = fkData
+      FieldName = 'garntbairrologdr'
+      Index = 80
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object ZQtabelagarntcepimov: TFloatField
+      FieldKind = fkData
+      FieldName = 'garntcepimov'
+      Index = 81
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 524288
+    end
+    object ZQtabelamcircunsimov: TFloatField
+      FieldKind = fkData
+      FieldName = 'mcircunsimov'
+      Index = 82
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelacomarcaimov: TStringField
+      FieldKind = fkData
+      FieldName = 'comarcaimov'
+      Index = 83
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 164
+    end
+    object ZQtabelanmatrimov: TFloatField
+      FieldKind = fkData
+      FieldName = 'nmatrimov'
+      Index = 84
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 458752
+    end
+    object ZQtabelanregimov: TFloatField
+      FieldKind = fkData
+      FieldName = 'nregimov'
+      Index = 85
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655360
+    end
+    object ZQtabelaaverbacaoimov: TStringField
+      FieldKind = fkData
+      FieldName = 'averbacaoimov'
+      Index = 86
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object ZQtabelanlivroimov: TStringField
+      FieldKind = fkData
+      FieldName = 'nlivroimov'
+      Index = 87
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQtabelanfolhaimov: TStringField
+      FieldKind = fkData
+      FieldName = 'nfolhaimov'
+      Index = 88
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object ZQtabeladregimov: TStringField
+      FieldKind = fkData
+      FieldName = 'dregimov'
+      Index = 89
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object ZQtabelacodigoregistrobens: TStringField
+      FieldKind = fkData
+      FieldName = 'codigoregistrobens'
+      Index = 90
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelacgarntbens: TFloatField
+      FieldKind = fkData
+      FieldName = 'cgarntbens'
+      Index = 91
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelagarntdescrbens: TStringField
+      FieldKind = fkData
+      FieldName = 'garntdescrbens'
+      Index = 92
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object ZQtabelacodigoregistrooutros: TStringField
+      FieldKind = fkData
+      FieldName = 'codigoregistrooutros'
+      Index = 93
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 4
+    end
+    object ZQtabelacgarntoutros: TFloatField
+      FieldKind = fkData
+      FieldName = 'cgarntoutros'
+      Index = 94
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 196608
+    end
+    object ZQtabelagarntvgarntoutros: TFloatField
+      FieldKind = fkData
+      FieldName = 'garntvgarntoutros'
+      Index = 95
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 1179648
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_CAD_REM"'
+      'WHERE'
+      '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg)) AND'
+      '  (("TB_CAD_REM".ato IS NULL AND :OLD_ato IS NULL) OR ("TB_CAD_REM".ato = :OLD_ato)) AND'
+      '  (("TB_CAD_REM".cpfadmescrirtorio IS NULL AND :OLD_cpfadmescrirtorio IS NULL) OR ("TB_CAD_REM".cpfadmescrirtorio = :OLD_cpfadmescrirtorio)) AND'
+      '  "TB_CAD_REM".numacordo = :OLD_numacordo AND'
+      '  (("TB_CAD_REM".dataacordo IS NULL AND :OLD_dataacordo IS NULL) OR ("TB_CAD_REM".dataacordo = :OLD_dataacordo)) AND'
+      '  (("TB_CAD_REM".quantped IS NULL AND :OLD_quantped IS NULL) OR ("TB_CAD_REM".quantped = :OLD_quantped)) AND'
+      '  (("TB_CAD_REM".quantparc IS NULL AND :OLD_quantparc IS NULL) OR ("TB_CAD_REM".quantparc = :OLD_quantparc)) AND'
+      '  (("TB_CAD_REM".codjun IS NULL AND :OLD_codjun IS NULL) OR ("TB_CAD_REM".codjun = :OLD_codjun)) AND'
+      '  (("TB_CAD_REM".contacorrente IS NULL AND :OLD_contacorrente IS NULL) OR ("TB_CAD_REM".contacorrente = :OLD_contacorrente)) AND'
+      '  (("TB_CAD_REM".numcarteira IS NULL AND :OLD_numcarteira IS NULL) OR ("TB_CAD_REM".numcarteira = :OLD_numcarteira)) AND'
+      '  (("TB_CAD_REM".numcontrato IS NULL AND :OLD_numcontrato IS NULL) OR ("TB_CAD_REM".numcontrato = :OLD_numcontrato)) AND'
+      '  (("TB_CAD_REM".datavecimento IS NULL AND :OLD_datavecimento IS NULL) OR ("TB_CAD_REM".datavecimento = :OLD_datavecimento)) AND'
+      '  (("TB_CAD_REM".datavencparc IS NULL AND :OLD_datavencparc IS NULL) OR ("TB_CAD_REM".datavencparc = :OLD_datavencparc)) AND'
+      '  (("TB_CAD_REM".valparc IS NULL AND :OLD_valparc IS NULL) OR ("TB_CAD_REM".valparc = :OLD_valparc)) AND'
+      '  (("TB_CAD_REM".valhonor IS NULL AND :OLD_valhonor IS NULL) OR ("TB_CAD_REM".valhonor = :OLD_valhonor)) AND'
+      '  (("TB_CAD_REM".taxaref IS NULL AND :OLD_taxaref IS NULL) OR ("TB_CAD_REM".taxaref = :OLD_taxaref)) AND'
+      '  (("TB_CAD_REM".obs IS NULL AND :OLD_obs IS NULL) OR ("TB_CAD_REM".obs = :OLD_obs)) AND'
+      '  (("TB_CAD_REM".nomeescritorio IS NULL AND :OLD_nomeescritorio IS NULL) OR ("TB_CAD_REM".nomeescritorio = :OLD_nomeescritorio)) AND'
+      '  (("TB_CAD_REM".dddescritorio IS NULL AND :OLD_dddescritorio IS NULL) OR ("TB_CAD_REM".dddescritorio = :OLD_dddescritorio)) AND'
+      '  (("TB_CAD_REM".telescritorio IS NULL AND :OLD_telescritorio IS NULL) OR ("TB_CAD_REM".telescritorio = :OLD_telescritorio)) AND'
+      '  (("TB_CAD_REM".nomecliente IS NULL AND :OLD_nomecliente IS NULL) OR ("TB_CAD_REM".nomecliente = :OLD_nomecliente)) AND'
+      '  (("TB_CAD_REM".endcliente IS NULL AND :OLD_endcliente IS NULL) OR ("TB_CAD_REM".endcliente = :OLD_endcliente)) AND'
+      '  (("TB_CAD_REM".num IS NULL AND :OLD_num IS NULL) OR ("TB_CAD_REM".num = :OLD_num)) AND'
+      '  (("TB_CAD_REM".complemnto IS NULL AND :OLD_complemnto IS NULL) OR ("TB_CAD_REM".complemnto = :OLD_complemnto)) AND'
+      '  (("TB_CAD_REM".bairro IS NULL AND :OLD_bairro IS NULL) OR ("TB_CAD_REM".bairro = :OLD_bairro)) AND'
+      '  (("TB_CAD_REM".municipio IS NULL AND :OLD_municipio IS NULL) OR ("TB_CAD_REM".municipio = :OLD_municipio)) AND'
+      '  (("TB_CAD_REM".unidadefed IS NULL AND :OLD_unidadefed IS NULL) OR ("TB_CAD_REM".unidadefed = :OLD_unidadefed)) AND'
+      '  (("TB_CAD_REM".cepcliente IS NULL AND :OLD_cepcliente IS NULL) OR ("TB_CAD_REM".cepcliente = :OLD_cepcliente)) AND'
+      '  (("TB_CAD_REM".complecep IS NULL AND :OLD_complecep IS NULL) OR ("TB_CAD_REM".complecep = :OLD_complecep)) AND'
+      '  (("TB_CAD_REM".dddcliente IS NULL AND :OLD_dddcliente IS NULL) OR ("TB_CAD_REM".dddcliente = :OLD_dddcliente)) AND'
+      '  (("TB_CAD_REM".telcliente IS NULL AND :OLD_telcliente IS NULL) OR ("TB_CAD_REM".telcliente = :OLD_telcliente)) AND'
+      '  (("TB_CAD_REM".valoracordo IS NULL AND :OLD_valoracordo IS NULL) OR ("TB_CAD_REM".valoracordo = :OLD_valoracordo)) AND'
+      '  (("TB_CAD_REM".datavencult IS NULL AND :OLD_datavencult IS NULL) OR ("TB_CAD_REM".datavencult = :OLD_datavencult)) AND'
+      '  (("TB_CAD_REM".parcelaplanoultimopag IS NULL AND :OLD_parcelaplanoultimopag IS NULL) OR ("TB_CAD_REM".parcelaplanoultimopag = :OLD_parcelaplanoultimopag)) AND'
+      '  (("TB_CAD_REM".cpfcnpjcliente IS NULL AND :OLD_cpfcnpjcliente IS NULL) OR ("TB_CAD_REM".cpfcnpjcliente = :OLD_cpfcnpjcliente)) AND'
+      '  (("TB_CAD_REM".cpfcnpjfilialcliente IS NULL AND :OLD_cpfcnpjfilialcliente IS NULL) OR ("TB_CAD_REM".cpfcnpjfilialcliente = :OLD_cpfcnpjfilialcliente)) AND'
+      '  (("TB_CAD_REM".controlecpfcnpjcliente IS NULL AND :OLD_controlecpfcnpjcliente IS NULL) OR ("TB_CAD_REM".controlecpfcnpjcliente = :OLD_controlecpfcnpjcliente)) AND'
+      '  (("TB_CAD_REM".codmeiopagamento IS NULL AND :OLD_codmeiopagamento IS NULL) OR ("TB_CAD_REM".codmeiopagamento = :OLD_codmeiopagamento)) AND'
+      '  (("TB_CAD_REM".valoriof IS NULL AND :OLD_valoriof IS NULL) OR ("TB_CAD_REM".valoriof = :OLD_valoriof)) AND'
+      '  (("TB_CAD_REM".taxajuros IS NULL AND :OLD_taxajuros IS NULL) OR ("TB_CAD_REM".taxajuros = :OLD_taxajuros)) AND'
+      '  (("TB_CAD_REM".acordoaprovadopelodarc IS NULL AND :OLD_acordoaprovadopelodarc IS NULL) OR ("TB_CAD_REM".acordoaprovadopelodarc = :OLD_acordoaprovadopelodarc)) AND'
+      '  (("TB_CAD_REM".dataaprovacao IS NULL AND :OLD_dataaprovacao IS NULL) OR ("TB_CAD_REM".dataaprovacao = :OLD_dataaprovacao)) AND'
+      '  (("TB_CAD_REM".nomeoperador IS NULL AND :OLD_nomeoperador IS NULL) OR ("TB_CAD_REM".nomeoperador = :OLD_nomeoperador)) AND'
+      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
+      '  (("TB_CAD_REM".camporetarq IS NULL AND :OLD_camporetarq IS NULL) OR ("TB_CAD_REM".camporetarq = :OLD_camporetarq)) AND'
+      '  (("TB_CAD_REM".nomeavalista1 IS NULL AND :OLD_nomeavalista1 IS NULL) OR ("TB_CAD_REM".nomeavalista1 = :OLD_nomeavalista1)) AND'
+      '  (("TB_CAD_REM".nomeavalista2 IS NULL AND :OLD_nomeavalista2 IS NULL) OR ("TB_CAD_REM".nomeavalista2 = :OLD_nomeavalista2)) AND'
+      '  (("TB_CAD_REM".valorconfessado IS NULL AND :OLD_valorconfessado IS NULL) OR ("TB_CAD_REM".valorconfessado = :OLD_valorconfessado)) AND'
+      '  (("TB_CAD_REM".indacordo IS NULL AND :OLD_indacordo IS NULL) OR ("TB_CAD_REM".indacordo = :OLD_indacordo)) AND'
+      '  (("TB_CAD_REM".cpfavalista1 IS NULL AND :OLD_cpfavalista1 IS NULL) OR ("TB_CAD_REM".cpfavalista1 = :OLD_cpfavalista1)) AND'
+      '  (("TB_CAD_REM".cpfavalista2 IS NULL AND :OLD_cpfavalista2 IS NULL) OR ("TB_CAD_REM".cpfavalista2 = :OLD_cpfavalista2)) AND'
+      '  (("TB_CAD_REM".ctrlav1 IS NULL AND :OLD_ctrlav1 IS NULL) OR ("TB_CAD_REM".ctrlav1 = :OLD_ctrlav1)) AND'
+      '  (("TB_CAD_REM".ctrlav2 IS NULL AND :OLD_ctrlav2 IS NULL) OR ("TB_CAD_REM".ctrlav2 = :OLD_ctrlav2)) AND'
+      '  (("TB_CAD_REM".filav1 IS NULL AND :OLD_filav1 IS NULL) OR ("TB_CAD_REM".filav1 = :OLD_filav1)) AND'
+      '  (("TB_CAD_REM".filav2 IS NULL AND :OLD_filav2 IS NULL) OR ("TB_CAD_REM".filav2 = :OLD_filav2)) AND'
+      '  (("TB_CAD_REM".idcontrato IS NULL AND :OLD_idcontrato IS NULL) OR ("TB_CAD_REM".idcontrato = :OLD_idcontrato)) AND'
+      '  (("TB_CAD_REM".quantidadedegarantias IS NULL AND :OLD_quantidadedegarantias IS NULL) OR ("TB_CAD_REM".quantidadedegarantias = :OLD_quantidadedegarantias)) AND'
+      '  (("TB_CAD_REM".codigoregistroveiculo IS NULL AND :OLD_codigoregistroveiculo IS NULL) OR ("TB_CAD_REM".codigoregistroveiculo = :OLD_codigoregistroveiculo)) AND'
+      '  (("TB_CAD_REM".cgarntveic IS NULL AND :OLD_cgarntveic IS NULL) OR ("TB_CAD_REM".cgarntveic = :OLD_cgarntveic)) AND'
+      '  (("TB_CAD_REM".vgrantveic IS NULL AND :OLD_vgrantveic IS NULL) OR ("TB_CAD_REM".vgrantveic = :OLD_vgrantveic)) AND'
+      '  (("TB_CAD_REM".renanveic IS NULL AND :OLD_renanveic IS NULL) OR ("TB_CAD_REM".renanveic = :OLD_renanveic)) AND'
+      '  (("TB_CAD_REM".placaveic IS NULL AND :OLD_placaveic IS NULL) OR ("TB_CAD_REM".placaveic = :OLD_placaveic)) AND'
+      '  (("TB_CAD_REM".uffabveic IS NULL AND :OLD_uffabveic IS NULL) OR ("TB_CAD_REM".uffabveic = :OLD_uffabveic)) AND'
+      '  (("TB_CAD_REM".anofabveic IS NULL AND :OLD_anofabveic IS NULL) OR ("TB_CAD_REM".anofabveic = :OLD_anofabveic)) AND'
+      '  (("TB_CAD_REM".uflicveic IS NULL AND :OLD_uflicveic IS NULL) OR ("TB_CAD_REM".uflicveic = :OLD_uflicveic)) AND'
+      '  (("TB_CAD_REM".chassirmarc IS NULL AND :OLD_chassirmarc IS NULL) OR ("TB_CAD_REM".chassirmarc = :OLD_chassirmarc)) AND'
+      '  (("TB_CAD_REM".chassiveic IS NULL AND :OLD_chassiveic IS NULL) OR ("TB_CAD_REM".chassiveic = :OLD_chassiveic)) AND'
+      '  (("TB_CAD_REM".antprodtveic IS NULL AND :OLD_antprodtveic IS NULL) OR ("TB_CAD_REM".antprodtveic = :OLD_antprodtveic)) AND'
+      '  (("TB_CAD_REM".contrantveic IS NULL AND :OLD_contrantveic IS NULL) OR ("TB_CAD_REM".contrantveic = :OLD_contrantveic)) AND'
+      '  (("TB_CAD_REM".marcaveic IS NULL AND :OLD_marcaveic IS NULL) OR ("TB_CAD_REM".marcaveic = :OLD_marcaveic)) AND'
+      '  (("TB_CAD_REM".modeloveic IS NULL AND :OLD_modeloveic IS NULL) OR ("TB_CAD_REM".modeloveic = :OLD_modeloveic)) AND'
+      '  (("TB_CAD_REM".corveic IS NULL AND :OLD_corveic IS NULL) OR ("TB_CAD_REM".corveic = :OLD_corveic)) AND'
+      '  (("TB_CAD_REM".porteveic IS NULL AND :OLD_porteveic IS NULL) OR ("TB_CAD_REM".porteveic = :OLD_porteveic)) AND'
+      '  (("TB_CAD_REM".codigoregistroimoveis IS NULL AND :OLD_codigoregistroimoveis IS NULL) OR ("TB_CAD_REM".codigoregistroimoveis = :OLD_codigoregistroimoveis)) AND'
+      '  (("TB_CAD_REM".cgarntimov IS NULL AND :OLD_cgarntimov IS NULL) OR ("TB_CAD_REM".cgarntimov = :OLD_cgarntimov)) AND'
+      '  (("TB_CAD_REM".vgarntimov IS NULL AND :OLD_vgarntimov IS NULL) OR ("TB_CAD_REM".vgarntimov = :OLD_vgarntimov)) AND'
+      '  (("TB_CAD_REM".garntlogdr IS NULL AND :OLD_garntlogdr IS NULL) OR ("TB_CAD_REM".garntlogdr = :OLD_garntlogdr)) AND'
+      '  (("TB_CAD_REM".garntnrologdr IS NULL AND :OLD_garntnrologdr IS NULL) OR ("TB_CAD_REM".garntnrologdr = :OLD_garntnrologdr)) AND'
+      '  (("TB_CAD_REM".garntcompllogdr IS NULL AND :OLD_garntcompllogdr IS NULL) OR ("TB_CAD_REM".garntcompllogdr = :OLD_garntcompllogdr)) AND'
+      '  (("TB_CAD_REM".garntbairrologdr IS NULL AND :OLD_garntbairrologdr IS NULL) OR ("TB_CAD_REM".garntbairrologdr = :OLD_garntbairrologdr)) AND'
+      '  (("TB_CAD_REM".garntcepimov IS NULL AND :OLD_garntcepimov IS NULL) OR ("TB_CAD_REM".garntcepimov = :OLD_garntcepimov)) AND'
+      '  (("TB_CAD_REM".mcircunsimov IS NULL AND :OLD_mcircunsimov IS NULL) OR ("TB_CAD_REM".mcircunsimov = :OLD_mcircunsimov)) AND'
+      '  (("TB_CAD_REM".comarcaimov IS NULL AND :OLD_comarcaimov IS NULL) OR ("TB_CAD_REM".comarcaimov = :OLD_comarcaimov)) AND'
+      '  (("TB_CAD_REM".nmatrimov IS NULL AND :OLD_nmatrimov IS NULL) OR ("TB_CAD_REM".nmatrimov = :OLD_nmatrimov)) AND'
+      '  (("TB_CAD_REM".nregimov IS NULL AND :OLD_nregimov IS NULL) OR ("TB_CAD_REM".nregimov = :OLD_nregimov)) AND'
+      '  (("TB_CAD_REM".averbacaoimov IS NULL AND :OLD_averbacaoimov IS NULL) OR ("TB_CAD_REM".averbacaoimov = :OLD_averbacaoimov)) AND'
+      '  (("TB_CAD_REM".nlivroimov IS NULL AND :OLD_nlivroimov IS NULL) OR ("TB_CAD_REM".nlivroimov = :OLD_nlivroimov)) AND'
+      '  (("TB_CAD_REM".nfolhaimov IS NULL AND :OLD_nfolhaimov IS NULL) OR ("TB_CAD_REM".nfolhaimov = :OLD_nfolhaimov)) AND'
+      '  (("TB_CAD_REM".dregimov IS NULL AND :OLD_dregimov IS NULL) OR ("TB_CAD_REM".dregimov = :OLD_dregimov)) AND'
+      '  (("TB_CAD_REM".codigoregistrobens IS NULL AND :OLD_codigoregistrobens IS NULL) OR ("TB_CAD_REM".codigoregistrobens = :OLD_codigoregistrobens)) AND'
+      '  (("TB_CAD_REM".cgarntbens IS NULL AND :OLD_cgarntbens IS NULL) OR ("TB_CAD_REM".cgarntbens = :OLD_cgarntbens)) AND'
+      '  (("TB_CAD_REM".garntdescrbens IS NULL AND :OLD_garntdescrbens IS NULL) OR ("TB_CAD_REM".garntdescrbens = :OLD_garntdescrbens)) AND'
+      '  (("TB_CAD_REM".codigoregistrooutros IS NULL AND :OLD_codigoregistrooutros IS NULL) OR ("TB_CAD_REM".codigoregistrooutros = :OLD_codigoregistrooutros)) AND'
+      '  (("TB_CAD_REM".cgarntoutros IS NULL AND :OLD_cgarntoutros IS NULL) OR ("TB_CAD_REM".cgarntoutros = :OLD_cgarntoutros)) AND'
+      '  (("TB_CAD_REM".garntvgarntoutros IS NULL AND :OLD_garntvgarntoutros IS NULL) OR ("TB_CAD_REM".garntvgarntoutros = :OLD_garntvgarntoutros))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_CAD_REM"'
+      '  (tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, quantparc, '
+      '   codjun, contacorrente, numcarteira, numcontrato, datavecimento, datavencparc, '
+      '   valparc, valhonor, taxaref, obs, nomeescritorio, dddescritorio, telescritorio, '
+      '   nomecliente, endcliente, num, complemnto, bairro, municipio, unidadefed, '
+      '   cepcliente, complecep, dddcliente, telcliente, valoracordo, datavencult, '
+      '   parcelaplanoultimopag, cpfcnpjcliente, cpfcnpjfilialcliente, controlecpfcnpjcliente, '
+      '   codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, dataaprovacao, '
+      '   nomeoperador, chaveprim, camporetarq, nomeavalista1, nomeavalista2, '
+      '   valorconfessado, indacordo, cpfavalista1, cpfavalista2, ctrlav1, ctrlav2, '
+      '   filav1, filav2, idcontrato, quantidadedegarantias, codigoregistroveiculo, '
+      '   cgarntveic, vgrantveic, renanveic, placaveic, uffabveic, anofabveic, '
+      '   uflicveic, chassirmarc, chassiveic, antprodtveic, contrantveic, marcaveic, '
+      '   modeloveic, corveic, porteveic, codigoregistroimoveis, cgarntimov, vgarntimov, '
+      '   garntlogdr, garntnrologdr, garntcompllogdr, garntbairrologdr, garntcepimov, '
+      '   mcircunsimov, comarcaimov, nmatrimov, nregimov, averbacaoimov, nlivroimov, '
+      '   nfolhaimov, dregimov, codigoregistrobens, cgarntbens, garntdescrbens, '
+      '   codigoregistrooutros, cgarntoutros, garntvgarntoutros)'
+      'VALUES'
+      '  (:tepreg, :ato, :cpfadmescrirtorio, :numacordo, :dataacordo, :quantped, '
+      '   :quantparc, :codjun, :contacorrente, :numcarteira, :numcontrato, :datavecimento, '
+      '   :datavencparc, :valparc, :valhonor, :taxaref, :obs, :nomeescritorio, '
+      '   :dddescritorio, :telescritorio, :nomecliente, :endcliente, :num, :complemnto, '
+      '   :bairro, :municipio, :unidadefed, :cepcliente, :complecep, :dddcliente, '
+      '   :telcliente, :valoracordo, :datavencult, :parcelaplanoultimopag, :cpfcnpjcliente, '
+      '   :cpfcnpjfilialcliente, :controlecpfcnpjcliente, :codmeiopagamento, :valoriof, '
+      '   :taxajuros, :acordoaprovadopelodarc, :dataaprovacao, :nomeoperador, '
+      '   :chaveprim, :camporetarq, :nomeavalista1, :nomeavalista2, :valorconfessado, '
+      '   :indacordo, :cpfavalista1, :cpfavalista2, :ctrlav1, :ctrlav2, :filav1, '
+      '   :filav2, :idcontrato, :quantidadedegarantias, :codigoregistroveiculo, '
+      '   :cgarntveic, :vgrantveic, :renanveic, :placaveic, :uffabveic, :anofabveic, '
+      '   :uflicveic, :chassirmarc, :chassiveic, :antprodtveic, :contrantveic, '
+      '   :marcaveic, :modeloveic, :corveic, :porteveic, :codigoregistroimoveis, '
+      '   :cgarntimov, :vgarntimov, :garntlogdr, :garntnrologdr, :garntcompllogdr, '
+      '   :garntbairrologdr, :garntcepimov, :mcircunsimov, :comarcaimov, :nmatrimov, '
+      '   :nregimov, :averbacaoimov, :nlivroimov, :nfolhaimov, :dregimov, :codigoregistrobens, '
+      '   :cgarntbens, :garntdescrbens, :codigoregistrooutros, :cgarntoutros, '
+      '   :garntvgarntoutros)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_CAD_REM" SET'
+      '  tepreg = :tepreg,'
+      '  ato = :ato,'
+      '  cpfadmescrirtorio = :cpfadmescrirtorio,'
+      '  numacordo = :numacordo,'
+      '  dataacordo = :dataacordo,'
+      '  quantped = :quantped,'
+      '  quantparc = :quantparc,'
+      '  codjun = :codjun,'
+      '  contacorrente = :contacorrente,'
+      '  numcarteira = :numcarteira,'
+      '  numcontrato = :numcontrato,'
+      '  datavecimento = :datavecimento,'
+      '  datavencparc = :datavencparc,'
+      '  valparc = :valparc,'
+      '  valhonor = :valhonor,'
+      '  taxaref = :taxaref,'
+      '  obs = :obs,'
+      '  nomeescritorio = :nomeescritorio,'
+      '  dddescritorio = :dddescritorio,'
+      '  telescritorio = :telescritorio,'
+      '  nomecliente = :nomecliente,'
+      '  endcliente = :endcliente,'
+      '  num = :num,'
+      '  complemnto = :complemnto,'
+      '  bairro = :bairro,'
+      '  municipio = :municipio,'
+      '  unidadefed = :unidadefed,'
+      '  cepcliente = :cepcliente,'
+      '  complecep = :complecep,'
+      '  dddcliente = :dddcliente,'
+      '  telcliente = :telcliente,'
+      '  valoracordo = :valoracordo,'
+      '  datavencult = :datavencult,'
+      '  parcelaplanoultimopag = :parcelaplanoultimopag,'
+      '  cpfcnpjcliente = :cpfcnpjcliente,'
+      '  cpfcnpjfilialcliente = :cpfcnpjfilialcliente,'
+      '  controlecpfcnpjcliente = :controlecpfcnpjcliente,'
+      '  codmeiopagamento = :codmeiopagamento,'
+      '  valoriof = :valoriof,'
+      '  taxajuros = :taxajuros,'
+      '  acordoaprovadopelodarc = :acordoaprovadopelodarc,'
+      '  dataaprovacao = :dataaprovacao,'
+      '  nomeoperador = :nomeoperador,'
+      '  chaveprim = :chaveprim,'
+      '  camporetarq = :camporetarq,'
+      '  nomeavalista1 = :nomeavalista1,'
+      '  nomeavalista2 = :nomeavalista2,'
+      '  valorconfessado = :valorconfessado,'
+      '  indacordo = :indacordo,'
+      '  cpfavalista1 = :cpfavalista1,'
+      '  cpfavalista2 = :cpfavalista2,'
+      '  ctrlav1 = :ctrlav1,'
+      '  ctrlav2 = :ctrlav2,'
+      '  filav1 = :filav1,'
+      '  filav2 = :filav2,'
+      '  idcontrato = :idcontrato,'
+      '  quantidadedegarantias = :quantidadedegarantias,'
+      '  codigoregistroveiculo = :codigoregistroveiculo,'
+      '  cgarntveic = :cgarntveic,'
+      '  vgrantveic = :vgrantveic,'
+      '  renanveic = :renanveic,'
+      '  placaveic = :placaveic,'
+      '  uffabveic = :uffabveic,'
+      '  anofabveic = :anofabveic,'
+      '  uflicveic = :uflicveic,'
+      '  chassirmarc = :chassirmarc,'
+      '  chassiveic = :chassiveic,'
+      '  antprodtveic = :antprodtveic,'
+      '  contrantveic = :contrantveic,'
+      '  marcaveic = :marcaveic,'
+      '  modeloveic = :modeloveic,'
+      '  corveic = :corveic,'
+      '  porteveic = :porteveic,'
+      '  codigoregistroimoveis = :codigoregistroimoveis,'
+      '  cgarntimov = :cgarntimov,'
+      '  vgarntimov = :vgarntimov,'
+      '  garntlogdr = :garntlogdr,'
+      '  garntnrologdr = :garntnrologdr,'
+      '  garntcompllogdr = :garntcompllogdr,'
+      '  garntbairrologdr = :garntbairrologdr,'
+      '  garntcepimov = :garntcepimov,'
+      '  mcircunsimov = :mcircunsimov,'
+      '  comarcaimov = :comarcaimov,'
+      '  nmatrimov = :nmatrimov,'
+      '  nregimov = :nregimov,'
+      '  averbacaoimov = :averbacaoimov,'
+      '  nlivroimov = :nlivroimov,'
+      '  nfolhaimov = :nfolhaimov,'
+      '  dregimov = :dregimov,'
+      '  codigoregistrobens = :codigoregistrobens,'
+      '  cgarntbens = :cgarntbens,'
+      '  garntdescrbens = :garntdescrbens,'
+      '  codigoregistrooutros = :codigoregistrooutros,'
+      '  cgarntoutros = :cgarntoutros,'
+      '  garntvgarntoutros = :garntvgarntoutros'
+      'WHERE'
+      '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg)) AND'
+      '  (("TB_CAD_REM".ato IS NULL AND :OLD_ato IS NULL) OR ("TB_CAD_REM".ato = :OLD_ato)) AND'
+      '  (("TB_CAD_REM".cpfadmescrirtorio IS NULL AND :OLD_cpfadmescrirtorio IS NULL) OR ("TB_CAD_REM".cpfadmescrirtorio = :OLD_cpfadmescrirtorio)) AND'
+      '  "TB_CAD_REM".numacordo = :OLD_numacordo AND'
+      '  (("TB_CAD_REM".dataacordo IS NULL AND :OLD_dataacordo IS NULL) OR ("TB_CAD_REM".dataacordo = :OLD_dataacordo)) AND'
+      '  (("TB_CAD_REM".quantped IS NULL AND :OLD_quantped IS NULL) OR ("TB_CAD_REM".quantped = :OLD_quantped)) AND'
+      '  (("TB_CAD_REM".quantparc IS NULL AND :OLD_quantparc IS NULL) OR ("TB_CAD_REM".quantparc = :OLD_quantparc)) AND'
+      '  (("TB_CAD_REM".codjun IS NULL AND :OLD_codjun IS NULL) OR ("TB_CAD_REM".codjun = :OLD_codjun)) AND'
+      '  (("TB_CAD_REM".contacorrente IS NULL AND :OLD_contacorrente IS NULL) OR ("TB_CAD_REM".contacorrente = :OLD_contacorrente)) AND'
+      '  (("TB_CAD_REM".numcarteira IS NULL AND :OLD_numcarteira IS NULL) OR ("TB_CAD_REM".numcarteira = :OLD_numcarteira)) AND'
+      '  (("TB_CAD_REM".numcontrato IS NULL AND :OLD_numcontrato IS NULL) OR ("TB_CAD_REM".numcontrato = :OLD_numcontrato)) AND'
+      '  (("TB_CAD_REM".datavecimento IS NULL AND :OLD_datavecimento IS NULL) OR ("TB_CAD_REM".datavecimento = :OLD_datavecimento)) AND'
+      '  (("TB_CAD_REM".datavencparc IS NULL AND :OLD_datavencparc IS NULL) OR ("TB_CAD_REM".datavencparc = :OLD_datavencparc)) AND'
+      '  (("TB_CAD_REM".valparc IS NULL AND :OLD_valparc IS NULL) OR ("TB_CAD_REM".valparc = :OLD_valparc)) AND'
+      '  (("TB_CAD_REM".valhonor IS NULL AND :OLD_valhonor IS NULL) OR ("TB_CAD_REM".valhonor = :OLD_valhonor)) AND'
+      '  (("TB_CAD_REM".taxaref IS NULL AND :OLD_taxaref IS NULL) OR ("TB_CAD_REM".taxaref = :OLD_taxaref)) AND'
+      '  (("TB_CAD_REM".obs IS NULL AND :OLD_obs IS NULL) OR ("TB_CAD_REM".obs = :OLD_obs)) AND'
+      '  (("TB_CAD_REM".nomeescritorio IS NULL AND :OLD_nomeescritorio IS NULL) OR ("TB_CAD_REM".nomeescritorio = :OLD_nomeescritorio)) AND'
+      '  (("TB_CAD_REM".dddescritorio IS NULL AND :OLD_dddescritorio IS NULL) OR ("TB_CAD_REM".dddescritorio = :OLD_dddescritorio)) AND'
+      '  (("TB_CAD_REM".telescritorio IS NULL AND :OLD_telescritorio IS NULL) OR ("TB_CAD_REM".telescritorio = :OLD_telescritorio)) AND'
+      '  (("TB_CAD_REM".nomecliente IS NULL AND :OLD_nomecliente IS NULL) OR ("TB_CAD_REM".nomecliente = :OLD_nomecliente)) AND'
+      '  (("TB_CAD_REM".endcliente IS NULL AND :OLD_endcliente IS NULL) OR ("TB_CAD_REM".endcliente = :OLD_endcliente)) AND'
+      '  (("TB_CAD_REM".num IS NULL AND :OLD_num IS NULL) OR ("TB_CAD_REM".num = :OLD_num)) AND'
+      '  (("TB_CAD_REM".complemnto IS NULL AND :OLD_complemnto IS NULL) OR ("TB_CAD_REM".complemnto = :OLD_complemnto)) AND'
+      '  (("TB_CAD_REM".bairro IS NULL AND :OLD_bairro IS NULL) OR ("TB_CAD_REM".bairro = :OLD_bairro)) AND'
+      '  (("TB_CAD_REM".municipio IS NULL AND :OLD_municipio IS NULL) OR ("TB_CAD_REM".municipio = :OLD_municipio)) AND'
+      '  (("TB_CAD_REM".unidadefed IS NULL AND :OLD_unidadefed IS NULL) OR ("TB_CAD_REM".unidadefed = :OLD_unidadefed)) AND'
+      '  (("TB_CAD_REM".cepcliente IS NULL AND :OLD_cepcliente IS NULL) OR ("TB_CAD_REM".cepcliente = :OLD_cepcliente)) AND'
+      '  (("TB_CAD_REM".complecep IS NULL AND :OLD_complecep IS NULL) OR ("TB_CAD_REM".complecep = :OLD_complecep)) AND'
+      '  (("TB_CAD_REM".dddcliente IS NULL AND :OLD_dddcliente IS NULL) OR ("TB_CAD_REM".dddcliente = :OLD_dddcliente)) AND'
+      '  (("TB_CAD_REM".telcliente IS NULL AND :OLD_telcliente IS NULL) OR ("TB_CAD_REM".telcliente = :OLD_telcliente)) AND'
+      '  (("TB_CAD_REM".valoracordo IS NULL AND :OLD_valoracordo IS NULL) OR ("TB_CAD_REM".valoracordo = :OLD_valoracordo)) AND'
+      '  (("TB_CAD_REM".datavencult IS NULL AND :OLD_datavencult IS NULL) OR ("TB_CAD_REM".datavencult = :OLD_datavencult)) AND'
+      '  (("TB_CAD_REM".parcelaplanoultimopag IS NULL AND :OLD_parcelaplanoultimopag IS NULL) OR ("TB_CAD_REM".parcelaplanoultimopag = :OLD_parcelaplanoultimopag)) AND'
+      '  (("TB_CAD_REM".cpfcnpjcliente IS NULL AND :OLD_cpfcnpjcliente IS NULL) OR ("TB_CAD_REM".cpfcnpjcliente = :OLD_cpfcnpjcliente)) AND'
+      '  (("TB_CAD_REM".cpfcnpjfilialcliente IS NULL AND :OLD_cpfcnpjfilialcliente IS NULL) OR ("TB_CAD_REM".cpfcnpjfilialcliente = :OLD_cpfcnpjfilialcliente)) AND'
+      '  (("TB_CAD_REM".controlecpfcnpjcliente IS NULL AND :OLD_controlecpfcnpjcliente IS NULL) OR ("TB_CAD_REM".controlecpfcnpjcliente = :OLD_controlecpfcnpjcliente)) AND'
+      '  (("TB_CAD_REM".codmeiopagamento IS NULL AND :OLD_codmeiopagamento IS NULL) OR ("TB_CAD_REM".codmeiopagamento = :OLD_codmeiopagamento)) AND'
+      '  (("TB_CAD_REM".valoriof IS NULL AND :OLD_valoriof IS NULL) OR ("TB_CAD_REM".valoriof = :OLD_valoriof)) AND'
+      '  (("TB_CAD_REM".taxajuros IS NULL AND :OLD_taxajuros IS NULL) OR ("TB_CAD_REM".taxajuros = :OLD_taxajuros)) AND'
+      '  (("TB_CAD_REM".acordoaprovadopelodarc IS NULL AND :OLD_acordoaprovadopelodarc IS NULL) OR ("TB_CAD_REM".acordoaprovadopelodarc = :OLD_acordoaprovadopelodarc)) AND'
+      '  (("TB_CAD_REM".dataaprovacao IS NULL AND :OLD_dataaprovacao IS NULL) OR ("TB_CAD_REM".dataaprovacao = :OLD_dataaprovacao)) AND'
+      '  (("TB_CAD_REM".nomeoperador IS NULL AND :OLD_nomeoperador IS NULL) OR ("TB_CAD_REM".nomeoperador = :OLD_nomeoperador)) AND'
+      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
+      '  (("TB_CAD_REM".camporetarq IS NULL AND :OLD_camporetarq IS NULL) OR ("TB_CAD_REM".camporetarq = :OLD_camporetarq)) AND'
+      '  (("TB_CAD_REM".nomeavalista1 IS NULL AND :OLD_nomeavalista1 IS NULL) OR ("TB_CAD_REM".nomeavalista1 = :OLD_nomeavalista1)) AND'
+      '  (("TB_CAD_REM".nomeavalista2 IS NULL AND :OLD_nomeavalista2 IS NULL) OR ("TB_CAD_REM".nomeavalista2 = :OLD_nomeavalista2)) AND'
+      '  (("TB_CAD_REM".valorconfessado IS NULL AND :OLD_valorconfessado IS NULL) OR ("TB_CAD_REM".valorconfessado = :OLD_valorconfessado)) AND'
+      '  (("TB_CAD_REM".indacordo IS NULL AND :OLD_indacordo IS NULL) OR ("TB_CAD_REM".indacordo = :OLD_indacordo)) AND'
+      '  (("TB_CAD_REM".cpfavalista1 IS NULL AND :OLD_cpfavalista1 IS NULL) OR ("TB_CAD_REM".cpfavalista1 = :OLD_cpfavalista1)) AND'
+      '  (("TB_CAD_REM".cpfavalista2 IS NULL AND :OLD_cpfavalista2 IS NULL) OR ("TB_CAD_REM".cpfavalista2 = :OLD_cpfavalista2)) AND'
+      '  (("TB_CAD_REM".ctrlav1 IS NULL AND :OLD_ctrlav1 IS NULL) OR ("TB_CAD_REM".ctrlav1 = :OLD_ctrlav1)) AND'
+      '  (("TB_CAD_REM".ctrlav2 IS NULL AND :OLD_ctrlav2 IS NULL) OR ("TB_CAD_REM".ctrlav2 = :OLD_ctrlav2)) AND'
+      '  (("TB_CAD_REM".filav1 IS NULL AND :OLD_filav1 IS NULL) OR ("TB_CAD_REM".filav1 = :OLD_filav1)) AND'
+      '  (("TB_CAD_REM".filav2 IS NULL AND :OLD_filav2 IS NULL) OR ("TB_CAD_REM".filav2 = :OLD_filav2)) AND'
+      '  (("TB_CAD_REM".idcontrato IS NULL AND :OLD_idcontrato IS NULL) OR ("TB_CAD_REM".idcontrato = :OLD_idcontrato)) AND'
+      '  (("TB_CAD_REM".quantidadedegarantias IS NULL AND :OLD_quantidadedegarantias IS NULL) OR ("TB_CAD_REM".quantidadedegarantias = :OLD_quantidadedegarantias)) AND'
+      '  (("TB_CAD_REM".codigoregistroveiculo IS NULL AND :OLD_codigoregistroveiculo IS NULL) OR ("TB_CAD_REM".codigoregistroveiculo = :OLD_codigoregistroveiculo)) AND'
+      '  (("TB_CAD_REM".cgarntveic IS NULL AND :OLD_cgarntveic IS NULL) OR ("TB_CAD_REM".cgarntveic = :OLD_cgarntveic)) AND'
+      '  (("TB_CAD_REM".vgrantveic IS NULL AND :OLD_vgrantveic IS NULL) OR ("TB_CAD_REM".vgrantveic = :OLD_vgrantveic)) AND'
+      '  (("TB_CAD_REM".renanveic IS NULL AND :OLD_renanveic IS NULL) OR ("TB_CAD_REM".renanveic = :OLD_renanveic)) AND'
+      '  (("TB_CAD_REM".placaveic IS NULL AND :OLD_placaveic IS NULL) OR ("TB_CAD_REM".placaveic = :OLD_placaveic)) AND'
+      '  (("TB_CAD_REM".uffabveic IS NULL AND :OLD_uffabveic IS NULL) OR ("TB_CAD_REM".uffabveic = :OLD_uffabveic)) AND'
+      '  (("TB_CAD_REM".anofabveic IS NULL AND :OLD_anofabveic IS NULL) OR ("TB_CAD_REM".anofabveic = :OLD_anofabveic)) AND'
+      '  (("TB_CAD_REM".uflicveic IS NULL AND :OLD_uflicveic IS NULL) OR ("TB_CAD_REM".uflicveic = :OLD_uflicveic)) AND'
+      '  (("TB_CAD_REM".chassirmarc IS NULL AND :OLD_chassirmarc IS NULL) OR ("TB_CAD_REM".chassirmarc = :OLD_chassirmarc)) AND'
+      '  (("TB_CAD_REM".chassiveic IS NULL AND :OLD_chassiveic IS NULL) OR ("TB_CAD_REM".chassiveic = :OLD_chassiveic)) AND'
+      '  (("TB_CAD_REM".antprodtveic IS NULL AND :OLD_antprodtveic IS NULL) OR ("TB_CAD_REM".antprodtveic = :OLD_antprodtveic)) AND'
+      '  (("TB_CAD_REM".contrantveic IS NULL AND :OLD_contrantveic IS NULL) OR ("TB_CAD_REM".contrantveic = :OLD_contrantveic)) AND'
+      '  (("TB_CAD_REM".marcaveic IS NULL AND :OLD_marcaveic IS NULL) OR ("TB_CAD_REM".marcaveic = :OLD_marcaveic)) AND'
+      '  (("TB_CAD_REM".modeloveic IS NULL AND :OLD_modeloveic IS NULL) OR ("TB_CAD_REM".modeloveic = :OLD_modeloveic)) AND'
+      '  (("TB_CAD_REM".corveic IS NULL AND :OLD_corveic IS NULL) OR ("TB_CAD_REM".corveic = :OLD_corveic)) AND'
+      '  (("TB_CAD_REM".porteveic IS NULL AND :OLD_porteveic IS NULL) OR ("TB_CAD_REM".porteveic = :OLD_porteveic)) AND'
+      '  (("TB_CAD_REM".codigoregistroimoveis IS NULL AND :OLD_codigoregistroimoveis IS NULL) OR ("TB_CAD_REM".codigoregistroimoveis = :OLD_codigoregistroimoveis)) AND'
+      '  (("TB_CAD_REM".cgarntimov IS NULL AND :OLD_cgarntimov IS NULL) OR ("TB_CAD_REM".cgarntimov = :OLD_cgarntimov)) AND'
+      '  (("TB_CAD_REM".vgarntimov IS NULL AND :OLD_vgarntimov IS NULL) OR ("TB_CAD_REM".vgarntimov = :OLD_vgarntimov)) AND'
+      '  (("TB_CAD_REM".garntlogdr IS NULL AND :OLD_garntlogdr IS NULL) OR ("TB_CAD_REM".garntlogdr = :OLD_garntlogdr)) AND'
+      '  (("TB_CAD_REM".garntnrologdr IS NULL AND :OLD_garntnrologdr IS NULL) OR ("TB_CAD_REM".garntnrologdr = :OLD_garntnrologdr)) AND'
+      '  (("TB_CAD_REM".garntcompllogdr IS NULL AND :OLD_garntcompllogdr IS NULL) OR ("TB_CAD_REM".garntcompllogdr = :OLD_garntcompllogdr)) AND'
+      '  (("TB_CAD_REM".garntbairrologdr IS NULL AND :OLD_garntbairrologdr IS NULL) OR ("TB_CAD_REM".garntbairrologdr = :OLD_garntbairrologdr)) AND'
+      '  (("TB_CAD_REM".garntcepimov IS NULL AND :OLD_garntcepimov IS NULL) OR ("TB_CAD_REM".garntcepimov = :OLD_garntcepimov)) AND'
+      '  (("TB_CAD_REM".mcircunsimov IS NULL AND :OLD_mcircunsimov IS NULL) OR ("TB_CAD_REM".mcircunsimov = :OLD_mcircunsimov)) AND'
+      '  (("TB_CAD_REM".comarcaimov IS NULL AND :OLD_comarcaimov IS NULL) OR ("TB_CAD_REM".comarcaimov = :OLD_comarcaimov)) AND'
+      '  (("TB_CAD_REM".nmatrimov IS NULL AND :OLD_nmatrimov IS NULL) OR ("TB_CAD_REM".nmatrimov = :OLD_nmatrimov)) AND'
+      '  (("TB_CAD_REM".nregimov IS NULL AND :OLD_nregimov IS NULL) OR ("TB_CAD_REM".nregimov = :OLD_nregimov)) AND'
+      '  (("TB_CAD_REM".averbacaoimov IS NULL AND :OLD_averbacaoimov IS NULL) OR ("TB_CAD_REM".averbacaoimov = :OLD_averbacaoimov)) AND'
+      '  (("TB_CAD_REM".nlivroimov IS NULL AND :OLD_nlivroimov IS NULL) OR ("TB_CAD_REM".nlivroimov = :OLD_nlivroimov)) AND'
+      '  (("TB_CAD_REM".nfolhaimov IS NULL AND :OLD_nfolhaimov IS NULL) OR ("TB_CAD_REM".nfolhaimov = :OLD_nfolhaimov)) AND'
+      '  (("TB_CAD_REM".dregimov IS NULL AND :OLD_dregimov IS NULL) OR ("TB_CAD_REM".dregimov = :OLD_dregimov)) AND'
+      '  (("TB_CAD_REM".codigoregistrobens IS NULL AND :OLD_codigoregistrobens IS NULL) OR ("TB_CAD_REM".codigoregistrobens = :OLD_codigoregistrobens)) AND'
+      '  (("TB_CAD_REM".cgarntbens IS NULL AND :OLD_cgarntbens IS NULL) OR ("TB_CAD_REM".cgarntbens = :OLD_cgarntbens)) AND'
+      '  (("TB_CAD_REM".garntdescrbens IS NULL AND :OLD_garntdescrbens IS NULL) OR ("TB_CAD_REM".garntdescrbens = :OLD_garntdescrbens)) AND'
+      '  (("TB_CAD_REM".codigoregistrooutros IS NULL AND :OLD_codigoregistrooutros IS NULL) OR ("TB_CAD_REM".codigoregistrooutros = :OLD_codigoregistrooutros)) AND'
+      '  (("TB_CAD_REM".cgarntoutros IS NULL AND :OLD_cgarntoutros IS NULL) OR ("TB_CAD_REM".cgarntoutros = :OLD_cgarntoutros)) AND'
+      '  (("TB_CAD_REM".garntvgarntoutros IS NULL AND :OLD_garntvgarntoutros IS NULL) OR ("TB_CAD_REM".garntvgarntoutros = :OLD_garntvgarntoutros))'
+    )
+    UseSequenceFieldForRefreshSQL = True
+    Left = 205
+    Top = 152
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'tepreg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfadmescrirtorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantped'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codjun'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contacorrente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcarteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavecimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavencparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valhonor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'taxaref'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'obs'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dddescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomecliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'endcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'num'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complemnto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'municipio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'unidadefed'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cepcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'complecep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dddcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'telcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valoracordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datavencult'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'parcelaplanoultimopag'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfcnpjcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfcnpjfilialcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'controlecpfcnpjcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codmeiopagamento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valoriof'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'taxajuros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'acordoaprovadopelodarc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataaprovacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeoperador'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'chaveprim'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'camporetarq'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeavalista1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomeavalista2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valorconfessado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'indacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfavalista1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cpfavalista2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ctrlav1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ctrlav2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'filav1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'filav2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantidadedegarantias'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codigoregistroveiculo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cgarntveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vgrantveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'renanveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'placaveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'uffabveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'anofabveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'uflicveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'chassirmarc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'chassiveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'antprodtveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contrantveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'marcaveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'modeloveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'corveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'porteveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codigoregistroimoveis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cgarntimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vgarntimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntlogdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntnrologdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntcompllogdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntbairrologdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntcepimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'mcircunsimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'comarcaimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nmatrimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nregimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'averbacaoimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nlivroimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nfolhaimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dregimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codigoregistrobens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cgarntbens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntdescrbens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'codigoregistrooutros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cgarntoutros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'garntvgarntoutros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_tepreg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cpfadmescrirtorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dataacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_quantped'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_quantparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codjun'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_contacorrente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numcarteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_datavecimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_datavencparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_valparc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_valhonor'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_taxaref'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_obs'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomeescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dddescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_telescritorio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomecliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_endcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_num'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_complemnto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_bairro'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_municipio'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_unidadefed'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cepcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_complecep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dddcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_telcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_valoracordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_datavencult'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_parcelaplanoultimopag'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cpfcnpjcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cpfcnpjfilialcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_controlecpfcnpjcliente'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codmeiopagamento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_valoriof'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_taxajuros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_acordoaprovadopelodarc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dataaprovacao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomeoperador'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_chaveprim'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_camporetarq'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomeavalista1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomeavalista2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_valorconfessado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_indacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cpfavalista1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cpfavalista2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ctrlav1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_ctrlav2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_filav1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_filav2'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_quantidadedegarantias'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codigoregistroveiculo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cgarntveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vgrantveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_renanveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_placaveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_uffabveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_anofabveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_uflicveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_chassirmarc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_chassiveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_antprodtveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_contrantveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_marcaveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_modeloveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_corveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_porteveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codigoregistroimoveis'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cgarntimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vgarntimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntlogdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntnrologdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntcompllogdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntbairrologdr'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntcepimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_mcircunsimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_comarcaimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nmatrimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nregimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_averbacaoimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nlivroimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nfolhaimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dregimov'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codigoregistrobens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cgarntbens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntdescrbens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codigoregistrooutros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_cgarntoutros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_garntvgarntoutros'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQContrato: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL2
+    SQL.Strings = (
+      'SELECT idcontrato, numcontrato, dataelaboracao, valortotalacordo,retornolido'
+      '  FROM "TB_CONTRATO"'
+      ' ORDER BY numcontrato'
+    )
+    Params = <>
+    Left = 312
+    Top = 61
+    object ZQContratoidcontrato: TLongintField
+      FieldKind = fkData
+      FieldName = 'idcontrato'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQContratonumcontrato: TLongintField
+      FieldKind = fkData
+      FieldName = 'numcontrato'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQContratodataelaboracao: TDateField
+      FieldKind = fkData
+      FieldName = 'dataelaboracao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQContratovalortotalacordo: TFloatField
+      FieldKind = fkData
+      FieldName = 'valortotalacordo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = True
+      Precision = 8
+    end
+    object ZQContratoretornolido: TBooleanField
+      FieldKind = fkData
+      FieldName = 'retornolido'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+  end
+  object ZUpdateSQL2: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_CONTRATO"'
+      'WHERE'
+      '  "TB_CONTRATO".idcontrato = :OLD_idcontrato'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_CONTRATO"'
+      '  (idcontrato, numcontrato, dataelaboracao, valortotalacordo, retornolido)'
+      'VALUES'
+      '  (:idcontrato, :numcontrato, :dataelaboracao, :valortotalacordo, :retornolido)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_CONTRATO" SET'
+      '  idcontrato = :idcontrato,'
+      '  numcontrato = :numcontrato,'
+      '  dataelaboracao = :dataelaboracao,'
+      '  valortotalacordo = :valortotalacordo,'
+      '  retornolido = :retornolido'
+      'WHERE'
+      '  "TB_CONTRATO".idcontrato = :OLD_idcontrato'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 310
+    Top = 166
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dataelaboracao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'valortotalacordo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'retornolido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idcontrato'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQueryExclui: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    AutoCalcFields = False
+    Params = <>
+    Left = 427
+    Top = 147
+  end
+  object ZQueryAtualiza: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    Params = <>
+    Left = 435
+    Top = 18
+  end
+  object ZquerySoma: TZReadOnlyQuery
+    Connection = DtmConexao.DbConexaoPg
+    SQL.Strings = (
+      'SELECT sum(valparc) as total'
+      '   FROM "TB_CAD_REM" '
+      ' where numcontrato=:numcontrato'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrato'
+        ParamType = ptUnknown
+      end>
+    Left = 105
+    Top = 165
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'numcontrato'
+        ParamType = ptUnknown
+      end>
+    object ZquerySomatotal: TFloatField
+      FieldKind = fkData
+      FieldName = 'total'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Precision = 4
+    end
+  end
+end
