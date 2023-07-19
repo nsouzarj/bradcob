@@ -1,0 +1,29 @@
+object DtmConexao: TDtmConexao
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 349
+  HorizontalOffset = 252
+  VerticalOffset = 120
+  Width = 707
+  object DbConexaoPg: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'codepage='
+      'controls_cp=CP_UTF8'
+    )
+    TransactIsolationLevel = tiReadCommitted
+    Connected = True
+    AfterConnect = DbConexaoPgAfterConnect
+    HostName = '192.168.1.7'
+    Port = 5432
+    Database = 'dbcob'
+    User = 'postgres'
+    Password = 'nso1810'
+    Protocol = 'postgresql'
+    LibraryLocation = 'C:\bradcob\drivers\libpq.dll'
+    Left = 96
+    Top = 64
+  end
+end

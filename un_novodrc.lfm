@@ -2,10 +2,10 @@ object FrmDrcNovo: TFrmDrcNovo
   Left = 0
   Height = 687
   Top = 2
-  Width = 1096
+  Width = 1008
   Caption = 'DRC'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 687
+  ClientWidth = 1008
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '2.0.10.0'
@@ -13,7 +13,7 @@ object FrmDrcNovo: TFrmDrcNovo
     Left = 0
     Height = 687
     Top = 0
-    Width = 1096
+    Width = 1008
     ActivePage = TabSheet1
     Align = alClient
     ParentFont = False
@@ -23,7 +23,7 @@ object FrmDrcNovo: TFrmDrcNovo
     object TabSheet1: TTabSheet
       Caption = 'Cabeçalho do Arquivo'
       ClientHeight = 659
-      ClientWidth = 1088
+      ClientWidth = 1000
       OnContextPopup = TabSheet1ContextPopup
       ParentFont = False
       object DBGrid1: TDBGrid

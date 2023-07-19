@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <AutoCreateForms Value="False"/>
+      <Title Value="BRA COB"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <Resources Count="1">
+        <Resource_0 FileName="menu.ico" Type="ICON" ResourceName="MENU"/>
+      </Resources>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+      <SharedMatrixOptions Count="1">
+        <Item1 ID="216683478997" Modes="Default" Value="-dDisableUTF8RTL"/>
+      </SharedMatrixOptions>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="5">
+      <Item1>
+        <PackageName Value="laz_fpspreadsheet_visual"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="zcomponent"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
+    </RequiredPackages>
+    <Units Count="14">
+      <Unit0>
+        <Filename Value="menu.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="menu1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmMenu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="un_modulo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtmDsps"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="un_principal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Frmdsps"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="unprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Frmdrc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="dados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtmDrc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="conexao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtmConexao"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="sobremenu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SobreMenu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SobreMenu"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="dados1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtmDrcNovo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="un_novodrc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmDrcNovo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="unifuncoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UniFuncoes"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="un_arqret.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmArqRet"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="undados2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtaModArqRet"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="dados2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DtmModule2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit13>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="menu"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <Libraries Value="drivers"/>
+      <OtherUnitFiles Value="drivers"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="5">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EZSQLException"/>
+      </Item4>
+      <Item5>
+        <Name Value="EZDatabaseError"/>
+      </Item5>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

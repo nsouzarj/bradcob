@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="34">
+    <Units Count="40">
       <Unit0>
         <Filename Value="menu.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -29,9 +29,9 @@
         <ComponentName Value="DtmDsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="323"/>
-        <CursorPos X="69" Y="356"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="552"/>
+        <CursorPos X="57" Y="552"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -42,11 +42,9 @@
         <ComponentName Value="Frmdsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="526"/>
-        <CursorPos X="5" Y="526"/>
-        <ComponentState Value="1"/>
+        <TopLine Value="574"/>
+        <CursorPos Y="579"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -57,7 +55,7 @@
         <ComponentName Value="Frmdrc"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="119"/>
         <CursorPos X="3" Y="119"/>
         <UsageCount Value="210"/>
@@ -70,8 +68,8 @@
         <ComponentName Value="DtmDrc"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="53"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="50"/>
         <CursorPos X="49" Y="113"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
@@ -82,8 +80,9 @@
         <ComponentName Value="DtmConexao"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="22"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="20"/>
         <CursorPos X="3" Y="40"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
@@ -106,9 +105,9 @@
         <ComponentName Value="DtmDrcNovo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="430"/>
-        <CursorPos X="3" Y="437"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="226"/>
+        <CursorPos Y="228"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -119,9 +118,8 @@
         <ComponentName Value="FrmDrcNovo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="172"/>
+        <TopLine Value="66"/>
         <CursorPos X="3" Y="172"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -130,9 +128,10 @@
         <Filename Value="unifuncoes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UniFuncoes"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="14" Y="15"/>
+        <EditorIndex Value="10"/>
+        <CursorPos X="7" Y="28"/>
         <UsageCount Value="205"/>
+        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="un_arqret.pas"/>
@@ -172,102 +171,106 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="711"/>
         <CursorPos Y="719"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="5"/>
       </Unit14>
       <Unit15>
         <Filename Value="C:\lazarus\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1357"/>
         <CursorPos Y="1407"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="6"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2871"/>
-        <CursorPos Y="2915"/>
-        <UsageCount Value="74"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="3528"/>
+        <CursorPos Y="3550"/>
+        <UsageCount Value="98"/>
+        <Loaded Value="True"/>
       </Unit16>
       <Unit17>
         <Filename Value="C:\lazarus\lcl\include\buttoncontrol.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="22"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="51"/>
       </Unit17>
       <Unit18>
         <Filename Value="C:\lazarus\lcl\include\buttons.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="162"/>
         <CursorPos Y="170"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="52"/>
       </Unit18>
       <Unit19>
         <Filename Value="C:\lazarus\lcl\include\bitbtn.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="57"/>
         <CursorPos Y="65"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="52"/>
       </Unit19>
       <Unit20>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="5389"/>
-        <CursorPos Y="5398"/>
-        <UsageCount Value="71"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="7412"/>
+        <CursorPos Y="7436"/>
+        <UsageCount Value="95"/>
+        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="106"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="93"/>
         <CursorPos Y="116"/>
-        <UsageCount Value="75"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2493"/>
-        <CursorPos Y="2516"/>
-        <UsageCount Value="58"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="2647"/>
+        <CursorPos Y="2680"/>
+        <UsageCount Value="83"/>
+        <Loaded Value="True"/>
       </Unit22>
       <Unit23>
         <Filename Value="C:\lazarus\zeosdbo-7.2.4-stable\src\dbc\ZDbcPostgreSqlUtils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="701"/>
         <CursorPos Y="710"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="51"/>
       </Unit23>
       <Unit24>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="949"/>
         <CursorPos Y="959"/>
-        <UsageCount Value="75"/>
+        <UsageCount Value="55"/>
       </Unit24>
       <Unit25>
         <Filename Value="C:\lazarus\zeosdbo-7.2.4-stable\src\component\ZSqlUpdate.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="803"/>
         <CursorPos Y="819"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="26"/>
       </Unit25>
       <Unit26>
         <Filename Value="C:\lazarus\zeosdbo-7.2.4-stable\src\component\ZAbstractDataset.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="388"/>
         <CursorPos Y="408"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="26"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\lazarus\fpspreadsheet-1.10.1\source\visual\fpspreadsheetctrls.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="50"/>
       </Unit27>
       <Unit28>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractRODataset.pas"/>
-        <EditorIndex Value="11"/>
-        <TopLine Value="3037"/>
+        <EditorIndex Value="22"/>
+        <TopLine Value="3053"/>
         <CursorPos Y="3061"/>
         <UsageCount Value="117"/>
         <Loaded Value="True"/>
@@ -275,16 +278,16 @@
       </Unit28>
       <Unit29>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcPostgreSqlUtils.pas"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="675"/>
-        <CursorPos X="111" Y="690"/>
-        <UsageCount Value="33"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="688"/>
+        <CursorPos Y="696"/>
+        <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit29>
       <Unit30>
         <Filename Value="C:\lazarus\componentes\fpspreadsheet-1.10.1\fpspreadsheet-1.10.1\source\common\fpspreadsheet.pas"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="23"/>
         <TopLine Value="8891"/>
         <CursorPos Y="8905"/>
         <UsageCount Value="102"/>
@@ -293,7 +296,7 @@
       <Unit31>
         <Filename Value="C:\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="1693"/>
         <CursorPos X="14" Y="1715"/>
         <UsageCount Value="101"/>
@@ -301,7 +304,7 @@
       </Unit31>
       <Unit32>
         <Filename Value="C:\lazarus\lcl\include\menuitem.inc"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="270"/>
         <CursorPos Y="282"/>
         <UsageCount Value="112"/>
@@ -309,134 +312,187 @@
       </Unit32>
       <Unit33>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcConnection.pas"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="21"/>
         <TopLine Value="1237"/>
         <CursorPos X="7" Y="1237"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit33>
+      <Unit34>
+        <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcCachedResultSet.pas"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="2116"/>
+        <CursorPos Y="2124"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractDataset.pas"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="436"/>
+        <CursorPos Y="457"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsforms.pp"/>
+        <UnitName Value="Win32WSForms"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="366"/>
+        <CursorPos Y="388"/>
+        <UsageCount Value="48"/>
+        <Loaded Value="True"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="C:\lazarus\lcl\include\customedit.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="570"/>
+        <CursorPos Y="596"/>
+        <UsageCount Value="47"/>
+        <Loaded Value="True"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsstdctrls.pp"/>
+        <UnitName Value="Win32WSStdCtrls"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="1317"/>
+        <CursorPos X="110" Y="1316"/>
+        <UsageCount Value="47"/>
+        <Loaded Value="True"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcCache.pas"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="1514"/>
+        <CursorPos Y="1522"/>
+        <UsageCount Value="46"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit39>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="397" Column="6" TopLine="376"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="571" TopLine="563"/>
       </Position1>
       <Position2>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="398" Column="6" TopLine="377"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="576" TopLine="576"/>
       </Position2>
       <Position3>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="399" Column="6" TopLine="378"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="571" TopLine="563"/>
       </Position3>
       <Position4>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="400" Column="6" TopLine="379"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="576" TopLine="563"/>
       </Position4>
       <Position5>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="401" Column="6" TopLine="380"/>
+        <Caret Line="522" TopLine="514"/>
       </Position5>
       <Position6>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="402" Column="6" TopLine="381"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="571" TopLine="563"/>
       </Position6>
       <Position7>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="403" Column="6" TopLine="382"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="576" TopLine="563"/>
       </Position7>
       <Position8>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="404" Column="6" TopLine="383"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="384" Column="6" TopLine="377"/>
       </Position8>
       <Position9>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="405" Column="6" TopLine="384"/>
+        <Caret Line="227" Column="15" TopLine="212"/>
       </Position9>
       <Position10>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="406" Column="6" TopLine="385"/>
+        <Caret Line="345" Column="275" TopLine="317"/>
       </Position10>
       <Position11>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="407" Column="6" TopLine="386"/>
+        <Caret Line="343" Column="67" TopLine="340"/>
       </Position11>
       <Position12>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="408" Column="6" TopLine="387"/>
+        <Caret Line="344" Column="132" TopLine="335"/>
       </Position12>
       <Position13>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="409" Column="6" TopLine="388"/>
+        <Caret Line="343" Column="169" TopLine="326"/>
       </Position13>
       <Position14>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="410" Column="6" TopLine="389"/>
+        <Caret Line="346" Column="132" TopLine="342"/>
       </Position14>
       <Position15>
         <Filename Value="un_modulo.pas"/>
-        <Caret Line="411" Column="6" TopLine="390"/>
+        <Caret Line="351" Column="66" TopLine="319"/>
       </Position15>
       <Position16>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="412" Column="6" TopLine="391"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="384" Column="6" TopLine="377"/>
       </Position16>
       <Position17>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="413" Column="6" TopLine="392"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="385" Column="6" TopLine="378"/>
       </Position17>
       <Position18>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="414" Column="6" TopLine="393"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="384" Column="6" TopLine="377"/>
       </Position18>
       <Position19>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="415" Column="6" TopLine="394"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="385" Column="6" TopLine="378"/>
       </Position19>
       <Position20>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="416" Column="6" TopLine="395"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="386" Column="6" TopLine="379"/>
       </Position20>
       <Position21>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="417" Column="6" TopLine="396"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="344" Column="3" TopLine="341"/>
       </Position21>
       <Position22>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="418" Column="6" TopLine="397"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="343" Column="3" TopLine="340"/>
       </Position22>
       <Position23>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="419" Column="6" TopLine="398"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="344" Column="3" TopLine="341"/>
       </Position23>
       <Position24>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="420" Column="6" TopLine="399"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="9" Column="12"/>
       </Position24>
       <Position25>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="421" Column="6" TopLine="400"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="616" Column="12" TopLine="582"/>
       </Position25>
       <Position26>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="422" Column="6" TopLine="401"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="617" Column="12" TopLine="617"/>
       </Position26>
       <Position27>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="423" Column="6" TopLine="402"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="644" Column="103" TopLine="610"/>
       </Position27>
       <Position28>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="257" Column="3" TopLine="255"/>
+        <Caret Line="609" Column="71" TopLine="585"/>
       </Position28>
       <Position29>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="424" Column="6" TopLine="403"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="574" TopLine="574"/>
       </Position29>
       <Position30>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="356" Column="69" TopLine="323"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="579" TopLine="574"/>
       </Position30>
     </JumpHistory>
     <RunParams>
@@ -445,7 +501,7 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="3">
+    <BreakPoints Count="6">
       <Item1>
         <Kind Value="bpkData"/>
         <WatchData Value="QueryRegistros.FieldByName('valorecebidocli').AsInteger"/>
@@ -457,16 +513,37 @@
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
-        <Source Value="un_modulo.pas"/>
-        <Line Value="149"/>
+        <Source Value="un_principal.pas"/>
+        <Line Value="475"/>
       </Item2>
       <Item3>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="un_modulo.pas"/>
-        <Line Value="361"/>
+        <Line Value="569"/>
       </Item3>
+      <Item4>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="un_modulo.pas"/>
+        <Line Value="572"/>
+      </Item4>
+      <Item5>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="un_principal.pas"/>
+        <Line Value="579"/>
+      </Item5>
+      <Item6>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="un_modulo.pas"/>
+        <Line Value="588"/>
+      </Item6>
     </BreakPoints>
     <Watches Count="1">
       <Item1>

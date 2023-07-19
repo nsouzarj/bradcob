@@ -2,8 +2,8 @@ object DtmConexao: TDtmConexao
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 349
-  HorizontalOffset = 243
-  VerticalOffset = 104
+  HorizontalOffset = 252
+  VerticalOffset = 120
   Width = 707
   object DbConexaoPg: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -16,7 +16,7 @@ object DtmConexao: TDtmConexao
     TransactIsolationLevel = tiReadCommitted
     Connected = True
     AfterConnect = DbConexaoPgAfterConnect
-    HostName = '192.168.1.7'
+    HostName = '172.16.48.11'
     Port = 5432
     Database = 'dbcob'
     User = 'postgres'
@@ -24,6 +24,6 @@ object DtmConexao: TDtmConexao
     Protocol = 'postgresql'
     LibraryLocation = 'C:\bradcob\drivers\libpq.dll'
     Left = 96
-    Top = 63
+    Top = 64
   end
 end

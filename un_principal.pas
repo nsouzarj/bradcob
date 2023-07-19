@@ -6,76 +6,124 @@ interface
 
 uses       Classes, SysUtils, db, FileUtil, DateTimePicker, Forms, Controls,
   Graphics, Dialogs, DBGrids, Buttons, ComCtrls, StdCtrls, ExtCtrls, MaskEdit,
-  DbCtrls, PopupNotifier, LazHelpHTML, un_modulo, Types, process,UniFuncoes;
+  DbCtrls, PopupNotifier, LazHelpHTML, Calendar, EditBtn, un_modulo, Types,
+  process, UniFuncoes;
 
 type
 
   { TFrmdsps }
 
   TFrmdsps = class(TForm)
+    Agencia: TStaticText;
+    ArquivoArq: TOpenDialog;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
-    btCancelarGeral: TBitBtn;
-    btAlterarGeral: TBitBtn;
+    BitBtn5: TBitBtn;
     btAdioionar: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
-    BitBtn5: TBitBtn;
     BitBtn6: TBitBtn;
+    btAlterarGeral: TBitBtn;
+    btCancelarGeral: TBitBtn;
     BtExcluir: TBitBtn;
     Button1: TButton;
-    CbAto: TComboBox;
-    CbTaxaRef: TComboBox;
     CbAcordo: TComboBox;
-    CbMeioPagto: TComboBox;
+    CbAto: TComboBox;
+    CbGarantiasBems: TComboBox;
+    CbGarantiasOutros: TComboBox;
+    CbGarantiasImovel: TComboBox;
     CbIndAcordo: TComboBox;
-    EdtEstadoCli: TComboBox;
+    CbMeioPagto: TComboBox;
+    CbTaxaRef: TComboBox;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
-    DBText2: TDBText;
-    dtDataAlteraParcela: TDateTimePicker;
     DBGrid2: TDBGrid;
+    DBText2: TDBText;
     DtAcordo: TDateTimePicker;
     DtaDataVenc: TDateTimePicker;
     DtaDataVencParc: TDateTimePicker;
-    DtUltimoVenc: TDateTimePicker;
     DtAprovacao: TDateTimePicker;
     DBGrid1: TDBGrid;
-    EdtValorHonorario: TEdit;
-    edtFilAval2: TEdit;
-    edtFilAval1: TEdit;
-    edtCrtl2: TEdit;
-    edtCrtl1: TEdit;
+    dtDataAlteraParcela: TDateTimePicker;
+    DtUltimoVenc: TDateTimePicker;
+    edtCompEnd: TEdit;
+    EdtEstadoCliVeic: TComboBox;
+    EdtEstadoCliVeicLic: TComboBox;
+    edtMarcaVeic: TEdit;
+    edtModVeic: TEdit;
+    edtNumLivro: TEdit;
+    edtNumFolha: TEdit;
+    edtRegImovel: TEdit;
+    edtCodRegBens: TEdit;
+    edtGartBens: TEdit;
+    edtDescBem: TEdit;
+    edtValBem: TEdit;
+    edtCodRegOutros: TEdit;
+    edtGarantOutros: TEdit;
+    edtBairroImovel: TEdit;
+    edtValorGarantOutros: TEdit;
+    edtCepImovel: TEdit;
+    edtCircusImovel: TEdit;
+    edtComarcaImovel: TEdit;
+    edtMatImovel: TEdit;
+    edtNumRegistroImovel: TEdit;
+    edtAvervImovel: TEdit;
+    edtNumImovel: TEdit;
+    edtCodRegImovel: TEdit;
+    edtTipoGarant: TEdit;
+    edtValGarantia: TEdit;
+    edtEndImovel: TEdit;
+    edtProdContratadoVeic: TEdit;
+    edtContraRenociado: TEdit;
+    edtCorVeic: TEdit;
+    edtPorteVeic: TEdit;
+    edtNumChassiVeic: TEdit;
+    edtChassi1Veic: TEdit;
+    edtAnoModVeic: TEdit;
+    edtAnoFabVeic: TEdit;
+    edtPlacaVeiculo: TEdit;
+    edtRenavanVeic: TEdit;
+    edtValorGarantVeic: TEdit;
+    EdtTipoGaratiaVeic: TEdit;
+    edtCodRegistroVeic: TEdit;
+    Label52: TLabel;
+    edtQuantGarantiaVeic: TEdit;
     edtAtualizarParcelas: TEdit;
-    EdtValorConfessado: TEdit;
-    EdtCpfAva2: TEdit;
-    EdtNomeAvalista2: TEdit;
-    EdtCpfAva1: TEdit;
-    EdtNomeAvalista1: TEdit;
-    EdtObservacao: TEdit;
-    EdtComplemnto: TEdit;
-    EdtCepComp: TEdit;
-    EdtNomeOperador: TEdit;
-    EdtTaxaJuros: TEdit;
-    EdtCpfCpjFilialCliente: TEdit;
-    EdtConCpfCnpjClie: TEdit;
-    EdtCpfCnpjClie: TEdit;
-    EdtParcPag: TEdit;
-    EdtTelefone: TEdit;
-    edtddd: TEdit;
-    EdtCep: TEdit;
-    EdtMunicipioCli: TEdit;
     EdtBairro: TEdit;
-    EdtNumEnd: TEdit;
-    EdtNomeCliente: TEdit;
-    EdtEnderecoCliente: TEdit;
-    EdtNumContrato: TEdit;
-    EdtNumCarteira: TEdit;
-    EdtContaCorrente: TEdit;
+    EdtCep: TEdit;
+    EdtCepComp: TEdit;
     EdtCodJuncao: TEdit;
+    EdtComplemnto: TEdit;
+    EdtConCpfCnpjClie: TEdit;
+    EdtContaCorrente: TEdit;
+    EdtCpfAva1: TEdit;
+    EdtCpfAva2: TEdit;
+    EdtCpfCnpjClie: TEdit;
+    EdtCpfCpjFilialCliente: TEdit;
+    edtCrtl1: TEdit;
+    edtCrtl2: TEdit;
+    edtddd: TEdit;
+    EdtEnderecoCliente: TEdit;
+    EdtEstadoCli: TComboBox;
+    edtFilAval1: TEdit;
+    edtFilAval2: TEdit;
+    EdtMunicipioCli: TEdit;
+    EdtNomeAvalista1: TEdit;
+    EdtNomeAvalista2: TEdit;
+    EdtNomeCliente: TEdit;
+    EdtNomeOperador: TEdit;
+    EdtNumAcordo: TEdit;
+    EdtNumCarteira: TEdit;
+    EdtNumContrato: TEdit;
+    EdtNumEnd: TEdit;
+    EdtObservacao: TEdit;
+    EdtParcPag: TEdit;
     EdtQunatParcela: TEdit;
     EdtQunt: TEdit;
-    EdtNumAcordo: TEdit;
+    EdtTaxaJuros: TEdit;
+    EdtTelefone: TEdit;
+    EdtValorConfessado: TEdit;
+    EdtValorHonorario: TEdit;
     GroupBox1: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
@@ -122,23 +170,64 @@ type
     Label48: TLabel;
     Label49: TLabel;
     Label5: TLabel;
+    Label50: TLabel;
     Label51: TLabel;
+    Label53: TLabel;
+    Label54: TLabel;
+    Label55: TLabel;
+    Label56: TLabel;
+    Label57: TLabel;
+    Label58: TLabel;
+    Label59: TLabel;
     Label6: TLabel;
+    Label60: TLabel;
+    Label61: TLabel;
+    Label62: TLabel;
+    Label63: TLabel;
+    Label64: TLabel;
+    Label65: TLabel;
+    Label66: TLabel;
+    Label67: TLabel;
+    Label68: TLabel;
+    Label69: TLabel;
     Label7: TLabel;
+    Label70: TLabel;
+    Label71: TLabel;
+    Label72: TLabel;
+    Label73: TLabel;
+    Label74: TLabel;
+    Label75: TLabel;
+    Label76: TLabel;
+    Label77: TLabel;
+    Label78: TLabel;
+    Label79: TLabel;
     Label8: TLabel;
+    Label80: TLabel;
+    Label81: TLabel;
+    Label82: TLabel;
+    Label83: TLabel;
+    Label84: TLabel;
+    Label86: TLabel;
+    Label87: TLabel;
+    Label88: TLabel;
+    Label89: TLabel;
     Label9: TLabel;
-    MkValorParcela: TMaskEdit;
+    Label90: TLabel;
+    Label91: TLabel;
+    Label92: TLabel;
     MkValorIof: TMaskEdit;
+    MkValorParcela: TMaskEdit;
     MkValorTotalAcordo: TMaskEdit;
     OpenDialog1: TOpenDialog;
-    ArquivoArq: TOpenDialog;
     PageControl1: TPageControl;
+    PageControl2: TPageControl;
     Panel2: TPanel;
     SelectDirectoryDialog1: TSelectDirectoryDialog;
     StaticText1: TStaticText;
-    Agencia: TStaticText;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure btAlterarGeralClick(Sender: TObject);
@@ -151,6 +240,7 @@ type
     procedure BtExcluirClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure CbIndAcordoChange(Sender: TObject);
+    procedure edtChassi1VeicChange(Sender: TObject);
     procedure EdtEstadoCliChange(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
     procedure DataSource2DataChange(Sender: TObject; Field: TField);
@@ -169,6 +259,8 @@ type
     procedure ProgressBar1ContextPopup(Sender: TObject; MousePos: TPoint;
       var Handled: Boolean);
     procedure StaticText2Click(Sender: TObject);
+    procedure TabSheet4ContextPopup(Sender: TObject; MousePos: TPoint;
+      var Handled: Boolean);
     procedure ZQtabelaCalcFields(DataSet: TDataSet);
   private
     { private declarations }
@@ -243,6 +335,12 @@ begin
 end;
 
 procedure TFrmdsps.StaticText2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.TabSheet4ContextPopup(Sender: TObject; MousePos: TPoint;
+  var Handled: Boolean);
 begin
 
 end;
@@ -404,7 +502,16 @@ begin
                    valparc,StrToFloat(EdtValorHonorario.Text),CbTaxaRef.Text,EdtObservacao.text,EdtNomeCliente.text,EdtEnderecoCliente.text,
                    EdtNumEnd.Text,EdtComplemnto.Text,EdtBairro.Text,EdtMunicipioCli.text,EdtEstadoCli.text,StrToInt(EdtCep.Text),StrToInt(EdtCepComp.Text), edtddd.text,StrToInt(EdtTelefone.text),StrToFloat(MkValorTotalAcordo.Text),DateToStr(DtUltimoVenc.date),
                    StrToInt(EdtParcPag.Text),StrToInt(EdtCpfCnpjClie.Text),StrToInt(EdtCpfCpjFilialCliente.Text),
-                   StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text), CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato);
+                   StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text), CbAcordo.Text,
+                   DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),
+                   CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato,
+                   edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
+                   StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
+                    EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
+                   edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, StrToInt(edtTipoGarant.Text),
+                   StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
+                   StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,StrToInt(edtGartBens.Text),
+                   edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, StrToInt(edtGarantOutros.Text),StrToFloat(edtValorGarantOutros.Text));
                end;
                if(a > 1) then
                begin
@@ -420,7 +527,16 @@ begin
                    valparc,StrToCurr(EdtValorHonorario.Text),CbTaxaRef.Text,EdtObservacao.text,EdtNomeCliente.text,EdtEnderecoCliente.text,
                    EdtNumEnd.Text,EdtComplemnto.Text,EdtBairro.Text,EdtMunicipioCli.text,EdtEstadoCli.text,StrToInt(EdtCep.Text),StrToInt(EdtCepComp.Text), edtddd.text,StrToInt(EdtTelefone.text),StrToCurr(MkValorTotalAcordo.Text),DateToStr(DtUltimoVenc.date),
                    StrToInt(EdtParcPag.Text),StrToInt(EdtCpfCnpjClie.Text),StrToInt(EdtCpfCpjFilialCliente.Text),
-                   StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text), CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato);
+                   StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text), CbAcordo.Text,
+                   DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),
+                   CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato,
+                   edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
+                   StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
+                   EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
+                   edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, StrToInt(edtTipoGarant.Text),
+                   StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
+                   StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,StrToInt(edtGartBens.Text),
+                   edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, StrToInt(edtGarantOutros.Text),StrToFloat(edtValorGarantOutros.Text));
                end;
              end;
              ShowMessage('Opreção concluída com sucesso !!!');
@@ -477,6 +593,7 @@ begin
      if a=1 then
      begin
          // Calcular a parcela com o percentual
+         //Insere na tabela os dados capturados da tela de entrada
          
          valparc:=(StrToFloat(MkValorTotalAcordo.Text)/cont);
          valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));
@@ -486,7 +603,20 @@ begin
          valparc,StrToFloat(EdtValorHonorario.Text),CbTaxaRef.Text,EdtObservacao.text,EdtNomeCliente.text,EdtEnderecoCliente.text,
          EdtNumEnd.Text,EdtComplemnto.Text,EdtBairro.Text,EdtMunicipioCli.text,EdtEstadoCli.Text,StrToInt(EdtCep.Text),StrToInt(EdtCepComp.Text), edtddd.text,StrToInt(EdtTelefone.text),StrToFloat(MkValorTotalAcordo.Text),DateToStr(DtUltimoVenc.date),
          StrToInt(EdtParcPag.Text),StrToInt(EdtCpfCnpjClie.Text),StrToInt(EdtCpfCpjFilialCliente.Text),
-         StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text), CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato);
+         StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text),
+         CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,
+         EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato,
+         edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
+         StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
+         EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
+         edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
+         StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
+         StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,CbGarantiasBems.ItemIndex ,
+         edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, CbGarantiasOutros.ItemIndex ,StrToFloat(edtValorGarantOutros.Text));
+         // StrToInt(edtTipoGarant.Text)
+         //StrToInt(edtGartBens.Text)
+         //StrToInt(edtGarantOutros.Text)
+
      end;
      if(a > 1) then
      begin
@@ -496,13 +626,22 @@ begin
          valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));
          valparc:=valparc+valor;
 
-         //Insere na tabela os dados capturados da tabela
+         //Insere na tabela os dados capturados da tela de entrada
          DtmDsps.SalvarRegistro('N',StrToInt(EdtNumAcordo.Text),DateToStr(DtAcordo.Date),StrToInt(EdtQunt.Text),StrToInt(EdtQunatParcela.Text),
          StrToInt(EdtCodJuncao.text),StrToInt(EdtContaCorrente.Text),EdtNumCarteira.text,StrToInt(EdtNumContrato.text),DateToStr(DtaDataVenc.Date),DateToStr(dataproxima),
          valparc,StrToCurr(EdtValorHonorario.Text),CbTaxaRef.Text,EdtObservacao.text,EdtNomeCliente.text,EdtEnderecoCliente.text,
          EdtNumEnd.Text,EdtComplemnto.Text,EdtBairro.Text,EdtMunicipioCli.text,EdtEstadoCli.text,StrToInt(EdtCep.Text),StrToInt(EdtCepComp.Text), edtddd.text,StrToInt(EdtTelefone.text),StrToCurr(MkValorTotalAcordo.Text),DateToStr(DtUltimoVenc.date),
          StrToInt(EdtParcPag.Text),StrToInt(EdtCpfCnpjClie.Text),StrToInt(EdtCpfCpjFilialCliente.Text),
-         StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text), CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato);
+         StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text),
+         CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,EdtCpfAva2.text,
+         StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato,
+         edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
+         StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
+         EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
+         edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
+         StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
+         StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,CbGarantiasBems.ItemIndex,
+         edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, CbGarantiasOutros.ItemIndex,StrToFloat(edtValorGarantOutros.Text));
      end;
    end;
     DtmDsps.ZQContrato.Refresh;
@@ -645,6 +784,11 @@ begin
 end;
 
 procedure TFrmdsps.CbIndAcordoChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.edtChassi1VeicChange(Sender: TObject);
 begin
 
 end;

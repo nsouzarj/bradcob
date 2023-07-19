@@ -2,8 +2,8 @@ object DtmDrcNovo: TDtmDrcNovo
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 312
-  HorizontalOffset = 398
-  VerticalOffset = 170
+  HorizontalOffset = 406
+  VerticalOffset = 198
   Width = 426
   object QueryHeader: TZQuery
     Connection = DtmConexao.DbConexaoPg

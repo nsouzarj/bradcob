@@ -1,7 +1,7 @@
 object Frmdrc: TFrmdrc
-  Left = 317
+  Left = 319
   Height = 482
-  Top = 207
+  Top = 264
   Width = 691
   Caption = 'DRC - VEICULOS'
   ClientHeight = 482

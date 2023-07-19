@@ -3,7 +3,7 @@ object DtmDsps: TDtmDsps
   OldCreateOrder = False
   Height = 309
   HorizontalOffset = 0
-  VerticalOffset = 308
+  VerticalOffset = 331
   Width = 675
   object ZQtabela: TZQuery
     Connection = DtmConexao.DbConexaoPg
@@ -11,32 +11,38 @@ object DtmDsps: TDtmDsps
     OnCalcFields = ZQtabelaCalcFields
     UpdateObject = ZUpdateSQL1
     SQL.Strings = (
-      'SELECT  tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, quantparc, codjun, '
+      'SELECT  chaveprim,tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, quantparc, codjun, '
       'contacorrente, numcarteira, numcontrato, datavecimento, datavencparc, valparc, valhonor,'
       ' taxaref, obs, nomeescritorio, dddescritorio, telescritorio, nomecliente, endcliente, num, '
       'complemnto, bairro, municipio, unidadefed, cepcliente, complecep, dddcliente, telcliente,'
       ' valoracordo, datavencult, parcelaplanoultimopag, cpfcnpjcliente, cpfcnpjfilialcliente, '
       'controlecpfcnpjcliente, codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, '
-      'dataaprovacao, nomeoperador, chaveprim, camporetarq, nomeavalista1, nomeavalista2, '
+      'dataaprovacao, nomeoperador, camporetarq, nomeavalista1, nomeavalista2, '
       'valorconfessado, indacordo, cpfavalista1, cpfavalista2, ctrlav1, ctrlav2, filav1, filav2, idcontrato, '
       'quantidadedegarantias, codigoregistroveiculo, cgarntveic, vgrantveic, renanveic, placaveic, uffabveic, '
-      'anofabveic, uflicveic, chassirmarc, chassiveic, antprodtveic, contrantveic, marcaveic, modeloveic,'
+      'anofabveic, anomodveic,uflicveic, chassirmarc, chassiveic, antprodtveic, contrantveic, marcaveic, modeloveic,'
       ' corveic, porteveic, codigoregistroimoveis, cgarntimov, vgarntimov, garntlogdr, garntnrologdr,'
       ' garntcompllogdr, garntbairrologdr, garntcepimov, mcircunsimov, comarcaimov, nmatrimov, '
       'nregimov, averbacaoimov, nlivroimov, nfolhaimov, dregimov, codigoregistrobens, cgarntbens, '
-      'garntdescrbens, codigoregistrooutros, cgarntoutros, garntvgarntoutros'
-      '   FROM "TB_CAD_REM" order by chaveprim'
+      'garntdescrbens, vgrantbens, codigoregistrooutros, cgarntoutros, garntvgarntoutros'
+      '   FROM "TB_CAD_REM" '
     )
     Params = <>
-    UpdateMode = umUpdateAll
-    WhereMode = wmWhereAll
-    Options = []
     Left = 176
     Top = 56
+    object ZQtabelachaveprim: TLongintField
+      FieldKind = fkData
+      FieldName = 'chaveprim'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
     object ZQtabelatepreg: TStringField
       FieldKind = fkData
       FieldName = 'tepreg'
-      Index = 0
+      Index = 1
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -46,7 +52,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaato: TStringField
       FieldKind = fkData
       FieldName = 'ato'
-      Index = 1
+      Index = 2
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -56,7 +62,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacpfadmescrirtorio: TFloatField
       FieldKind = fkData
       FieldName = 'cpfadmescrirtorio'
-      Index = 2
+      Index = 3
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -66,7 +72,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelanumacordo: TFloatField
       FieldKind = fkData
       FieldName = 'numacordo'
-      Index = 3
+      Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -76,7 +82,7 @@ object DtmDsps: TDtmDsps
     object ZQtabeladataacordo: TStringField
       FieldKind = fkData
       FieldName = 'dataacordo'
-      Index = 4
+      Index = 5
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -86,7 +92,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaquantped: TFloatField
       FieldKind = fkData
       FieldName = 'quantped'
-      Index = 5
+      Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -96,7 +102,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaquantparc: TFloatField
       FieldKind = fkData
       FieldName = 'quantparc'
-      Index = 6
+      Index = 7
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -106,7 +112,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacodjun: TFloatField
       FieldKind = fkData
       FieldName = 'codjun'
-      Index = 7
+      Index = 8
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -116,7 +122,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacontacorrente: TFloatField
       FieldKind = fkData
       FieldName = 'contacorrente'
-      Index = 8
+      Index = 9
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -126,7 +132,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelanumcarteira: TStringField
       FieldKind = fkData
       FieldName = 'numcarteira'
-      Index = 9
+      Index = 10
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -135,7 +141,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelanumcontrato: TFloatField
       FieldKind = fkData
       FieldName = 'numcontrato'
-      Index = 10
+      Index = 11
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -145,7 +151,7 @@ object DtmDsps: TDtmDsps
     object ZQtabeladatavecimento: TStringField
       FieldKind = fkData
       FieldName = 'datavecimento'
-      Index = 11
+      Index = 12
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -155,7 +161,7 @@ object DtmDsps: TDtmDsps
     object ZQtabeladatavencparc: TStringField
       FieldKind = fkData
       FieldName = 'datavencparc'
-      Index = 12
+      Index = 13
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -165,29 +171,27 @@ object DtmDsps: TDtmDsps
     object ZQtabelavalparc: TFloatField
       FieldKind = fkData
       FieldName = 'valparc'
-      Index = 13
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Currency = True
-      Precision = 1114114
-    end
-    object ZQtabelavalhonor: TFloatField
-      FieldKind = fkData
-      FieldName = 'valhonor'
       Index = 14
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Currency = True
-      Precision = 1114114
+      Precision = 4
+    end
+    object ZQtabelavalhonor: TFloatField
+      FieldKind = fkData
+      FieldName = 'valhonor'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 4
     end
     object ZQtabelataxaref: TStringField
       FieldKind = fkData
       FieldName = 'taxaref'
-      Index = 15
+      Index = 16
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -197,7 +201,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaobs: TStringField
       FieldKind = fkData
       FieldName = 'obs'
-      Index = 16
+      Index = 17
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -207,7 +211,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelanomeescritorio: TStringField
       FieldKind = fkData
       FieldName = 'nomeescritorio'
-      Index = 17
+      Index = 18
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -217,7 +221,7 @@ object DtmDsps: TDtmDsps
     object ZQtabeladddescritorio: TFloatField
       FieldKind = fkData
       FieldName = 'dddescritorio'
-      Index = 18
+      Index = 19
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -227,7 +231,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelatelescritorio: TFloatField
       FieldKind = fkData
       FieldName = 'telescritorio'
-      Index = 19
+      Index = 20
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -237,7 +241,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelanomecliente: TStringField
       FieldKind = fkData
       FieldName = 'nomecliente'
-      Index = 20
+      Index = 21
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -247,7 +251,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaendcliente: TStringField
       FieldKind = fkData
       FieldName = 'endcliente'
-      Index = 21
+      Index = 22
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -257,7 +261,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelanum: TStringField
       FieldKind = fkData
       FieldName = 'num'
-      Index = 22
+      Index = 23
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -267,7 +271,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacomplemnto: TStringField
       FieldKind = fkData
       FieldName = 'complemnto'
-      Index = 23
+      Index = 24
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -277,7 +281,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelabairro: TStringField
       FieldKind = fkData
       FieldName = 'bairro'
-      Index = 24
+      Index = 25
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -287,7 +291,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelamunicipio: TStringField
       FieldKind = fkData
       FieldName = 'municipio'
-      Index = 25
+      Index = 26
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -297,7 +301,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaunidadefed: TStringField
       FieldKind = fkData
       FieldName = 'unidadefed'
-      Index = 26
+      Index = 27
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -307,7 +311,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacepcliente: TFloatField
       FieldKind = fkData
       FieldName = 'cepcliente'
-      Index = 27
+      Index = 28
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -317,7 +321,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacomplecep: TFloatField
       FieldKind = fkData
       FieldName = 'complecep'
-      Index = 28
+      Index = 29
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -327,7 +331,7 @@ object DtmDsps: TDtmDsps
     object ZQtabeladddcliente: TStringField
       FieldKind = fkData
       FieldName = 'dddcliente'
-      Index = 29
+      Index = 30
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -337,7 +341,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelatelcliente: TFloatField
       FieldKind = fkData
       FieldName = 'telcliente'
-      Index = 30
+      Index = 31
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -347,18 +351,17 @@ object DtmDsps: TDtmDsps
     object ZQtabelavaloracordo: TFloatField
       FieldKind = fkData
       FieldName = 'valoracordo'
-      Index = 31
+      Index = 32
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Currency = True
-      Precision = 1114114
+      Precision = 4
     end
     object ZQtabeladatavencult: TStringField
       FieldKind = fkData
       FieldName = 'datavencult'
-      Index = 32
+      Index = 33
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -368,7 +371,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelaparcelaplanoultimopag: TFloatField
       FieldKind = fkData
       FieldName = 'parcelaplanoultimopag'
-      Index = 33
+      Index = 34
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -378,7 +381,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacpfcnpjcliente: TFloatField
       FieldKind = fkData
       FieldName = 'cpfcnpjcliente'
-      Index = 34
+      Index = 35
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -388,7 +391,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacpfcnpjfilialcliente: TFloatField
       FieldKind = fkData
       FieldName = 'cpfcnpjfilialcliente'
-      Index = 35
+      Index = 36
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -398,7 +401,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacontrolecpfcnpjcliente: TFloatField
       FieldKind = fkData
       FieldName = 'controlecpfcnpjcliente'
-      Index = 36
+      Index = 37
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -408,7 +411,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacodmeiopagamento: TFloatField
       FieldKind = fkData
       FieldName = 'codmeiopagamento'
-      Index = 37
+      Index = 38
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -418,30 +421,27 @@ object DtmDsps: TDtmDsps
     object ZQtabelavaloriof: TFloatField
       FieldKind = fkData
       FieldName = 'valoriof'
-      Index = 38
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Currency = True
-      Precision = 1114114
-    end
-    object ZQtabelataxajuros: TFloatField
-      FieldKind = fkData
-      FieldName = 'taxajuros'
       Index = 39
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      DisplayFormat = ',0.00;-,0.00'
-      Currency = True
-      Precision = 2
+      Precision = 4
+    end
+    object ZQtabelataxajuros: TFloatField
+      FieldKind = fkData
+      FieldName = 'taxajuros'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 4
     end
     object ZQtabelaacordoaprovadopelodarc: TStringField
       FieldKind = fkData
       FieldName = 'acordoaprovadopelodarc'
-      Index = 40
+      Index = 41
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -451,7 +451,7 @@ object DtmDsps: TDtmDsps
     object ZQtabeladataaprovacao: TStringField
       FieldKind = fkData
       FieldName = 'dataaprovacao'
-      Index = 41
+      Index = 42
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -461,17 +461,27 @@ object DtmDsps: TDtmDsps
     object ZQtabelanomeoperador: TStringField
       FieldKind = fkData
       FieldName = 'nomeoperador'
-      Index = 42
+      Index = 43
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Size = 60
     end
+    object ZQtabelacamporetarq: TStringField
+      FieldKind = fkData
+      FieldName = 'camporetarq'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 240
+    end
     object ZQtabelanomeavalista1: TStringField
       FieldKind = fkData
       FieldName = 'nomeavalista1'
-      Index = 43
+      Index = 45
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -481,73 +491,52 @@ object DtmDsps: TDtmDsps
     object ZQtabelanomeavalista2: TStringField
       FieldKind = fkData
       FieldName = 'nomeavalista2'
-      Index = 44
+      Index = 46
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Size = 160
     end
-    object ZQtabelacamporetarq: TStringField
+    object ZQtabelavalorconfessado: TFloatField
       FieldKind = fkData
-      FieldName = 'camporetarq'
-      Index = 45
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 240
-    end
-    object ZQtabelacpfavalista1: TStringField
-      FieldKind = fkData
-      FieldName = 'cpfavalista1'
-      Index = 46
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 44
-    end
-    object ZQtabelacpfavalista2: TStringField
-      FieldKind = fkData
-      FieldName = 'cpfavalista2'
+      FieldName = 'valorconfessado'
       Index = 47
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 44
-    end
-    object ZQtabelavalorconfessado: TFloatField
-      FieldKind = fkData
-      FieldName = 'valorconfessado'
-      Index = 48
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Currency = True
       Precision = 983042
     end
     object ZQtabelaindacordo: TFloatField
       FieldKind = fkData
       FieldName = 'indacordo'
-      Index = 49
+      Index = 48
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
       Precision = 131072
     end
-    object ZQtabelachaveprim: TFloatField
+    object ZQtabelacpfavalista1: TStringField
       FieldKind = fkData
-      FieldName = 'chaveprim'
+      FieldName = 'cpfavalista1'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object ZQtabelacpfavalista2: TStringField
+      FieldKind = fkData
+      FieldName = 'cpfavalista2'
       Index = 50
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
-      Required = True
-      Precision = 2
+      Required = False
+      Size = 36
     end
     object ZQtabelactrlav1: TStringField
       FieldKind = fkData
@@ -569,9 +558,9 @@ object DtmDsps: TDtmDsps
       Required = False
       Size = 8
     end
-    object ZQtabelafilav1: TStringField
+    object ZQtabelafilav2: TStringField
       FieldKind = fkData
-      FieldName = 'filav1'
+      FieldName = 'filav2'
       Index = 53
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
@@ -579,9 +568,9 @@ object DtmDsps: TDtmDsps
       Required = False
       Size = 16
     end
-    object ZQtabelafilav2: TStringField
+    object ZQtabelafilav1: TStringField
       FieldKind = fkData
-      FieldName = 'filav2'
+      FieldName = 'filav1'
       Index = 54
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
@@ -599,19 +588,10 @@ object DtmDsps: TDtmDsps
       Required = False
       Precision = 655360
     end
-    object ZQtabelatotal: TCurrencyField
-      FieldKind = fkCalculated
-      FieldName = 'total'
-      Index = 56
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
     object ZQtabelaquantidadedegarantias: TFloatField
       FieldKind = fkData
       FieldName = 'quantidadedegarantias'
-      Index = 57
+      Index = 56
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -621,7 +601,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacodigoregistroveiculo: TStringField
       FieldKind = fkData
       FieldName = 'codigoregistroveiculo'
-      Index = 58
+      Index = 57
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -631,7 +611,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacgarntveic: TFloatField
       FieldKind = fkData
       FieldName = 'cgarntveic'
-      Index = 59
+      Index = 58
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -641,17 +621,17 @@ object DtmDsps: TDtmDsps
     object ZQtabelavgrantveic: TFloatField
       FieldKind = fkData
       FieldName = 'vgrantveic'
-      Index = 60
+      Index = 59
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Precision = 1179648
+      Precision = 1048578
     end
     object ZQtabelarenanveic: TFloatField
       FieldKind = fkData
       FieldName = 'renanveic'
-      Index = 61
+      Index = 60
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -661,17 +641,17 @@ object DtmDsps: TDtmDsps
     object ZQtabelaplacaveic: TStringField
       FieldKind = fkData
       FieldName = 'placaveic'
-      Index = 62
+      Index = 61
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 28
+      Size = 16
     end
     object ZQtabelauffabveic: TStringField
       FieldKind = fkData
       FieldName = 'uffabveic'
-      Index = 63
+      Index = 62
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -681,6 +661,16 @@ object DtmDsps: TDtmDsps
     object ZQtabelaanofabveic: TFloatField
       FieldKind = fkData
       FieldName = 'anofabveic'
+      Index = 63
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 262144
+    end
+    object ZQtabelaanomodveic: TFloatField
+      FieldKind = fkData
+      FieldName = 'anomodveic'
       Index = 64
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
@@ -935,7 +925,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Size = 32
+      Size = 12
     end
     object ZQtabelacodigoregistrobens: TStringField
       FieldKind = fkData
@@ -967,10 +957,20 @@ object DtmDsps: TDtmDsps
       Required = False
       Size = 200
     end
+    object ZQtabelavgrantbens: TFloatField
+      FieldKind = fkData
+      FieldName = 'vgrantbens'
+      Index = 93
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 655362
+    end
     object ZQtabelacodigoregistrooutros: TStringField
       FieldKind = fkData
       FieldName = 'codigoregistrooutros'
-      Index = 93
+      Index = 94
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -980,7 +980,7 @@ object DtmDsps: TDtmDsps
     object ZQtabelacgarntoutros: TFloatField
       FieldKind = fkData
       FieldName = 'cgarntoutros'
-      Index = 94
+      Index = 95
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -990,18 +990,19 @@ object DtmDsps: TDtmDsps
     object ZQtabelagarntvgarntoutros: TFloatField
       FieldKind = fkData
       FieldName = 'garntvgarntoutros'
-      Index = 95
+      Index = 96
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      Precision = 1179648
+      Precision = 1048578
     end
   end
   object ZUpdateSQL1: TZUpdateSQL
     DeleteSQL.Strings = (
       'DELETE FROM "TB_CAD_REM"'
       'WHERE'
+      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
       '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg)) AND'
       '  (("TB_CAD_REM".ato IS NULL AND :OLD_ato IS NULL) OR ("TB_CAD_REM".ato = :OLD_ato)) AND'
       '  (("TB_CAD_REM".cpfadmescrirtorio IS NULL AND :OLD_cpfadmescrirtorio IS NULL) OR ("TB_CAD_REM".cpfadmescrirtorio = :OLD_cpfadmescrirtorio)) AND'
@@ -1045,7 +1046,6 @@ object DtmDsps: TDtmDsps
       '  (("TB_CAD_REM".acordoaprovadopelodarc IS NULL AND :OLD_acordoaprovadopelodarc IS NULL) OR ("TB_CAD_REM".acordoaprovadopelodarc = :OLD_acordoaprovadopelodarc)) AND'
       '  (("TB_CAD_REM".dataaprovacao IS NULL AND :OLD_dataaprovacao IS NULL) OR ("TB_CAD_REM".dataaprovacao = :OLD_dataaprovacao)) AND'
       '  (("TB_CAD_REM".nomeoperador IS NULL AND :OLD_nomeoperador IS NULL) OR ("TB_CAD_REM".nomeoperador = :OLD_nomeoperador)) AND'
-      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
       '  (("TB_CAD_REM".camporetarq IS NULL AND :OLD_camporetarq IS NULL) OR ("TB_CAD_REM".camporetarq = :OLD_camporetarq)) AND'
       '  (("TB_CAD_REM".nomeavalista1 IS NULL AND :OLD_nomeavalista1 IS NULL) OR ("TB_CAD_REM".nomeavalista1 = :OLD_nomeavalista1)) AND'
       '  (("TB_CAD_REM".nomeavalista2 IS NULL AND :OLD_nomeavalista2 IS NULL) OR ("TB_CAD_REM".nomeavalista2 = :OLD_nomeavalista2)) AND'
@@ -1066,6 +1066,7 @@ object DtmDsps: TDtmDsps
       '  (("TB_CAD_REM".placaveic IS NULL AND :OLD_placaveic IS NULL) OR ("TB_CAD_REM".placaveic = :OLD_placaveic)) AND'
       '  (("TB_CAD_REM".uffabveic IS NULL AND :OLD_uffabveic IS NULL) OR ("TB_CAD_REM".uffabveic = :OLD_uffabveic)) AND'
       '  (("TB_CAD_REM".anofabveic IS NULL AND :OLD_anofabveic IS NULL) OR ("TB_CAD_REM".anofabveic = :OLD_anofabveic)) AND'
+      '  (("TB_CAD_REM".anomodveic IS NULL AND :OLD_anomodveic IS NULL) OR ("TB_CAD_REM".anomodveic = :OLD_anomodveic)) AND'
       '  (("TB_CAD_REM".uflicveic IS NULL AND :OLD_uflicveic IS NULL) OR ("TB_CAD_REM".uflicveic = :OLD_uflicveic)) AND'
       '  (("TB_CAD_REM".chassirmarc IS NULL AND :OLD_chassirmarc IS NULL) OR ("TB_CAD_REM".chassirmarc = :OLD_chassirmarc)) AND'
       '  (("TB_CAD_REM".chassiveic IS NULL AND :OLD_chassiveic IS NULL) OR ("TB_CAD_REM".chassiveic = :OLD_chassiveic)) AND'
@@ -1094,52 +1095,54 @@ object DtmDsps: TDtmDsps
       '  (("TB_CAD_REM".codigoregistrobens IS NULL AND :OLD_codigoregistrobens IS NULL) OR ("TB_CAD_REM".codigoregistrobens = :OLD_codigoregistrobens)) AND'
       '  (("TB_CAD_REM".cgarntbens IS NULL AND :OLD_cgarntbens IS NULL) OR ("TB_CAD_REM".cgarntbens = :OLD_cgarntbens)) AND'
       '  (("TB_CAD_REM".garntdescrbens IS NULL AND :OLD_garntdescrbens IS NULL) OR ("TB_CAD_REM".garntdescrbens = :OLD_garntdescrbens)) AND'
+      '  (("TB_CAD_REM".vgrantbens IS NULL AND :OLD_vgrantbens IS NULL) OR ("TB_CAD_REM".vgrantbens = :OLD_vgrantbens)) AND'
       '  (("TB_CAD_REM".codigoregistrooutros IS NULL AND :OLD_codigoregistrooutros IS NULL) OR ("TB_CAD_REM".codigoregistrooutros = :OLD_codigoregistrooutros)) AND'
       '  (("TB_CAD_REM".cgarntoutros IS NULL AND :OLD_cgarntoutros IS NULL) OR ("TB_CAD_REM".cgarntoutros = :OLD_cgarntoutros)) AND'
       '  (("TB_CAD_REM".garntvgarntoutros IS NULL AND :OLD_garntvgarntoutros IS NULL) OR ("TB_CAD_REM".garntvgarntoutros = :OLD_garntvgarntoutros))'
     )
     InsertSQL.Strings = (
       'INSERT INTO "TB_CAD_REM"'
-      '  (tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, quantparc, '
-      '   codjun, contacorrente, numcarteira, numcontrato, datavecimento, datavencparc, '
-      '   valparc, valhonor, taxaref, obs, nomeescritorio, dddescritorio, telescritorio, '
-      '   nomecliente, endcliente, num, complemnto, bairro, municipio, unidadefed, '
-      '   cepcliente, complecep, dddcliente, telcliente, valoracordo, datavencult, '
-      '   parcelaplanoultimopag, cpfcnpjcliente, cpfcnpjfilialcliente, controlecpfcnpjcliente, '
-      '   codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, dataaprovacao, '
-      '   nomeoperador, chaveprim, camporetarq, nomeavalista1, nomeavalista2, '
+      '  (chaveprim, tepreg, ato, cpfadmescrirtorio, numacordo, dataacordo, quantped, '
+      '   quantparc, codjun, contacorrente, numcarteira, numcontrato, datavecimento, '
+      '   datavencparc, valparc, valhonor, taxaref, obs, nomeescritorio, dddescritorio, '
+      '   telescritorio, nomecliente, endcliente, num, complemnto, bairro, municipio, '
+      '   unidadefed, cepcliente, complecep, dddcliente, telcliente, valoracordo, '
+      '   datavencult, parcelaplanoultimopag, cpfcnpjcliente, cpfcnpjfilialcliente, '
+      '   controlecpfcnpjcliente, codmeiopagamento, valoriof, taxajuros, acordoaprovadopelodarc, '
+      '   dataaprovacao, nomeoperador, camporetarq, nomeavalista1, nomeavalista2, '
       '   valorconfessado, indacordo, cpfavalista1, cpfavalista2, ctrlav1, ctrlav2, '
       '   filav1, filav2, idcontrato, quantidadedegarantias, codigoregistroveiculo, '
       '   cgarntveic, vgrantveic, renanveic, placaveic, uffabveic, anofabveic, '
-      '   uflicveic, chassirmarc, chassiveic, antprodtveic, contrantveic, marcaveic, '
-      '   modeloveic, corveic, porteveic, codigoregistroimoveis, cgarntimov, vgarntimov, '
-      '   garntlogdr, garntnrologdr, garntcompllogdr, garntbairrologdr, garntcepimov, '
-      '   mcircunsimov, comarcaimov, nmatrimov, nregimov, averbacaoimov, nlivroimov, '
-      '   nfolhaimov, dregimov, codigoregistrobens, cgarntbens, garntdescrbens, '
-      '   codigoregistrooutros, cgarntoutros, garntvgarntoutros)'
+      '   anomodveic, uflicveic, chassirmarc, chassiveic, antprodtveic, contrantveic, '
+      '   marcaveic, modeloveic, corveic, porteveic, codigoregistroimoveis, cgarntimov, '
+      '   vgarntimov, garntlogdr, garntnrologdr, garntcompllogdr, garntbairrologdr, '
+      '   garntcepimov, mcircunsimov, comarcaimov, nmatrimov, nregimov, averbacaoimov, '
+      '   nlivroimov, nfolhaimov, dregimov, codigoregistrobens, cgarntbens, garntdescrbens, '
+      '   vgrantbens, codigoregistrooutros, cgarntoutros, garntvgarntoutros)'
       'VALUES'
-      '  (:tepreg, :ato, :cpfadmescrirtorio, :numacordo, :dataacordo, :quantped, '
-      '   :quantparc, :codjun, :contacorrente, :numcarteira, :numcontrato, :datavecimento, '
-      '   :datavencparc, :valparc, :valhonor, :taxaref, :obs, :nomeescritorio, '
-      '   :dddescritorio, :telescritorio, :nomecliente, :endcliente, :num, :complemnto, '
-      '   :bairro, :municipio, :unidadefed, :cepcliente, :complecep, :dddcliente, '
-      '   :telcliente, :valoracordo, :datavencult, :parcelaplanoultimopag, :cpfcnpjcliente, '
-      '   :cpfcnpjfilialcliente, :controlecpfcnpjcliente, :codmeiopagamento, :valoriof, '
-      '   :taxajuros, :acordoaprovadopelodarc, :dataaprovacao, :nomeoperador, '
-      '   :chaveprim, :camporetarq, :nomeavalista1, :nomeavalista2, :valorconfessado, '
-      '   :indacordo, :cpfavalista1, :cpfavalista2, :ctrlav1, :ctrlav2, :filav1, '
-      '   :filav2, :idcontrato, :quantidadedegarantias, :codigoregistroveiculo, '
-      '   :cgarntveic, :vgrantveic, :renanveic, :placaveic, :uffabveic, :anofabveic, '
+      '  (:chaveprim, :tepreg, :ato, :cpfadmescrirtorio, :numacordo, :dataacordo, '
+      '   :quantped, :quantparc, :codjun, :contacorrente, :numcarteira, :numcontrato, '
+      '   :datavecimento, :datavencparc, :valparc, :valhonor, :taxaref, :obs, '
+      '   :nomeescritorio, :dddescritorio, :telescritorio, :nomecliente, :endcliente, '
+      '   :num, :complemnto, :bairro, :municipio, :unidadefed, :cepcliente, :complecep, '
+      '   :dddcliente, :telcliente, :valoracordo, :datavencult, :parcelaplanoultimopag, '
+      '   :cpfcnpjcliente, :cpfcnpjfilialcliente, :controlecpfcnpjcliente, :codmeiopagamento, '
+      '   :valoriof, :taxajuros, :acordoaprovadopelodarc, :dataaprovacao, :nomeoperador, '
+      '   :camporetarq, :nomeavalista1, :nomeavalista2, :valorconfessado, :indacordo, '
+      '   :cpfavalista1, :cpfavalista2, :ctrlav1, :ctrlav2, :filav1, :filav2, '
+      '   :idcontrato, :quantidadedegarantias, :codigoregistroveiculo, :cgarntveic, '
+      '   :vgrantveic, :renanveic, :placaveic, :uffabveic, :anofabveic, :anomodveic, '
       '   :uflicveic, :chassirmarc, :chassiveic, :antprodtveic, :contrantveic, '
       '   :marcaveic, :modeloveic, :corveic, :porteveic, :codigoregistroimoveis, '
       '   :cgarntimov, :vgarntimov, :garntlogdr, :garntnrologdr, :garntcompllogdr, '
       '   :garntbairrologdr, :garntcepimov, :mcircunsimov, :comarcaimov, :nmatrimov, '
       '   :nregimov, :averbacaoimov, :nlivroimov, :nfolhaimov, :dregimov, :codigoregistrobens, '
-      '   :cgarntbens, :garntdescrbens, :codigoregistrooutros, :cgarntoutros, '
+      '   :cgarntbens, :garntdescrbens, :vgrantbens, :codigoregistrooutros, :cgarntoutros, '
       '   :garntvgarntoutros)'
     )
     ModifySQL.Strings = (
       'UPDATE "TB_CAD_REM" SET'
+      '  chaveprim = :chaveprim,'
       '  tepreg = :tepreg,'
       '  ato = :ato,'
       '  cpfadmescrirtorio = :cpfadmescrirtorio,'
@@ -1183,7 +1186,6 @@ object DtmDsps: TDtmDsps
       '  acordoaprovadopelodarc = :acordoaprovadopelodarc,'
       '  dataaprovacao = :dataaprovacao,'
       '  nomeoperador = :nomeoperador,'
-      '  chaveprim = :chaveprim,'
       '  camporetarq = :camporetarq,'
       '  nomeavalista1 = :nomeavalista1,'
       '  nomeavalista2 = :nomeavalista2,'
@@ -1204,6 +1206,7 @@ object DtmDsps: TDtmDsps
       '  placaveic = :placaveic,'
       '  uffabveic = :uffabveic,'
       '  anofabveic = :anofabveic,'
+      '  anomodveic = :anomodveic,'
       '  uflicveic = :uflicveic,'
       '  chassirmarc = :chassirmarc,'
       '  chassiveic = :chassiveic,'
@@ -1232,10 +1235,12 @@ object DtmDsps: TDtmDsps
       '  codigoregistrobens = :codigoregistrobens,'
       '  cgarntbens = :cgarntbens,'
       '  garntdescrbens = :garntdescrbens,'
+      '  vgrantbens = :vgrantbens,'
       '  codigoregistrooutros = :codigoregistrooutros,'
       '  cgarntoutros = :cgarntoutros,'
       '  garntvgarntoutros = :garntvgarntoutros'
       'WHERE'
+      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
       '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg)) AND'
       '  (("TB_CAD_REM".ato IS NULL AND :OLD_ato IS NULL) OR ("TB_CAD_REM".ato = :OLD_ato)) AND'
       '  (("TB_CAD_REM".cpfadmescrirtorio IS NULL AND :OLD_cpfadmescrirtorio IS NULL) OR ("TB_CAD_REM".cpfadmescrirtorio = :OLD_cpfadmescrirtorio)) AND'
@@ -1279,7 +1284,6 @@ object DtmDsps: TDtmDsps
       '  (("TB_CAD_REM".acordoaprovadopelodarc IS NULL AND :OLD_acordoaprovadopelodarc IS NULL) OR ("TB_CAD_REM".acordoaprovadopelodarc = :OLD_acordoaprovadopelodarc)) AND'
       '  (("TB_CAD_REM".dataaprovacao IS NULL AND :OLD_dataaprovacao IS NULL) OR ("TB_CAD_REM".dataaprovacao = :OLD_dataaprovacao)) AND'
       '  (("TB_CAD_REM".nomeoperador IS NULL AND :OLD_nomeoperador IS NULL) OR ("TB_CAD_REM".nomeoperador = :OLD_nomeoperador)) AND'
-      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
       '  (("TB_CAD_REM".camporetarq IS NULL AND :OLD_camporetarq IS NULL) OR ("TB_CAD_REM".camporetarq = :OLD_camporetarq)) AND'
       '  (("TB_CAD_REM".nomeavalista1 IS NULL AND :OLD_nomeavalista1 IS NULL) OR ("TB_CAD_REM".nomeavalista1 = :OLD_nomeavalista1)) AND'
       '  (("TB_CAD_REM".nomeavalista2 IS NULL AND :OLD_nomeavalista2 IS NULL) OR ("TB_CAD_REM".nomeavalista2 = :OLD_nomeavalista2)) AND'
@@ -1300,6 +1304,7 @@ object DtmDsps: TDtmDsps
       '  (("TB_CAD_REM".placaveic IS NULL AND :OLD_placaveic IS NULL) OR ("TB_CAD_REM".placaveic = :OLD_placaveic)) AND'
       '  (("TB_CAD_REM".uffabveic IS NULL AND :OLD_uffabveic IS NULL) OR ("TB_CAD_REM".uffabveic = :OLD_uffabveic)) AND'
       '  (("TB_CAD_REM".anofabveic IS NULL AND :OLD_anofabveic IS NULL) OR ("TB_CAD_REM".anofabveic = :OLD_anofabveic)) AND'
+      '  (("TB_CAD_REM".anomodveic IS NULL AND :OLD_anomodveic IS NULL) OR ("TB_CAD_REM".anomodveic = :OLD_anomodveic)) AND'
       '  (("TB_CAD_REM".uflicveic IS NULL AND :OLD_uflicveic IS NULL) OR ("TB_CAD_REM".uflicveic = :OLD_uflicveic)) AND'
       '  (("TB_CAD_REM".chassirmarc IS NULL AND :OLD_chassirmarc IS NULL) OR ("TB_CAD_REM".chassirmarc = :OLD_chassirmarc)) AND'
       '  (("TB_CAD_REM".chassiveic IS NULL AND :OLD_chassiveic IS NULL) OR ("TB_CAD_REM".chassiveic = :OLD_chassiveic)) AND'
@@ -1328,14 +1333,20 @@ object DtmDsps: TDtmDsps
       '  (("TB_CAD_REM".codigoregistrobens IS NULL AND :OLD_codigoregistrobens IS NULL) OR ("TB_CAD_REM".codigoregistrobens = :OLD_codigoregistrobens)) AND'
       '  (("TB_CAD_REM".cgarntbens IS NULL AND :OLD_cgarntbens IS NULL) OR ("TB_CAD_REM".cgarntbens = :OLD_cgarntbens)) AND'
       '  (("TB_CAD_REM".garntdescrbens IS NULL AND :OLD_garntdescrbens IS NULL) OR ("TB_CAD_REM".garntdescrbens = :OLD_garntdescrbens)) AND'
+      '  (("TB_CAD_REM".vgrantbens IS NULL AND :OLD_vgrantbens IS NULL) OR ("TB_CAD_REM".vgrantbens = :OLD_vgrantbens)) AND'
       '  (("TB_CAD_REM".codigoregistrooutros IS NULL AND :OLD_codigoregistrooutros IS NULL) OR ("TB_CAD_REM".codigoregistrooutros = :OLD_codigoregistrooutros)) AND'
       '  (("TB_CAD_REM".cgarntoutros IS NULL AND :OLD_cgarntoutros IS NULL) OR ("TB_CAD_REM".cgarntoutros = :OLD_cgarntoutros)) AND'
       '  (("TB_CAD_REM".garntvgarntoutros IS NULL AND :OLD_garntvgarntoutros IS NULL) OR ("TB_CAD_REM".garntvgarntoutros = :OLD_garntvgarntoutros))'
     )
-    UseSequenceFieldForRefreshSQL = True
+    UseSequenceFieldForRefreshSQL = False
     Left = 205
     Top = 152
     ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'chaveprim'
+        ParamType = ptUnknown
+      end    
       item
         DataType = ftUnknown
         Name = 'tepreg'
@@ -1553,11 +1564,6 @@ object DtmDsps: TDtmDsps
       end    
       item
         DataType = ftUnknown
-        Name = 'chaveprim'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
         Name = 'camporetarq'
         ParamType = ptUnknown
       end    
@@ -1654,6 +1660,11 @@ object DtmDsps: TDtmDsps
       item
         DataType = ftUnknown
         Name = 'anofabveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'anomodveic'
         ParamType = ptUnknown
       end    
       item
@@ -1798,6 +1809,11 @@ object DtmDsps: TDtmDsps
       end    
       item
         DataType = ftUnknown
+        Name = 'vgrantbens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
         Name = 'codigoregistrooutros'
         ParamType = ptUnknown
       end    
@@ -1809,6 +1825,11 @@ object DtmDsps: TDtmDsps
       item
         DataType = ftUnknown
         Name = 'garntvgarntoutros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_chaveprim'
         ParamType = ptUnknown
       end    
       item
@@ -2028,11 +2049,6 @@ object DtmDsps: TDtmDsps
       end    
       item
         DataType = ftUnknown
-        Name = 'OLD_chaveprim'
-        ParamType = ptUnknown
-      end    
-      item
-        DataType = ftUnknown
         Name = 'OLD_camporetarq'
         ParamType = ptUnknown
       end    
@@ -2129,6 +2145,11 @@ object DtmDsps: TDtmDsps
       item
         DataType = ftUnknown
         Name = 'OLD_anofabveic'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_anomodveic'
         ParamType = ptUnknown
       end    
       item
@@ -2269,6 +2290,11 @@ object DtmDsps: TDtmDsps
       item
         DataType = ftUnknown
         Name = 'OLD_garntdescrbens'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vgrantbens'
         ParamType = ptUnknown
       end    
       item

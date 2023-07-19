@@ -6,7 +6,8 @@ unit un_modulo;
 interface
 
 uses
-  Classes, SysUtils, db, FileUtil, ZConnection, ZDataset, conexao, ZSqlUpdate,UniFuncoes;
+  Classes, SysUtils, db, FileUtil, ZConnection, ZDataset, conexao, ZSqlUpdate,
+  ZStoredProcedure, UniFuncoes;
 
 type
 
@@ -19,8 +20,10 @@ type
     ZQContratoretornolido: TBooleanField;
     ZQContratovalortotalacordo: TFloatField;
     ZQtabela: TZQuery;
+    ZQContrato: TZQuery;
     ZQtabelaacordoaprovadopelodarc: TStringField;
     ZQtabelaanofabveic: TFloatField;
+    ZQtabelaanomodveic: TFloatField;
     ZQtabelaantprodtveic: TFloatField;
     ZQtabelaato: TStringField;
     ZQtabelaaverbacaoimov: TStringField;
@@ -33,7 +36,7 @@ type
     ZQtabelacgarntveic: TFloatField;
     ZQtabelachassirmarc: TFloatField;
     ZQtabelachassiveic: TStringField;
-    ZQtabelachaveprim: TFloatField;
+    ZQtabelachaveprim: TLongintField;
     ZQtabelacodigoregistrobens: TStringField;
     ZQtabelacodigoregistroimoveis: TStringField;
     ZQtabelacodigoregistrooutros: TStringField;
@@ -104,7 +107,6 @@ type
     ZQtabelatelcliente: TFloatField;
     ZQtabelatelescritorio: TFloatField;
     ZQtabelatepreg: TStringField;
-    ZQtabelatotal: TCurrencyField;
     ZQtabelauffabveic: TStringField;
     ZQtabelauflicveic: TStringField;
     ZQtabelaunidadefed: TStringField;
@@ -113,9 +115,106 @@ type
     ZQtabelavalorconfessado: TFloatField;
     ZQtabelavaloriof: TFloatField;
     ZQtabelavalparc: TFloatField;
-    ZQContrato: TZQuery;
     ZQtabelavgarntimov: TFloatField;
+    ZQtabelavgrantbens: TFloatField;
     ZQtabelavgrantveic: TFloatField;
+    ZQuery1acordoaprovadopelodarc: TStringField;
+    ZQuery1anofabveic: TFloatField;
+    ZQuery1anomodveic: TFloatField;
+    ZQuery1antprodtveic: TFloatField;
+    ZQuery1ato: TStringField;
+    ZQuery1averbacaoimov: TStringField;
+    ZQuery1bairro: TStringField;
+    ZQuery1camporetarq: TStringField;
+    ZQuery1cepcliente: TFloatField;
+    ZQuery1cgarntbens: TFloatField;
+    ZQuery1cgarntimov: TFloatField;
+    ZQuery1cgarntoutros: TFloatField;
+    ZQuery1cgarntveic: TFloatField;
+    ZQuery1chassirmarc: TFloatField;
+    ZQuery1chassiveic: TStringField;
+    ZQuery1chaveprim: TFloatField;
+    ZQuery1codigoregistrobens: TStringField;
+    ZQuery1codigoregistroimoveis: TStringField;
+    ZQuery1codigoregistrooutros: TStringField;
+    ZQuery1codigoregistroveiculo: TStringField;
+    ZQuery1codjun: TFloatField;
+    ZQuery1codmeiopagamento: TFloatField;
+    ZQuery1comarcaimov: TStringField;
+    ZQuery1complecep: TFloatField;
+    ZQuery1complemnto: TStringField;
+    ZQuery1contacorrente: TFloatField;
+    ZQuery1contrantveic: TFloatField;
+    ZQuery1controlecpfcnpjcliente: TFloatField;
+    ZQuery1corveic: TStringField;
+    ZQuery1cpfadmescrirtorio: TFloatField;
+    ZQuery1cpfavalista1: TStringField;
+    ZQuery1cpfavalista2: TStringField;
+    ZQuery1cpfcnpjcliente: TFloatField;
+    ZQuery1cpfcnpjfilialcliente: TFloatField;
+    ZQuery1ctrlav1: TStringField;
+    ZQuery1ctrlav2: TStringField;
+    ZQuery1dataacordo: TStringField;
+    ZQuery1dataaprovacao: TStringField;
+    ZQuery1datavecimento: TStringField;
+    ZQuery1datavencparc: TStringField;
+    ZQuery1datavencult: TStringField;
+    ZQuery1dddcliente: TStringField;
+    ZQuery1dddescritorio: TFloatField;
+    ZQuery1dregimov: TStringField;
+    ZQuery1endcliente: TStringField;
+    ZQuery1filav1: TStringField;
+    ZQuery1filav2: TStringField;
+    ZQuery1garntbairrologdr: TStringField;
+    ZQuery1garntcepimov: TFloatField;
+    ZQuery1garntcompllogdr: TStringField;
+    ZQuery1garntdescrbens: TStringField;
+    ZQuery1garntlogdr: TStringField;
+    ZQuery1garntnrologdr: TFloatField;
+    ZQuery1garntvgarntoutros: TFloatField;
+    ZQuery1idcontrato: TFloatField;
+    ZQuery1indacordo: TFloatField;
+    ZQuery1marcaveic: TStringField;
+    ZQuery1mcircunsimov: TFloatField;
+    ZQuery1modeloveic: TStringField;
+    ZQuery1municipio: TStringField;
+    ZQuery1nfolhaimov: TStringField;
+    ZQuery1nlivroimov: TStringField;
+    ZQuery1nmatrimov: TFloatField;
+    ZQuery1nomeavalista1: TStringField;
+    ZQuery1nomeavalista2: TStringField;
+    ZQuery1nomecliente: TStringField;
+    ZQuery1nomeescritorio: TStringField;
+    ZQuery1nomeoperador: TStringField;
+    ZQuery1nregimov: TFloatField;
+    ZQuery1num: TStringField;
+    ZQuery1numacordo: TFloatField;
+    ZQuery1numcarteira: TStringField;
+    ZQuery1numcontrato: TFloatField;
+    ZQuery1obs: TStringField;
+    ZQuery1parcelaplanoultimopag: TFloatField;
+    ZQuery1placaveic: TStringField;
+    ZQuery1porteveic: TFloatField;
+    ZQuery1quantidadedegarantias: TFloatField;
+    ZQuery1quantparc: TFloatField;
+    ZQuery1quantped: TFloatField;
+    ZQuery1renanveic: TFloatField;
+    ZQuery1taxajuros: TFloatField;
+    ZQuery1taxaref: TStringField;
+    ZQuery1telcliente: TFloatField;
+    ZQuery1telescritorio: TFloatField;
+    ZQuery1tepreg: TStringField;
+    ZQuery1uffabveic: TStringField;
+    ZQuery1uflicveic: TStringField;
+    ZQuery1unidadefed: TStringField;
+    ZQuery1valhonor: TFloatField;
+    ZQuery1valoracordo: TFloatField;
+    ZQuery1valorconfessado: TFloatField;
+    ZQuery1valoriof: TFloatField;
+    ZQuery1valparc: TFloatField;
+    ZQuery1vgarntimov: TFloatField;
+    ZQuery1vgrantbens: TFloatField;
+    ZQuery1vgrantveic: TFloatField;
     ZQueryAtualiza: TZQuery;
     ZQueryExclui: TZQuery;
     ZquerySoma: TZReadOnlyQuery;
@@ -126,11 +225,9 @@ type
     procedure DataModuleCreate(Sender: TObject);
     procedure ZConnection1AfterConnect(Sender: TObject);
     procedure GravarArquivo(nome:String);
-   // function LPad(S: string; Ch: Char; Len: Integer):string;
-   // function RPad(S: string; Ch: Char; Len: Integer): string;
-    procedure SalvarRegistro(ato: String; numacordo: Integer;
-
-
+  //  function LPad(S: string; Ch: Char; Len: Integer):string;
+  //  function RPad(S: string; Ch: Char; Len: Integer): string;
+   procedure SalvarRegistro(ato: String; numacordo: Integer;
    datacordo: String; quantpend, quantpacelas, codjuncao,
    contacorrente: Integer; numcarteira: String; numcontrato: Integer; dataVenc,
    DataVencParc: String; valorparc,valorhono: real;
@@ -140,7 +237,16 @@ type
    parcelaplano, cpfcnpjcliente, cpfcnpjfilialcli, controlecpf, codpag:integer;
    valoriof, taxajuros: real; acordo, dataaprv, nomeoperador,
    avalista1:String;cpfavalista1:String;avalista2:String;cpfavalista2:String;valorconfessado:real;
-      indacordo:Integer;filav1:String;filav2:String;ctrlav1:String;crtlav2:String;idcontrato:Integer);
+   indacordo:Integer;filav1:String;filav2:String;ctrlav1:String;crtlav2:String;idcontrato:Integer;
+   codregveic:String;quantgrantia:Integer;tipogarantia:Integer;valorveic:real;renavan:Integer;placaveic:String;
+   ufveic:String;anofabveic:Integer;anomodveic:Integer; uflincveic:String;chassiveic:Integer;nunchassiveic:String;
+   prodcontratado:Integer;contratorenegociado:Integer;marcaveic:String;modeloveic:String;corveic:String;porteveic:Integer;
+   codregimovel:String;tipogarantimovel:Integer;valorimovel:real;enderecoimovel:String;numimovel:Integer;complimovel:String;
+   bairroimovel:String;cepimovel:Integer;circunsimovel:Integer;comarcaimovel:String;matimovel:Integer;numregistro:Integer;
+   averbimovel:String;mumlivro:String;numfolha:String;regimovel:String;
+   cordregbens:String;tipogarantbens:Integer;descbem:String;valorbem:real;
+   codregoutros:String;tipogarantoutrosd:Integer;valoutros:real);
+
 
 
  //Salva o acordo
@@ -233,7 +339,55 @@ begin
            Func.RPad(IntToStr(ZQtabelacpfcnpjfilialcliente.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontrolecpfcnpjcliente.AsInteger),'0',2)+Func.RPad(IntToStr(ZQtabelacodmeiopagamento.AsInteger),'0',3)+ Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloriof.AsCurrency),',','',[rfReplaceAll]),'0',17)+
            Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelataxajuros.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelaacordoaprovadopelodarc.AsString+StringReplace(ZQtabeladataaprovacao.AsString,'/','.',[rfReplaceAll])+Func.LPad(ZQtabelanomeoperador.AsString,' ',15),
            Func.LPad(ZQtabelanomeavalista1.AsString,' ',40),  Func.LPad(ZQtabelanomeavalista2.AsString,' ',40),  Func.LPad(ZQtabelacpfavalista1.AsString,'0',9),Func.RPad(ZQtabelafilav1.AsString,'0',4),Func.LPad(ZQtabelactrlav1.AsString,'0',2),
-           Func.lPad(ZQtabelacpfavalista2.AsString,'0',9),Func.LPad(ZQtabelafilav2.AsString,'0',4),Func.LPad(ZQtabelactrlav2.AsString,'0',2), Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17),Func.RPad(IntToStr(ZQtabelaindacordo.AsInteger),'0',2) );
+           Func.LPad(ZQtabelacpfavalista2.AsString,'0',9),Func.LPad(ZQtabelafilav2.AsString,'0',4),Func.LPad(ZQtabelactrlav2.AsString,'0',2), Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17),Func.RPad(IntToStr(ZQtabelaindacordo.AsInteger),'0',2)+
+           Func.LPad(IntToStr(ZQtabelaquantidadedegarantias.AsInteger),'0',2)+
+
+           //Veiculo
+           ZQtabelacodigoregistroveiculo.AsString+Func.Rpad(IntToStr(ZQtabelacgarntveic.AsInteger),'0',3)+
+           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantveic.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
+           Func.RPad(IntToStr(ZQtabelarenanveic.AsInteger),'0',11)+
+           Func.RPad(IntToStr(ZQtabelaplacaveic.AsInteger),' ',7)+
+           ZQtabelauffabveic.AsString+Func.RPad(IntToStr(ZQtabelaanofabveic.AsInteger),'0',4)+
+           Func.RPad(IntToStr(ZQtabelaanomodveic.AsInteger),'0',4)+
+           ZQtabelauflicveic.AsString+
+           Func.Lpad(IntToStr(ZQtabelachassirmarc.AsInteger),'0',1)+
+           Func.LPad(ZQtabelachassiveic.AsString,' ',20)+
+           Func.Lpad(IntToStr(ZQtabelaantprodtveic.AsInteger),'0',3)+
+           Func.Lpad(IntToStr(ZQtabelacontrantveic.AsInteger),'0',9)+
+           Func.LPad(ZQtabelamarcaveic.AsString,' ',20)+
+           Func.LPad(ZQtabelamodeloveic.AsString,' ',20)+
+           Func.LPad(ZQtabelacorveic.AsString,' ',20)+
+           Func.Lpad(IntToStr(ZQtabelaporteveic.AsInteger),'0',1)+
+
+           //Imoveis
+           ZQtabelacodigoregistroimoveis.AsString+
+           Func.Lpad(IntToStr(ZQtabelacgarntimov.AsInteger),'0',3)+
+           Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelavgarntimov.AsCurrency),',','',[rfReplaceAll]),'0',18)+
+           Func.LPad(ZQtabelagarntlogdr.AsString,' ',38)+
+           Func.Lpad(IntToStr(ZQtabelagarntnrologdr.AsInteger),'0',5)+
+           Func.LPad(ZQtabelagarntcompllogdr.AsString,' ',10)+
+           Func.LPad(ZQtabelagarntbairrologdr.AsString,' ',20)+
+           Func.Lpad(IntToStr(ZQtabelagarntcepimov.AsInteger),'0',8)+
+           Func.Lpad(IntToStr(ZQtabelamcircunsimov.AsInteger),'0',3)+
+           Func.LPad(ZQtabelacomarcaimov.AsString,' ',41)+
+           Func.Lpad(IntToStr(ZQtabelanmatrimov.AsInteger),'0',7)+
+           Func.Lpad(IntToStr(ZQtabelanregimov.AsInteger),'0',10)+
+           Func.LPad(ZQtabelaaverbacaoimov.AsString,' ',11)+
+           Func.LPad(ZQtabelanlivroimov.AsString,' ',5)+
+           Func.LPad(ZQtabelanfolhaimov.AsString,' ',3)+
+           Func.LPad(ZQtabeladregimov.AsString,' ',8)+
+
+           //Bens
+           ZQtabelacodigoregistrobens.AsString+
+           Func.LPad(IntToStr(ZQtabelacgarntbens.AsInteger),'0',3)+
+           Func.RPad(ZQtabelagarntdescrbens.AsString,' ',50)+
+           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantbens.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
+
+           //Outros
+           ZQtabelacodigoregistrooutros.AsString+
+           Func.LPad(IntToStr(ZQtabelacgarntoutros.AsInteger),'0',3)+
+           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelagarntvgarntoutros.AsCurrency) ,',','',[rfReplaceAll]),'0',18));
+           //Recebe total
            recebe:=  Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17); //Func.RPad(StringReplace(FormatCurr('0.00',Round(ZQtabelavalparc.AsCurrency)) ,',','',[rfReplaceAll]),'0',17);
            ZQtabela.Next;
      end;
@@ -249,6 +403,9 @@ begin
 
 
 end;
+
+
+
 {
 function TDtmDsps.LPad(S: string; Ch: Char; Len: Integer): string;
 var   RestLen: Integer;
@@ -280,7 +437,15 @@ procedure TDtmDsps.SalvarRegistro(ato: String; numacordo: Integer;
   parcelaplano, cpfcnpjcliente, cpfcnpjfilialcli, controlecpf, codpag: integer;
   valoriof, taxajuros: real; acordo, dataaprv, nomeoperador, avalista1: String;
   cpfavalista1: String; avalista2: String; cpfavalista2: String;
-  valorconfessado: real; indacordo: Integer;filav1:String;filav2:String;ctrlav1:String;crtlav2:String;idcontrato:Integer);
+  valorconfessado: real; indacordo: Integer;filav1:String;filav2:String;ctrlav1:String;crtlav2:String;idcontrato:Integer;
+  codregveic:String;quantgrantia:Integer;tipogarantia:Integer;valorveic:real;renavan:Integer;placaveic:String;ufveic:String;
+  anofabveic:Integer;anomodveic:Integer;uflincveic:String;chassiveic:Integer;nunchassiveic:String;prodcontratado:Integer;
+  contratorenegociado:Integer;marcaveic:String;modeloveic:String;corveic:String;porteveic:Integer;
+  codregimovel:String;tipogarantimovel:Integer;valorimovel:real;enderecoimovel:String;numimovel:Integer;complimovel:String;
+  bairroimovel:String;cepimovel:Integer;circunsimovel:Integer;comarcaimovel:String;matimovel:Integer;numregistro:Integer;
+  averbimovel:String;mumlivro:String;numfolha:String;regimovel:String;
+  cordregbens:String;tipogarantbens:Integer;descbem:String;valorbem:real;
+  codregoutros:String;tipogarantoutrosd:Integer;valoutros:real);
 begin
    try
        ZQtabela.Open;
@@ -354,6 +519,52 @@ begin
        ZQtabela.FieldByName('filav1').AsString:=filav1;
        ZQtabela.FieldByName('filav2').AsString:=filav2;
        ZQtabela.FieldByName('idcontrato').AsInteger:=idcontrato;
+       //Veiculos
+       ZQtabela.FieldByName('codigoregistroveiculo').AsString:=codregveic;
+       ZQtabela.FieldByName('quantidadedegarantias').AsInteger:=quantgrantia;
+       ZQtabela.FieldByName('cgarntveic').AsInteger:=tipogarantia;
+       ZQtabela.FieldByName('vgrantveic').AsFloat:=valorveic;
+       ZQtabela.FieldByName('renanveic').AsInteger:=renavan;
+       ZQtabela.FieldByName('placaveic').AsString:=placaveic;
+       ZQtabela.FieldByName('uffabveic').AsString:=ufveic;
+       ZQtabela.FieldByName('anofabveic').AsInteger:=anofabveic;
+       ZQtabela.FieldByName('anomodveic').AsInteger:=anomodveic;
+       ZQtabela.FieldByName('uflicveic').AsString:=uflincveic;
+       ZQtabela.FieldByName('chassirmarc').AsInteger:=chassiveic;
+       ZQtabela.FieldByName('chassiveic').AsString:=nunchassiveic;
+       ZQtabela.FieldByName('antprodtveic').AsInteger:=prodcontratado;
+       ZQtabela.FieldByName('contrantveic').AsInteger:=contratorenegociado;
+       ZQtabela.FieldByName('marcaveic').AsString:=marcaveic;
+       ZQtabela.FieldByName('modeloveic').AsString:=modeloveic;
+       ZQtabela.FieldByName('corveic').AsString:=corveic;
+       ZQtabela.FieldByName('porteveic').AsInteger:=porteveic;
+       //Imoveis
+       ZQtabela.FieldByName('codigoregistroimoveis').AsString:=codregimovel;
+       ZQtabela.FieldByName('cgarntimov').AsInteger:=tipogarantimovel;
+       ZQtabela.FieldByName('vgarntimov').AsFloat:=valorimovel;
+       ZQtabela.FieldByName('garntlogdr').AsString:=enderecoimovel;
+       ZQtabela.FieldByName('garntnrologdr').AsInteger:=numimovel;
+       ZQtabela.FieldByName('garntcompllogdr').AsString:=complimovel;
+       ZQtabela.FieldByName('garntbairrologdr').AsString:=bairroimovel;
+       ZQtabela.FieldByName('garntcepimov').AsInteger:=cepimovel;
+       ZQtabela.FieldByName('mcircunsimov').AsInteger:=circunsimovel;
+       ZQtabela.FieldByName('comarcaimov').AsString:=comarcaimovel;
+       ZQtabela.FieldByName('nmatrimov').AsInteger:=matimovel;
+       ZQtabela.FieldByName('nregimov').AsInteger:=numregistro;
+       ZQtabela.FieldByName('averbacaoimov').AsString:=averbimovel;
+       ZQtabela.FieldByName('nlivroimov').AsString:=mumlivro;
+       ZQtabela.FieldByName('nfolhaimov').AsString:=numfolha;
+       ZQtabela.FieldByName('dregimov').AsString:=regimovel;
+       //Bens
+       ZQtabela.FieldByName('codigoregistrobens').AsString:=cordregbens;
+       ZQtabela.FieldByName('cgarntbens').AsInteger:=tipogarantbens;
+       ZQtabela.FieldByName('garntdescrbens').AsString:=descbem;
+       ZQtabela.FieldByName('vgrantbens').AsFloat:=valorbem;
+       //Outros
+       ZQtabela.FieldByName('codigoregistrooutros').AsString:=codregoutros;
+       ZQtabela.FieldByName('cgarntoutros').AsInteger:=tipogarantoutrosd;
+       ZQtabela.FieldByName('garntvgarntoutros').AsFloat:=valoutros;
+
 
        ZQtabela.ApplyUpdates;
    except
@@ -368,6 +579,8 @@ begin
 
 
 end;
+
+
 
 //Procedure salva o contrato
 procedure TDtmDsps.SalvarAcordo(acordo: Integer; dataelaboracao: TDate;
