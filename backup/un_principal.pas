@@ -241,6 +241,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure CbIndAcordoChange(Sender: TObject);
     procedure edtChassi1VeicChange(Sender: TObject);
+    procedure EdtContaCorrenteChange(Sender: TObject);
     procedure EdtEstadoCliChange(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
     procedure DataSource2DataChange(Sender: TObject; Field: TField);
@@ -606,7 +607,7 @@ begin
          StrToInt(EdtConCpfCnpjClie.Text),StrToInt(CbMeioPagto.Text),StrToFloat(MkValorIof.Text),StrToCurr(EdtTaxaJuros.Text),
          CbAcordo.Text,DateToStr(DtAprovacao.Date),EdtNomeOperador.Text,EdtNomeAvalista1.text,EdtCpfAva1.text,EdtNomeAvalista2.Text,
          EdtCpfAva2.text,StrToCurr(EdtValorConfessado.text),CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato,
-         edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), CbGarantiasImovel.ItemIndex StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
+         edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
          StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
          EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
          edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
@@ -789,6 +790,11 @@ begin
 end;
 
 procedure TFrmdsps.edtChassi1VeicChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.EdtContaCorrenteChange(Sender: TObject);
 begin
 
 end;

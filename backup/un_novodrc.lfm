@@ -1,7 +1,7 @@
 object FrmDrcNovo: TFrmDrcNovo
   Left = 0
   Height = 687
-  Top = 3
+  Top = 2
   Width = 1008
   Caption = 'DRC'
   ClientHeight = 687

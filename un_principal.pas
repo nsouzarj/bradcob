@@ -241,6 +241,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure CbIndAcordoChange(Sender: TObject);
     procedure edtChassi1VeicChange(Sender: TObject);
+    procedure EdtContaCorrenteChange(Sender: TObject);
     procedure EdtEstadoCliChange(Sender: TObject);
     procedure DataSource1DataChange(Sender: TObject; Field: TField);
     procedure DataSource2DataChange(Sender: TObject; Field: TField);
@@ -595,9 +596,10 @@ begin
          // Calcular a parcela com o percentual
          //Insere na tabela os dados capturados da tela de entrada
          
-         valparc:=(StrToFloat(MkValorTotalAcordo.Text)/cont);
-         valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));
-         valparc:=valparc+valor;
+         valparc:=(StrToFloat(MkValorTotalAcordo.Text)/cont);   //A Valor da parcela e Valor total do acordo divido pelo numero de parcelas
+         valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));    //A Taxa de juros e valor da parcela nultiplicado pela taxa de juros dividido por 100
+         valparc:=valparc+valor; //O valor encontrado na taxa de juros e acrescentado no valor de cada parcela para correcao das mesma
+
          DtmDsps.SalvarRegistro(CbAto.Text,StrToInt(EdtNumAcordo.Text),DateToStr(DtAcordo.Date),StrToInt(EdtQunt.Text),StrToInt(EdtQunatParcela.Text),
          StrToInt(EdtCodJuncao.text),StrToInt(EdtContaCorrente.Text),EdtNumCarteira.text,StrToInt(EdtNumContrato.text),DateToStr(DtaDataVenc.Date),DateToStr(DtaDataVencParc.Date),
          valparc,StrToFloat(EdtValorHonorario.Text),CbTaxaRef.Text,EdtObservacao.text,EdtNomeCliente.text,EdtEnderecoCliente.text,
@@ -789,6 +791,11 @@ begin
 end;
 
 procedure TFrmdsps.edtChassi1VeicChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.EdtContaCorrenteChange(Sender: TObject);
 begin
 
 end;

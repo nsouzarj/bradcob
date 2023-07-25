@@ -1,18 +1,18 @@
 object Frmdsps: TFrmdsps
-  Left = 116
-  Height = 789
-  Top = 88
-  Width = 1630
+  Left = 143
+  Height = 802
+  Top = 59
+  Width = 1627
   Caption = 'CADASTRO DE ACORDO REMESSA/RETORNO'
-  ClientHeight = 789
-  ClientWidth = 1630
+  ClientHeight = 0
+  ClientWidth = 0
   Color = 15000804
   DefaultMonitor = dmPrimary
   OnCreate = FormCreate
   Position = poDesktopCenter
   LCLVersion = '2.0.10.0'
   object DBGrid1: TDBGrid
-    Left = 7
+    Left = 6
     Height = 192
     Top = 544
     Width = 1617
@@ -406,7 +406,7 @@ object Frmdsps: TFrmdsps
     TabOrder = 4
   end
   object BitBtn1: TBitBtn
-    Left = 0
+    Left = 6
     Height = 36
     Hint = 'Gera o arquivo de envio ao ski line.'
     Top = 736
@@ -849,10 +849,10 @@ object Frmdsps: TFrmdsps
     TabOrder = 0
   end
   object BitBtn4: TBitBtn
-    Left = 192
+    Left = 184
     Height = 36
     Hint = 'Aqui abre o arquivo de retorno e lê seu conteúdo. '
-    Top = 738
+    Top = 736
     Width = 173
     Caption = 'LER ARQ. RETORNO'
     Color = clMoneyGreen
@@ -1156,34 +1156,36 @@ object Frmdsps: TFrmdsps
     TabOrder = 3
   end
   object Panel2: TPanel
-    Left = 1224
+    Left = 1072
     Height = 50
-    Top = 736
-    Width = 399
+    Top = 744
+    Width = 551
     ClientHeight = 50
-    ClientWidth = 399
+    ClientWidth = 551
     Color = 306619
     ParentColor = False
     TabOrder = 6
+    Wordwrap = True
     object Label51: TLabel
-      Left = 16
+      Left = 48
       Height = 28
       Top = 8
-      Width = 213
-      Caption = 'Valor Total(Corrigido).:'
+      Width = 335
+      Caption = 'Valor Total das Parcelas(Corrigido).:'
       Font.Height = -20
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
     end
     object DBText2: TDBText
-      Left = 240
+      Left = 368
       Height = 28
       Top = 8
       Width = 152
       Alignment = taRightJustify
       AutoSize = False
       DataField = 'total'
+      DataSource = DataSource1
       Font.Color = clBlue
       Font.Height = -20
       ParentColor = False
@@ -1377,6 +1379,7 @@ object Frmdsps: TFrmdsps
         Top = 56
         Width = 80
         MaxLength = 7
+        OnChange = EdtContaCorrenteChange
         ParentFont = False
         TabOrder = 8
         Text = '000000'
@@ -3865,6 +3868,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 176
         Width = 326
+        CharCase = ecUppercase
         Font.Color = clBlack
         MaxLength = 10
         ParentFont = False
@@ -5174,7 +5178,6 @@ object Frmdsps: TFrmdsps
     end
   end
   object DataSource1: TDataSource
-    AutoEdit = False
     DataSet = DtmDsps.ZQtabela
     OnDataChange = DataSource1DataChange
     Left = 664

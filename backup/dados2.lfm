@@ -1,0 +1,962 @@
+object DtmModule2: TDtmModule2
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 383
+  HorizontalOffset = 137
+  VerticalOffset = 49
+  Width = 474
+  object zQHeader: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT idheader, fixo, nomempresa, datarepasse, pretcontas, numlote, '
+      '       fixobranco'
+      '  FROM "TB_PC_HEADER"'
+    )
+    Params = <>
+    Left = 80
+    Top = 49
+    object zQHeaderidheader: TLongintField
+      FieldKind = fkData
+      FieldName = 'idheader'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zQHeaderfixo: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 4
+    end
+    object zQHeadernomempresa: TStringField
+      FieldKind = fkData
+      FieldName = 'nomempresa'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zQHeaderdatarepasse: TStringField
+      FieldKind = fkData
+      FieldName = 'datarepasse'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object zQHeaderpretcontas: TStringField
+      FieldKind = fkData
+      FieldName = 'pretcontas'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 76
+    end
+    object zQHeadernumlote: TStringField
+      FieldKind = fkData
+      FieldName = 'numlote'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 24
+    end
+    object zQHeaderfixobranco: TStringField
+      FieldKind = fkData
+      FieldName = 'fixobranco'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 704
+    end
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_PC_HEADER"'
+      'WHERE'
+      '  "TB_PC_HEADER".idheader = :OLD_idheader AND'
+      '  "TB_PC_HEADER".fixo = :OLD_fixo AND'
+      '  (("TB_PC_HEADER".nomempresa IS NULL AND :OLD_nomempresa IS NULL) OR ("TB_PC_HEADER".nomempresa = :OLD_nomempresa)) AND'
+      '  (("TB_PC_HEADER".datarepasse IS NULL AND :OLD_datarepasse IS NULL) OR ("TB_PC_HEADER".datarepasse = :OLD_datarepasse)) AND'
+      '  (("TB_PC_HEADER".pretcontas IS NULL AND :OLD_pretcontas IS NULL) OR ("TB_PC_HEADER".pretcontas = :OLD_pretcontas)) AND'
+      '  (("TB_PC_HEADER".numlote IS NULL AND :OLD_numlote IS NULL) OR ("TB_PC_HEADER".numlote = :OLD_numlote)) AND'
+      '  (("TB_PC_HEADER".fixobranco IS NULL AND :OLD_fixobranco IS NULL) OR ("TB_PC_HEADER".fixobranco = :OLD_fixobranco))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_PC_HEADER"'
+      '  (idheader, fixo, nomempresa, datarepasse, pretcontas, numlote, fixobranco)'
+      'VALUES'
+      '  (:idheader, :fixo, :nomempresa, :datarepasse, :pretcontas, :numlote, '
+      '   :fixobranco)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_PC_HEADER" SET'
+      '  idheader = :idheader,'
+      '  fixo = :fixo,'
+      '  nomempresa = :nomempresa,'
+      '  datarepasse = :datarepasse,'
+      '  pretcontas = :pretcontas,'
+      '  numlote = :numlote,'
+      '  fixobranco = :fixobranco'
+      'WHERE'
+      '  "TB_PC_HEADER".idheader = :OLD_idheader AND'
+      '  "TB_PC_HEADER".fixo = :OLD_fixo AND'
+      '  (("TB_PC_HEADER".nomempresa IS NULL AND :OLD_nomempresa IS NULL) OR ("TB_PC_HEADER".nomempresa = :OLD_nomempresa)) AND'
+      '  (("TB_PC_HEADER".datarepasse IS NULL AND :OLD_datarepasse IS NULL) OR ("TB_PC_HEADER".datarepasse = :OLD_datarepasse)) AND'
+      '  (("TB_PC_HEADER".pretcontas IS NULL AND :OLD_pretcontas IS NULL) OR ("TB_PC_HEADER".pretcontas = :OLD_pretcontas)) AND'
+      '  (("TB_PC_HEADER".numlote IS NULL AND :OLD_numlote IS NULL) OR ("TB_PC_HEADER".numlote = :OLD_numlote)) AND'
+      '  (("TB_PC_HEADER".fixobranco IS NULL AND :OLD_fixobranco IS NULL) OR ("TB_PC_HEADER".fixobranco = :OLD_fixobranco))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 176
+    Top = 49
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idheader'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datarepasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pretcontas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixobranco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idheader'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_fixo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_datarepasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_pretcontas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_fixobranco'
+        ParamType = ptUnknown
+      end>
+  end
+  object zQtrailler: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL2
+    SQL.Strings = (
+      'SELECT idheader, fixo, nomempresa, datarepasse, pretcontas, numlote, '
+      '       fixobranco'
+      '  FROM "TB_PC_HEADER"'
+    )
+    Params = <>
+    Left = 77
+    Top = 128
+    object zQtrailleridheader: TLongintField
+      FieldKind = fkData
+      FieldName = 'idheader'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zQtraillerfixo: TStringField
+      FieldKind = fkData
+      FieldName = 'fixo'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 4
+    end
+    object zQtraillernomempresa: TStringField
+      FieldKind = fkData
+      FieldName = 'nomempresa'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object zQtraillerdatarepasse: TStringField
+      FieldKind = fkData
+      FieldName = 'datarepasse'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object zQtraillerpretcontas: TStringField
+      FieldKind = fkData
+      FieldName = 'pretcontas'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 76
+    end
+    object zQtraillernumlote: TStringField
+      FieldKind = fkData
+      FieldName = 'numlote'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 24
+    end
+    object zQtraillerfixobranco: TStringField
+      FieldKind = fkData
+      FieldName = 'fixobranco'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 704
+    end
+  end
+  object zQrec: TZQuery
+    Connection = DtmConexao.DbConexaoPg
+    UpdateObject = ZUpdateSQL3
+    SQL.Strings = (
+      'SELECT idreg, agencia, conta, carteira, contrato, dtvencimento, dtremessa, '
+      '       idmolp, dtpagto, vlrinicial, vlratualizado, vlrjuros, vlrmulta, '
+      '       vlrhonorarios, vlrdespesas, vlrdebito, siglaempresa, tipopc, '
+      '       vlrrecebido, vlrrespasse, numagencia, nossonumboleto, vlrrecebido1'
+      '  FROM "TB_PC_REG"'
+    )
+    Params = <>
+    Left = 77
+    Top = 232
+    object zQrecidreg: TLongintField
+      FieldKind = fkData
+      FieldName = 'idreg'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zQrecagencia: TStringField
+      FieldKind = fkData
+      FieldName = 'agencia'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object zQrecconta: TStringField
+      FieldKind = fkData
+      FieldName = 'conta'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 28
+    end
+    object zQreccarteira: TStringField
+      FieldKind = fkData
+      FieldName = 'carteira'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object zQreccontrato: TStringField
+      FieldKind = fkData
+      FieldName = 'contrato'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 28
+    end
+    object zQrecdtvencimento: TStringField
+      FieldKind = fkData
+      FieldName = 'dtvencimento'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object zQrecdtremessa: TStringField
+      FieldKind = fkData
+      FieldName = 'dtremessa'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object zQrecidmolp: TStringField
+      FieldKind = fkData
+      FieldName = 'idmolp'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object zQrecdtpagto: TStringField
+      FieldKind = fkData
+      FieldName = 'dtpagto'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object zQrecvlrinicial: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrinicial'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlratualizado: TStringField
+      FieldKind = fkData
+      FieldName = 'vlratualizado'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlrjuros: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrjuros'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlrmulta: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrmulta'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlrhonorarios: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrhonorarios'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlrdespesas: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrdespesas'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlrdebito: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrdebito'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecsiglaempresa: TStringField
+      FieldKind = fkData
+      FieldName = 'siglaempresa'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object zQrectipopc: TStringField
+      FieldKind = fkData
+      FieldName = 'tipopc'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object zQrecvlrrecebido: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrrecebido'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecvlrrespasse: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrrespasse'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 72
+    end
+    object zQrecnumagencia: TStringField
+      FieldKind = fkData
+      FieldName = 'numagencia'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 52
+    end
+    object zQrecnossonumboleto: TStringField
+      FieldKind = fkData
+      FieldName = 'nossonumboleto'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 48
+    end
+    object zQrecvlrrecebido1: TStringField
+      FieldKind = fkData
+      FieldName = 'vlrrecebido1'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 52
+    end
+  end
+  object ZUpdateSQL2: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_PC_HEADER"'
+      'WHERE'
+      '  "TB_PC_HEADER".idheader = :OLD_idheader AND'
+      '  "TB_PC_HEADER".fixo = :OLD_fixo AND'
+      '  (("TB_PC_HEADER".nomempresa IS NULL AND :OLD_nomempresa IS NULL) OR ("TB_PC_HEADER".nomempresa = :OLD_nomempresa)) AND'
+      '  (("TB_PC_HEADER".datarepasse IS NULL AND :OLD_datarepasse IS NULL) OR ("TB_PC_HEADER".datarepasse = :OLD_datarepasse)) AND'
+      '  (("TB_PC_HEADER".pretcontas IS NULL AND :OLD_pretcontas IS NULL) OR ("TB_PC_HEADER".pretcontas = :OLD_pretcontas)) AND'
+      '  (("TB_PC_HEADER".numlote IS NULL AND :OLD_numlote IS NULL) OR ("TB_PC_HEADER".numlote = :OLD_numlote)) AND'
+      '  (("TB_PC_HEADER".fixobranco IS NULL AND :OLD_fixobranco IS NULL) OR ("TB_PC_HEADER".fixobranco = :OLD_fixobranco))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_PC_HEADER"'
+      '  (idheader, fixo, nomempresa, datarepasse, pretcontas, numlote, fixobranco)'
+      'VALUES'
+      '  (:idheader, :fixo, :nomempresa, :datarepasse, :pretcontas, :numlote, '
+      '   :fixobranco)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_PC_HEADER" SET'
+      '  idheader = :idheader,'
+      '  fixo = :fixo,'
+      '  nomempresa = :nomempresa,'
+      '  datarepasse = :datarepasse,'
+      '  pretcontas = :pretcontas,'
+      '  numlote = :numlote,'
+      '  fixobranco = :fixobranco'
+      'WHERE'
+      '  "TB_PC_HEADER".idheader = :OLD_idheader AND'
+      '  "TB_PC_HEADER".fixo = :OLD_fixo AND'
+      '  (("TB_PC_HEADER".nomempresa IS NULL AND :OLD_nomempresa IS NULL) OR ("TB_PC_HEADER".nomempresa = :OLD_nomempresa)) AND'
+      '  (("TB_PC_HEADER".datarepasse IS NULL AND :OLD_datarepasse IS NULL) OR ("TB_PC_HEADER".datarepasse = :OLD_datarepasse)) AND'
+      '  (("TB_PC_HEADER".pretcontas IS NULL AND :OLD_pretcontas IS NULL) OR ("TB_PC_HEADER".pretcontas = :OLD_pretcontas)) AND'
+      '  (("TB_PC_HEADER".numlote IS NULL AND :OLD_numlote IS NULL) OR ("TB_PC_HEADER".numlote = :OLD_numlote)) AND'
+      '  (("TB_PC_HEADER".fixobranco IS NULL AND :OLD_fixobranco IS NULL) OR ("TB_PC_HEADER".fixobranco = :OLD_fixobranco))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 176
+    Top = 136
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idheader'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nomempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datarepasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'pretcontas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixobranco'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idheader'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_fixo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nomempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_datarepasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_pretcontas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numlote'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_fixobranco'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZUpdateSQL3: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM "TB_PC_REG"'
+      'WHERE'
+      '  "TB_PC_REG".idreg = :OLD_idreg AND'
+      '  (("TB_PC_REG".agencia IS NULL AND :OLD_agencia IS NULL) OR ("TB_PC_REG".agencia = :OLD_agencia)) AND'
+      '  (("TB_PC_REG".conta IS NULL AND :OLD_conta IS NULL) OR ("TB_PC_REG".conta = :OLD_conta)) AND'
+      '  (("TB_PC_REG".carteira IS NULL AND :OLD_carteira IS NULL) OR ("TB_PC_REG".carteira = :OLD_carteira)) AND'
+      '  (("TB_PC_REG".contrato IS NULL AND :OLD_contrato IS NULL) OR ("TB_PC_REG".contrato = :OLD_contrato)) AND'
+      '  (("TB_PC_REG".dtvencimento IS NULL AND :OLD_dtvencimento IS NULL) OR ("TB_PC_REG".dtvencimento = :OLD_dtvencimento)) AND'
+      '  (("TB_PC_REG".dtremessa IS NULL AND :OLD_dtremessa IS NULL) OR ("TB_PC_REG".dtremessa = :OLD_dtremessa)) AND'
+      '  (("TB_PC_REG".idmolp IS NULL AND :OLD_idmolp IS NULL) OR ("TB_PC_REG".idmolp = :OLD_idmolp)) AND'
+      '  (("TB_PC_REG".dtpagto IS NULL AND :OLD_dtpagto IS NULL) OR ("TB_PC_REG".dtpagto = :OLD_dtpagto)) AND'
+      '  (("TB_PC_REG".vlrinicial IS NULL AND :OLD_vlrinicial IS NULL) OR ("TB_PC_REG".vlrinicial = :OLD_vlrinicial)) AND'
+      '  (("TB_PC_REG".vlratualizado IS NULL AND :OLD_vlratualizado IS NULL) OR ("TB_PC_REG".vlratualizado = :OLD_vlratualizado)) AND'
+      '  (("TB_PC_REG".vlrjuros IS NULL AND :OLD_vlrjuros IS NULL) OR ("TB_PC_REG".vlrjuros = :OLD_vlrjuros)) AND'
+      '  (("TB_PC_REG".vlrmulta IS NULL AND :OLD_vlrmulta IS NULL) OR ("TB_PC_REG".vlrmulta = :OLD_vlrmulta)) AND'
+      '  (("TB_PC_REG".vlrhonorarios IS NULL AND :OLD_vlrhonorarios IS NULL) OR ("TB_PC_REG".vlrhonorarios = :OLD_vlrhonorarios)) AND'
+      '  (("TB_PC_REG".vlrdespesas IS NULL AND :OLD_vlrdespesas IS NULL) OR ("TB_PC_REG".vlrdespesas = :OLD_vlrdespesas)) AND'
+      '  (("TB_PC_REG".vlrdebito IS NULL AND :OLD_vlrdebito IS NULL) OR ("TB_PC_REG".vlrdebito = :OLD_vlrdebito)) AND'
+      '  (("TB_PC_REG".siglaempresa IS NULL AND :OLD_siglaempresa IS NULL) OR ("TB_PC_REG".siglaempresa = :OLD_siglaempresa)) AND'
+      '  (("TB_PC_REG".tipopc IS NULL AND :OLD_tipopc IS NULL) OR ("TB_PC_REG".tipopc = :OLD_tipopc)) AND'
+      '  (("TB_PC_REG".vlrrecebido IS NULL AND :OLD_vlrrecebido IS NULL) OR ("TB_PC_REG".vlrrecebido = :OLD_vlrrecebido)) AND'
+      '  (("TB_PC_REG".vlrrespasse IS NULL AND :OLD_vlrrespasse IS NULL) OR ("TB_PC_REG".vlrrespasse = :OLD_vlrrespasse)) AND'
+      '  (("TB_PC_REG".numagencia IS NULL AND :OLD_numagencia IS NULL) OR ("TB_PC_REG".numagencia = :OLD_numagencia)) AND'
+      '  (("TB_PC_REG".nossonumboleto IS NULL AND :OLD_nossonumboleto IS NULL) OR ("TB_PC_REG".nossonumboleto = :OLD_nossonumboleto)) AND'
+      '  (("TB_PC_REG".vlrrecebido1 IS NULL AND :OLD_vlrrecebido1 IS NULL) OR ("TB_PC_REG".vlrrecebido1 = :OLD_vlrrecebido1))'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO "TB_PC_REG"'
+      '  (idreg, agencia, conta, carteira, contrato, dtvencimento, dtremessa, '
+      '   idmolp, dtpagto, vlrinicial, vlratualizado, vlrjuros, vlrmulta, vlrhonorarios, '
+      '   vlrdespesas, vlrdebito, siglaempresa, tipopc, vlrrecebido, vlrrespasse, '
+      '   numagencia, nossonumboleto, vlrrecebido1)'
+      'VALUES'
+      '  (:idreg, :agencia, :conta, :carteira, :contrato, :dtvencimento, :dtremessa, '
+      '   :idmolp, :dtpagto, :vlrinicial, :vlratualizado, :vlrjuros, :vlrmulta, '
+      '   :vlrhonorarios, :vlrdespesas, :vlrdebito, :siglaempresa, :tipopc, :vlrrecebido, '
+      '   :vlrrespasse, :numagencia, :nossonumboleto, :vlrrecebido1)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE "TB_PC_REG" SET'
+      '  idreg = :idreg,'
+      '  agencia = :agencia,'
+      '  conta = :conta,'
+      '  carteira = :carteira,'
+      '  contrato = :contrato,'
+      '  dtvencimento = :dtvencimento,'
+      '  dtremessa = :dtremessa,'
+      '  idmolp = :idmolp,'
+      '  dtpagto = :dtpagto,'
+      '  vlrinicial = :vlrinicial,'
+      '  vlratualizado = :vlratualizado,'
+      '  vlrjuros = :vlrjuros,'
+      '  vlrmulta = :vlrmulta,'
+      '  vlrhonorarios = :vlrhonorarios,'
+      '  vlrdespesas = :vlrdespesas,'
+      '  vlrdebito = :vlrdebito,'
+      '  siglaempresa = :siglaempresa,'
+      '  tipopc = :tipopc,'
+      '  vlrrecebido = :vlrrecebido,'
+      '  vlrrespasse = :vlrrespasse,'
+      '  numagencia = :numagencia,'
+      '  nossonumboleto = :nossonumboleto,'
+      '  vlrrecebido1 = :vlrrecebido1'
+      'WHERE'
+      '  "TB_PC_REG".idreg = :OLD_idreg AND'
+      '  (("TB_PC_REG".agencia IS NULL AND :OLD_agencia IS NULL) OR ("TB_PC_REG".agencia = :OLD_agencia)) AND'
+      '  (("TB_PC_REG".conta IS NULL AND :OLD_conta IS NULL) OR ("TB_PC_REG".conta = :OLD_conta)) AND'
+      '  (("TB_PC_REG".carteira IS NULL AND :OLD_carteira IS NULL) OR ("TB_PC_REG".carteira = :OLD_carteira)) AND'
+      '  (("TB_PC_REG".contrato IS NULL AND :OLD_contrato IS NULL) OR ("TB_PC_REG".contrato = :OLD_contrato)) AND'
+      '  (("TB_PC_REG".dtvencimento IS NULL AND :OLD_dtvencimento IS NULL) OR ("TB_PC_REG".dtvencimento = :OLD_dtvencimento)) AND'
+      '  (("TB_PC_REG".dtremessa IS NULL AND :OLD_dtremessa IS NULL) OR ("TB_PC_REG".dtremessa = :OLD_dtremessa)) AND'
+      '  (("TB_PC_REG".idmolp IS NULL AND :OLD_idmolp IS NULL) OR ("TB_PC_REG".idmolp = :OLD_idmolp)) AND'
+      '  (("TB_PC_REG".dtpagto IS NULL AND :OLD_dtpagto IS NULL) OR ("TB_PC_REG".dtpagto = :OLD_dtpagto)) AND'
+      '  (("TB_PC_REG".vlrinicial IS NULL AND :OLD_vlrinicial IS NULL) OR ("TB_PC_REG".vlrinicial = :OLD_vlrinicial)) AND'
+      '  (("TB_PC_REG".vlratualizado IS NULL AND :OLD_vlratualizado IS NULL) OR ("TB_PC_REG".vlratualizado = :OLD_vlratualizado)) AND'
+      '  (("TB_PC_REG".vlrjuros IS NULL AND :OLD_vlrjuros IS NULL) OR ("TB_PC_REG".vlrjuros = :OLD_vlrjuros)) AND'
+      '  (("TB_PC_REG".vlrmulta IS NULL AND :OLD_vlrmulta IS NULL) OR ("TB_PC_REG".vlrmulta = :OLD_vlrmulta)) AND'
+      '  (("TB_PC_REG".vlrhonorarios IS NULL AND :OLD_vlrhonorarios IS NULL) OR ("TB_PC_REG".vlrhonorarios = :OLD_vlrhonorarios)) AND'
+      '  (("TB_PC_REG".vlrdespesas IS NULL AND :OLD_vlrdespesas IS NULL) OR ("TB_PC_REG".vlrdespesas = :OLD_vlrdespesas)) AND'
+      '  (("TB_PC_REG".vlrdebito IS NULL AND :OLD_vlrdebito IS NULL) OR ("TB_PC_REG".vlrdebito = :OLD_vlrdebito)) AND'
+      '  (("TB_PC_REG".siglaempresa IS NULL AND :OLD_siglaempresa IS NULL) OR ("TB_PC_REG".siglaempresa = :OLD_siglaempresa)) AND'
+      '  (("TB_PC_REG".tipopc IS NULL AND :OLD_tipopc IS NULL) OR ("TB_PC_REG".tipopc = :OLD_tipopc)) AND'
+      '  (("TB_PC_REG".vlrrecebido IS NULL AND :OLD_vlrrecebido IS NULL) OR ("TB_PC_REG".vlrrecebido = :OLD_vlrrecebido)) AND'
+      '  (("TB_PC_REG".vlrrespasse IS NULL AND :OLD_vlrrespasse IS NULL) OR ("TB_PC_REG".vlrrespasse = :OLD_vlrrespasse)) AND'
+      '  (("TB_PC_REG".numagencia IS NULL AND :OLD_numagencia IS NULL) OR ("TB_PC_REG".numagencia = :OLD_numagencia)) AND'
+      '  (("TB_PC_REG".nossonumboleto IS NULL AND :OLD_nossonumboleto IS NULL) OR ("TB_PC_REG".nossonumboleto = :OLD_nossonumboleto)) AND'
+      '  (("TB_PC_REG".vlrrecebido1 IS NULL AND :OLD_vlrrecebido1 IS NULL) OR ("TB_PC_REG".vlrrecebido1 = :OLD_vlrrecebido1))'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 176
+    Top = 232
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'idreg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'agencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'conta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'carteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'contrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtvencimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtremessa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'idmolp'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'dtpagto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrinicial'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlratualizado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrjuros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrmulta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrhonorarios'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrdespesas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrdebito'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'siglaempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tipopc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrrecebido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrrespasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'numagencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'nossonumboleto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'vlrrecebido1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idreg'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_agencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_conta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_carteira'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_contrato'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dtvencimento'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dtremessa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_idmolp'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_dtpagto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrinicial'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlratualizado'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrjuros'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrmulta'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrhonorarios'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrdespesas'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrdebito'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_siglaempresa'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_tipopc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrrecebido'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrrespasse'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_numagencia'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_nossonumboleto'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_vlrrecebido1'
+        ParamType = ptUnknown
+      end>
+  end
+end

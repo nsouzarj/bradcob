@@ -2,8 +2,8 @@ object DtmModule2: TDtmModule2
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 383
-  HorizontalOffset = 137
-  VerticalOffset = 49
+  HorizontalOffset = 143
+  VerticalOffset = 52
   Width = 474
   object zQHeader: TZQuery
     Connection = DtmConexao.DbConexaoPg

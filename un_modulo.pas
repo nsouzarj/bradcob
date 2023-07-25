@@ -107,6 +107,7 @@ type
     ZQtabelatelcliente: TFloatField;
     ZQtabelatelescritorio: TFloatField;
     ZQtabelatepreg: TStringField;
+    ZQtabelatotal: TCurrencyField;
     ZQtabelauffabveic: TStringField;
     ZQtabelauflicveic: TStringField;
     ZQtabelaunidadefed: TStringField;
@@ -346,7 +347,7 @@ begin
            ZQtabelacodigoregistroveiculo.AsString+Func.Rpad(IntToStr(ZQtabelacgarntveic.AsInteger),'0',3)+
            Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantveic.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
            Func.RPad(IntToStr(ZQtabelarenanveic.AsInteger),'0',11)+
-           Func.RPad(IntToStr(ZQtabelaplacaveic.AsInteger),' ',7)+
+           Func.LPad(ZQtabelaplacaveic.AsString,' ',7)+
            ZQtabelauffabveic.AsString+Func.RPad(IntToStr(ZQtabelaanofabveic.AsInteger),'0',4)+
            Func.RPad(IntToStr(ZQtabelaanomodveic.AsInteger),'0',4)+
            ZQtabelauflicveic.AsString+

@@ -3,7 +3,7 @@ object DtmDsps: TDtmDsps
   OldCreateOrder = False
   Height = 309
   HorizontalOffset = 0
-  VerticalOffset = 331
+  VerticalOffset = 337
   Width = 675
   object ZQtabela: TZQuery
     Connection = DtmConexao.DbConexaoPg
@@ -28,6 +28,7 @@ object DtmDsps: TDtmDsps
       '   FROM "TB_CAD_REM" '
     )
     Params = <>
+    WhereMode = wmWhereAll
     Left = 176
     Top = 56
     object ZQtabelachaveprim: TLongintField
@@ -36,7 +37,7 @@ object DtmDsps: TDtmDsps
       Index = 0
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = True
     end
     object ZQtabelatepreg: TStringField
@@ -176,6 +177,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 4
     end
     object ZQtabelavalhonor: TFloatField
@@ -186,6 +188,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 4
     end
     object ZQtabelataxaref: TStringField
@@ -356,6 +359,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 4
     end
     object ZQtabeladatavencult: TStringField
@@ -426,6 +430,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 4
     end
     object ZQtabelataxajuros: TFloatField
@@ -506,6 +511,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 983042
     end
     object ZQtabelaindacordo: TFloatField
@@ -626,6 +632,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 1048578
     end
     object ZQtabelarenanveic: TFloatField
@@ -796,6 +803,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 1179648
     end
     object ZQtabelagarntlogdr: TStringField
@@ -965,6 +973,7 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 655362
     end
     object ZQtabelacodigoregistrooutros: TStringField
@@ -995,7 +1004,18 @@ object DtmDsps: TDtmDsps
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      Currency = True
       Precision = 1048578
+    end
+    object ZQtabelatotal: TCurrencyField
+      DefaultExpression = 'sum(valparc)'
+      FieldKind = fkCalculated
+      FieldName = 'total'
+      Index = 97
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
     end
   end
   object ZUpdateSQL1: TZUpdateSQL
@@ -1240,103 +1260,7 @@ object DtmDsps: TDtmDsps
       '  cgarntoutros = :cgarntoutros,'
       '  garntvgarntoutros = :garntvgarntoutros'
       'WHERE'
-      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim AND'
-      '  (("TB_CAD_REM".tepreg IS NULL AND :OLD_tepreg IS NULL) OR ("TB_CAD_REM".tepreg = :OLD_tepreg)) AND'
-      '  (("TB_CAD_REM".ato IS NULL AND :OLD_ato IS NULL) OR ("TB_CAD_REM".ato = :OLD_ato)) AND'
-      '  (("TB_CAD_REM".cpfadmescrirtorio IS NULL AND :OLD_cpfadmescrirtorio IS NULL) OR ("TB_CAD_REM".cpfadmescrirtorio = :OLD_cpfadmescrirtorio)) AND'
-      '  "TB_CAD_REM".numacordo = :OLD_numacordo AND'
-      '  (("TB_CAD_REM".dataacordo IS NULL AND :OLD_dataacordo IS NULL) OR ("TB_CAD_REM".dataacordo = :OLD_dataacordo)) AND'
-      '  (("TB_CAD_REM".quantped IS NULL AND :OLD_quantped IS NULL) OR ("TB_CAD_REM".quantped = :OLD_quantped)) AND'
-      '  (("TB_CAD_REM".quantparc IS NULL AND :OLD_quantparc IS NULL) OR ("TB_CAD_REM".quantparc = :OLD_quantparc)) AND'
-      '  (("TB_CAD_REM".codjun IS NULL AND :OLD_codjun IS NULL) OR ("TB_CAD_REM".codjun = :OLD_codjun)) AND'
-      '  (("TB_CAD_REM".contacorrente IS NULL AND :OLD_contacorrente IS NULL) OR ("TB_CAD_REM".contacorrente = :OLD_contacorrente)) AND'
-      '  (("TB_CAD_REM".numcarteira IS NULL AND :OLD_numcarteira IS NULL) OR ("TB_CAD_REM".numcarteira = :OLD_numcarteira)) AND'
-      '  (("TB_CAD_REM".numcontrato IS NULL AND :OLD_numcontrato IS NULL) OR ("TB_CAD_REM".numcontrato = :OLD_numcontrato)) AND'
-      '  (("TB_CAD_REM".datavecimento IS NULL AND :OLD_datavecimento IS NULL) OR ("TB_CAD_REM".datavecimento = :OLD_datavecimento)) AND'
-      '  (("TB_CAD_REM".datavencparc IS NULL AND :OLD_datavencparc IS NULL) OR ("TB_CAD_REM".datavencparc = :OLD_datavencparc)) AND'
-      '  (("TB_CAD_REM".valparc IS NULL AND :OLD_valparc IS NULL) OR ("TB_CAD_REM".valparc = :OLD_valparc)) AND'
-      '  (("TB_CAD_REM".valhonor IS NULL AND :OLD_valhonor IS NULL) OR ("TB_CAD_REM".valhonor = :OLD_valhonor)) AND'
-      '  (("TB_CAD_REM".taxaref IS NULL AND :OLD_taxaref IS NULL) OR ("TB_CAD_REM".taxaref = :OLD_taxaref)) AND'
-      '  (("TB_CAD_REM".obs IS NULL AND :OLD_obs IS NULL) OR ("TB_CAD_REM".obs = :OLD_obs)) AND'
-      '  (("TB_CAD_REM".nomeescritorio IS NULL AND :OLD_nomeescritorio IS NULL) OR ("TB_CAD_REM".nomeescritorio = :OLD_nomeescritorio)) AND'
-      '  (("TB_CAD_REM".dddescritorio IS NULL AND :OLD_dddescritorio IS NULL) OR ("TB_CAD_REM".dddescritorio = :OLD_dddescritorio)) AND'
-      '  (("TB_CAD_REM".telescritorio IS NULL AND :OLD_telescritorio IS NULL) OR ("TB_CAD_REM".telescritorio = :OLD_telescritorio)) AND'
-      '  (("TB_CAD_REM".nomecliente IS NULL AND :OLD_nomecliente IS NULL) OR ("TB_CAD_REM".nomecliente = :OLD_nomecliente)) AND'
-      '  (("TB_CAD_REM".endcliente IS NULL AND :OLD_endcliente IS NULL) OR ("TB_CAD_REM".endcliente = :OLD_endcliente)) AND'
-      '  (("TB_CAD_REM".num IS NULL AND :OLD_num IS NULL) OR ("TB_CAD_REM".num = :OLD_num)) AND'
-      '  (("TB_CAD_REM".complemnto IS NULL AND :OLD_complemnto IS NULL) OR ("TB_CAD_REM".complemnto = :OLD_complemnto)) AND'
-      '  (("TB_CAD_REM".bairro IS NULL AND :OLD_bairro IS NULL) OR ("TB_CAD_REM".bairro = :OLD_bairro)) AND'
-      '  (("TB_CAD_REM".municipio IS NULL AND :OLD_municipio IS NULL) OR ("TB_CAD_REM".municipio = :OLD_municipio)) AND'
-      '  (("TB_CAD_REM".unidadefed IS NULL AND :OLD_unidadefed IS NULL) OR ("TB_CAD_REM".unidadefed = :OLD_unidadefed)) AND'
-      '  (("TB_CAD_REM".cepcliente IS NULL AND :OLD_cepcliente IS NULL) OR ("TB_CAD_REM".cepcliente = :OLD_cepcliente)) AND'
-      '  (("TB_CAD_REM".complecep IS NULL AND :OLD_complecep IS NULL) OR ("TB_CAD_REM".complecep = :OLD_complecep)) AND'
-      '  (("TB_CAD_REM".dddcliente IS NULL AND :OLD_dddcliente IS NULL) OR ("TB_CAD_REM".dddcliente = :OLD_dddcliente)) AND'
-      '  (("TB_CAD_REM".telcliente IS NULL AND :OLD_telcliente IS NULL) OR ("TB_CAD_REM".telcliente = :OLD_telcliente)) AND'
-      '  (("TB_CAD_REM".valoracordo IS NULL AND :OLD_valoracordo IS NULL) OR ("TB_CAD_REM".valoracordo = :OLD_valoracordo)) AND'
-      '  (("TB_CAD_REM".datavencult IS NULL AND :OLD_datavencult IS NULL) OR ("TB_CAD_REM".datavencult = :OLD_datavencult)) AND'
-      '  (("TB_CAD_REM".parcelaplanoultimopag IS NULL AND :OLD_parcelaplanoultimopag IS NULL) OR ("TB_CAD_REM".parcelaplanoultimopag = :OLD_parcelaplanoultimopag)) AND'
-      '  (("TB_CAD_REM".cpfcnpjcliente IS NULL AND :OLD_cpfcnpjcliente IS NULL) OR ("TB_CAD_REM".cpfcnpjcliente = :OLD_cpfcnpjcliente)) AND'
-      '  (("TB_CAD_REM".cpfcnpjfilialcliente IS NULL AND :OLD_cpfcnpjfilialcliente IS NULL) OR ("TB_CAD_REM".cpfcnpjfilialcliente = :OLD_cpfcnpjfilialcliente)) AND'
-      '  (("TB_CAD_REM".controlecpfcnpjcliente IS NULL AND :OLD_controlecpfcnpjcliente IS NULL) OR ("TB_CAD_REM".controlecpfcnpjcliente = :OLD_controlecpfcnpjcliente)) AND'
-      '  (("TB_CAD_REM".codmeiopagamento IS NULL AND :OLD_codmeiopagamento IS NULL) OR ("TB_CAD_REM".codmeiopagamento = :OLD_codmeiopagamento)) AND'
-      '  (("TB_CAD_REM".valoriof IS NULL AND :OLD_valoriof IS NULL) OR ("TB_CAD_REM".valoriof = :OLD_valoriof)) AND'
-      '  (("TB_CAD_REM".taxajuros IS NULL AND :OLD_taxajuros IS NULL) OR ("TB_CAD_REM".taxajuros = :OLD_taxajuros)) AND'
-      '  (("TB_CAD_REM".acordoaprovadopelodarc IS NULL AND :OLD_acordoaprovadopelodarc IS NULL) OR ("TB_CAD_REM".acordoaprovadopelodarc = :OLD_acordoaprovadopelodarc)) AND'
-      '  (("TB_CAD_REM".dataaprovacao IS NULL AND :OLD_dataaprovacao IS NULL) OR ("TB_CAD_REM".dataaprovacao = :OLD_dataaprovacao)) AND'
-      '  (("TB_CAD_REM".nomeoperador IS NULL AND :OLD_nomeoperador IS NULL) OR ("TB_CAD_REM".nomeoperador = :OLD_nomeoperador)) AND'
-      '  (("TB_CAD_REM".camporetarq IS NULL AND :OLD_camporetarq IS NULL) OR ("TB_CAD_REM".camporetarq = :OLD_camporetarq)) AND'
-      '  (("TB_CAD_REM".nomeavalista1 IS NULL AND :OLD_nomeavalista1 IS NULL) OR ("TB_CAD_REM".nomeavalista1 = :OLD_nomeavalista1)) AND'
-      '  (("TB_CAD_REM".nomeavalista2 IS NULL AND :OLD_nomeavalista2 IS NULL) OR ("TB_CAD_REM".nomeavalista2 = :OLD_nomeavalista2)) AND'
-      '  (("TB_CAD_REM".valorconfessado IS NULL AND :OLD_valorconfessado IS NULL) OR ("TB_CAD_REM".valorconfessado = :OLD_valorconfessado)) AND'
-      '  (("TB_CAD_REM".indacordo IS NULL AND :OLD_indacordo IS NULL) OR ("TB_CAD_REM".indacordo = :OLD_indacordo)) AND'
-      '  (("TB_CAD_REM".cpfavalista1 IS NULL AND :OLD_cpfavalista1 IS NULL) OR ("TB_CAD_REM".cpfavalista1 = :OLD_cpfavalista1)) AND'
-      '  (("TB_CAD_REM".cpfavalista2 IS NULL AND :OLD_cpfavalista2 IS NULL) OR ("TB_CAD_REM".cpfavalista2 = :OLD_cpfavalista2)) AND'
-      '  (("TB_CAD_REM".ctrlav1 IS NULL AND :OLD_ctrlav1 IS NULL) OR ("TB_CAD_REM".ctrlav1 = :OLD_ctrlav1)) AND'
-      '  (("TB_CAD_REM".ctrlav2 IS NULL AND :OLD_ctrlav2 IS NULL) OR ("TB_CAD_REM".ctrlav2 = :OLD_ctrlav2)) AND'
-      '  (("TB_CAD_REM".filav1 IS NULL AND :OLD_filav1 IS NULL) OR ("TB_CAD_REM".filav1 = :OLD_filav1)) AND'
-      '  (("TB_CAD_REM".filav2 IS NULL AND :OLD_filav2 IS NULL) OR ("TB_CAD_REM".filav2 = :OLD_filav2)) AND'
-      '  (("TB_CAD_REM".idcontrato IS NULL AND :OLD_idcontrato IS NULL) OR ("TB_CAD_REM".idcontrato = :OLD_idcontrato)) AND'
-      '  (("TB_CAD_REM".quantidadedegarantias IS NULL AND :OLD_quantidadedegarantias IS NULL) OR ("TB_CAD_REM".quantidadedegarantias = :OLD_quantidadedegarantias)) AND'
-      '  (("TB_CAD_REM".codigoregistroveiculo IS NULL AND :OLD_codigoregistroveiculo IS NULL) OR ("TB_CAD_REM".codigoregistroveiculo = :OLD_codigoregistroveiculo)) AND'
-      '  (("TB_CAD_REM".cgarntveic IS NULL AND :OLD_cgarntveic IS NULL) OR ("TB_CAD_REM".cgarntveic = :OLD_cgarntveic)) AND'
-      '  (("TB_CAD_REM".vgrantveic IS NULL AND :OLD_vgrantveic IS NULL) OR ("TB_CAD_REM".vgrantveic = :OLD_vgrantveic)) AND'
-      '  (("TB_CAD_REM".renanveic IS NULL AND :OLD_renanveic IS NULL) OR ("TB_CAD_REM".renanveic = :OLD_renanveic)) AND'
-      '  (("TB_CAD_REM".placaveic IS NULL AND :OLD_placaveic IS NULL) OR ("TB_CAD_REM".placaveic = :OLD_placaveic)) AND'
-      '  (("TB_CAD_REM".uffabveic IS NULL AND :OLD_uffabveic IS NULL) OR ("TB_CAD_REM".uffabveic = :OLD_uffabveic)) AND'
-      '  (("TB_CAD_REM".anofabveic IS NULL AND :OLD_anofabveic IS NULL) OR ("TB_CAD_REM".anofabveic = :OLD_anofabveic)) AND'
-      '  (("TB_CAD_REM".anomodveic IS NULL AND :OLD_anomodveic IS NULL) OR ("TB_CAD_REM".anomodveic = :OLD_anomodveic)) AND'
-      '  (("TB_CAD_REM".uflicveic IS NULL AND :OLD_uflicveic IS NULL) OR ("TB_CAD_REM".uflicveic = :OLD_uflicveic)) AND'
-      '  (("TB_CAD_REM".chassirmarc IS NULL AND :OLD_chassirmarc IS NULL) OR ("TB_CAD_REM".chassirmarc = :OLD_chassirmarc)) AND'
-      '  (("TB_CAD_REM".chassiveic IS NULL AND :OLD_chassiveic IS NULL) OR ("TB_CAD_REM".chassiveic = :OLD_chassiveic)) AND'
-      '  (("TB_CAD_REM".antprodtveic IS NULL AND :OLD_antprodtveic IS NULL) OR ("TB_CAD_REM".antprodtveic = :OLD_antprodtveic)) AND'
-      '  (("TB_CAD_REM".contrantveic IS NULL AND :OLD_contrantveic IS NULL) OR ("TB_CAD_REM".contrantveic = :OLD_contrantveic)) AND'
-      '  (("TB_CAD_REM".marcaveic IS NULL AND :OLD_marcaveic IS NULL) OR ("TB_CAD_REM".marcaveic = :OLD_marcaveic)) AND'
-      '  (("TB_CAD_REM".modeloveic IS NULL AND :OLD_modeloveic IS NULL) OR ("TB_CAD_REM".modeloveic = :OLD_modeloveic)) AND'
-      '  (("TB_CAD_REM".corveic IS NULL AND :OLD_corveic IS NULL) OR ("TB_CAD_REM".corveic = :OLD_corveic)) AND'
-      '  (("TB_CAD_REM".porteveic IS NULL AND :OLD_porteveic IS NULL) OR ("TB_CAD_REM".porteveic = :OLD_porteveic)) AND'
-      '  (("TB_CAD_REM".codigoregistroimoveis IS NULL AND :OLD_codigoregistroimoveis IS NULL) OR ("TB_CAD_REM".codigoregistroimoveis = :OLD_codigoregistroimoveis)) AND'
-      '  (("TB_CAD_REM".cgarntimov IS NULL AND :OLD_cgarntimov IS NULL) OR ("TB_CAD_REM".cgarntimov = :OLD_cgarntimov)) AND'
-      '  (("TB_CAD_REM".vgarntimov IS NULL AND :OLD_vgarntimov IS NULL) OR ("TB_CAD_REM".vgarntimov = :OLD_vgarntimov)) AND'
-      '  (("TB_CAD_REM".garntlogdr IS NULL AND :OLD_garntlogdr IS NULL) OR ("TB_CAD_REM".garntlogdr = :OLD_garntlogdr)) AND'
-      '  (("TB_CAD_REM".garntnrologdr IS NULL AND :OLD_garntnrologdr IS NULL) OR ("TB_CAD_REM".garntnrologdr = :OLD_garntnrologdr)) AND'
-      '  (("TB_CAD_REM".garntcompllogdr IS NULL AND :OLD_garntcompllogdr IS NULL) OR ("TB_CAD_REM".garntcompllogdr = :OLD_garntcompllogdr)) AND'
-      '  (("TB_CAD_REM".garntbairrologdr IS NULL AND :OLD_garntbairrologdr IS NULL) OR ("TB_CAD_REM".garntbairrologdr = :OLD_garntbairrologdr)) AND'
-      '  (("TB_CAD_REM".garntcepimov IS NULL AND :OLD_garntcepimov IS NULL) OR ("TB_CAD_REM".garntcepimov = :OLD_garntcepimov)) AND'
-      '  (("TB_CAD_REM".mcircunsimov IS NULL AND :OLD_mcircunsimov IS NULL) OR ("TB_CAD_REM".mcircunsimov = :OLD_mcircunsimov)) AND'
-      '  (("TB_CAD_REM".comarcaimov IS NULL AND :OLD_comarcaimov IS NULL) OR ("TB_CAD_REM".comarcaimov = :OLD_comarcaimov)) AND'
-      '  (("TB_CAD_REM".nmatrimov IS NULL AND :OLD_nmatrimov IS NULL) OR ("TB_CAD_REM".nmatrimov = :OLD_nmatrimov)) AND'
-      '  (("TB_CAD_REM".nregimov IS NULL AND :OLD_nregimov IS NULL) OR ("TB_CAD_REM".nregimov = :OLD_nregimov)) AND'
-      '  (("TB_CAD_REM".averbacaoimov IS NULL AND :OLD_averbacaoimov IS NULL) OR ("TB_CAD_REM".averbacaoimov = :OLD_averbacaoimov)) AND'
-      '  (("TB_CAD_REM".nlivroimov IS NULL AND :OLD_nlivroimov IS NULL) OR ("TB_CAD_REM".nlivroimov = :OLD_nlivroimov)) AND'
-      '  (("TB_CAD_REM".nfolhaimov IS NULL AND :OLD_nfolhaimov IS NULL) OR ("TB_CAD_REM".nfolhaimov = :OLD_nfolhaimov)) AND'
-      '  (("TB_CAD_REM".dregimov IS NULL AND :OLD_dregimov IS NULL) OR ("TB_CAD_REM".dregimov = :OLD_dregimov)) AND'
-      '  (("TB_CAD_REM".codigoregistrobens IS NULL AND :OLD_codigoregistrobens IS NULL) OR ("TB_CAD_REM".codigoregistrobens = :OLD_codigoregistrobens)) AND'
-      '  (("TB_CAD_REM".cgarntbens IS NULL AND :OLD_cgarntbens IS NULL) OR ("TB_CAD_REM".cgarntbens = :OLD_cgarntbens)) AND'
-      '  (("TB_CAD_REM".garntdescrbens IS NULL AND :OLD_garntdescrbens IS NULL) OR ("TB_CAD_REM".garntdescrbens = :OLD_garntdescrbens)) AND'
-      '  (("TB_CAD_REM".vgrantbens IS NULL AND :OLD_vgrantbens IS NULL) OR ("TB_CAD_REM".vgrantbens = :OLD_vgrantbens)) AND'
-      '  (("TB_CAD_REM".codigoregistrooutros IS NULL AND :OLD_codigoregistrooutros IS NULL) OR ("TB_CAD_REM".codigoregistrooutros = :OLD_codigoregistrooutros)) AND'
-      '  (("TB_CAD_REM".cgarntoutros IS NULL AND :OLD_cgarntoutros IS NULL) OR ("TB_CAD_REM".cgarntoutros = :OLD_cgarntoutros)) AND'
-      '  (("TB_CAD_REM".garntvgarntoutros IS NULL AND :OLD_garntvgarntoutros IS NULL) OR ("TB_CAD_REM".garntvgarntoutros = :OLD_garntvgarntoutros))'
+      '  "TB_CAD_REM".chaveprim = :OLD_chaveprim '
     )
     UseSequenceFieldForRefreshSQL = False
     Left = 205
@@ -2315,6 +2239,8 @@ object DtmDsps: TDtmDsps
   end
   object ZQContrato: TZQuery
     Connection = DtmConexao.DbConexaoPg
+    SortedFields = 'idcontrato'
+    SortType = stDescending
     UpdateObject = ZUpdateSQL2
     SQL.Strings = (
       'SELECT idcontrato, numcontrato, dataelaboracao, valortotalacordo,retornolido'
@@ -2322,6 +2248,7 @@ object DtmDsps: TDtmDsps
       ' ORDER BY numcontrato'
     )
     Params = <>
+    IndexFieldNames = 'idcontrato Desc'
     Left = 312
     Top = 61
     object ZQContratoidcontrato: TLongintField
