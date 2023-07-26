@@ -35,6 +35,7 @@ type
     CbIndAcordo: TComboBox;
     CbMeioPagto: TComboBox;
     CbTaxaRef: TComboBox;
+    CbPorteVeiculo: TComboBox;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
     DBGrid2: TDBGrid;
@@ -55,11 +56,9 @@ type
     edtNumFolha: TEdit;
     edtRegImovel: TEdit;
     edtCodRegBens: TEdit;
-    edtGartBens: TEdit;
     edtDescBem: TEdit;
     edtValBem: TEdit;
     edtCodRegOutros: TEdit;
-    edtGarantOutros: TEdit;
     edtBairroImovel: TEdit;
     edtValorGarantOutros: TEdit;
     edtCepImovel: TEdit;
@@ -70,13 +69,11 @@ type
     edtAvervImovel: TEdit;
     edtNumImovel: TEdit;
     edtCodRegImovel: TEdit;
-    edtTipoGarant: TEdit;
     edtValGarantia: TEdit;
     edtEndImovel: TEdit;
     edtProdContratadoVeic: TEdit;
     edtContraRenociado: TEdit;
     edtCorVeic: TEdit;
-    edtPorteVeic: TEdit;
     edtNumChassiVeic: TEdit;
     edtChassi1Veic: TEdit;
     edtAnoModVeic: TEdit;
@@ -254,6 +251,7 @@ type
     procedure OpenDialog1FolderChange(Sender: TObject);
     procedure OpenDialog1SelectionChange(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
+    procedure PageControl2Change(Sender: TObject);
     procedure PopupNotifier1Close(Sender: TObject; var CloseAction: TCloseAction
       );
 
@@ -316,6 +314,11 @@ begin
 end;
 
 procedure TFrmdsps.PageControl1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.PageControl2Change(Sender: TObject);
 begin
 
 end;
@@ -508,11 +511,11 @@ begin
                    CbIndAcordo.ItemIndex+1,edtFilAval1.Text,edtFilAval2.Text,edtCrtl1.Text,edtCrtl2.Text,id_contrato,
                    edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
                    StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
-                    EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
-                   edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, StrToInt(edtTipoGarant.Text),
+                   EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
+                   edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,CbPorteVeiculo.ItemIndex,edtCodRegImovel.Text, CbGarantiasBems.ItemIndex,
                    StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
-                   StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,StrToInt(edtGartBens.Text),
-                   edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, StrToInt(edtGarantOutros.Text),StrToFloat(edtValorGarantOutros.Text));
+                   StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,CbGarantiasBems.ItemIndex,
+                   edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, CbGarantiasOutros.ItemIndex,StrToFloat(edtValorGarantOutros.Text));
                end;
                if(a > 1) then
                begin
@@ -534,10 +537,10 @@ begin
                    edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
                    StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
                    EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
-                   edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, StrToInt(edtTipoGarant.Text),
+                   edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,CbPorteVeiculo.ItemIndex,edtCodRegImovel.Text,CbGarantiasBems.ItemIndex,
                    StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
-                   StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,StrToInt(edtGartBens.Text),
-                   edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, StrToInt(edtGarantOutros.Text),StrToFloat(edtValorGarantOutros.Text));
+                   StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,CbGarantiasBems.ItemIndex,
+                   edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, CbGarantiasOutros.ItemIndex,StrToFloat(edtValorGarantOutros.Text));
                end;
              end;
              ShowMessage('Opreção concluída com sucesso !!!');
@@ -611,7 +614,7 @@ begin
          edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
          StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
          EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
-         edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
+         edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,CbPorteVeiculo.ItemIndex,edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
          StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
          StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,CbGarantiasBems.ItemIndex ,
          edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, CbGarantiasOutros.ItemIndex ,StrToFloat(edtValorGarantOutros.Text));
@@ -640,7 +643,7 @@ begin
          edtCodRegistroVeic.Text,StrToInt(edtQuantGarantiaVeic.Text), StrToInt(EdtTipoGaratiaVeic.Text),StrToFloat(edtValorGarantVeic.Text),
          StrToInt(edtRenavanVeic.Text), edtPlacaVeiculo.Text, EdtEstadoCliVeic.Text, StrToInt(edtAnoFabVeic.Text), StrToInt(edtAnoModVeic.Text),
          EdtEstadoCliVeicLic.Text,StrToInt(edtChassi1Veic.Text),edtNumChassiVeic.Text, StrToInt(edtProdContratadoVeic.Text), StrToInt(edtContraRenociado.Text),
-         edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,StrToInt(edtPorteVeic.Text),edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
+         edtMarcaVeic.Text, edtModVeic.Text,edtCorVeic.Text,CbPorteVeiculo.ItemIndex,edtCodRegImovel.Text, CbGarantiasImovel.ItemIndex,
          StrToFloat(edtValGarantia.Text),edtEndImovel.Text,StrToInt(edtNumImovel.Text),edtCompEnd.Text,edtBairroImovel.Text,StrToInt(edtCepImovel.Text),StrToInt(edtCircusImovel.Text),edtComarcaImovel.Text,
          StrToInt(edtMatImovel.Text),StrToInt(edtNumRegistroImovel.Text),edtAvervImovel.Text,edtNumLivro.Text,edtNumFolha.Text,edtRegImovel.Text,edtCodRegBens.Text,CbGarantiasBems.ItemIndex,
          edtDescBem.Text,StrToFloat(edtValBem.Text), edtCodRegOutros.Text, CbGarantiasOutros.ItemIndex,StrToFloat(edtValorGarantOutros.Text));
