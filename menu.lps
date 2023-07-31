@@ -29,12 +29,10 @@
         <ComponentName Value="DtmDsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="570"/>
         <CursorPos Y="594"/>
         <UsageCount Value="210"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="un_principal.pas"/>
@@ -42,9 +40,10 @@
         <ComponentName Value="Frmdsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="447"/>
-        <CursorPos X="102" Y="637"/>
+        <CursorPos X="61" Y="453"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -55,12 +54,10 @@
         <ComponentName Value="Frmdrc"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="119"/>
         <CursorPos X="3" Y="119"/>
         <UsageCount Value="210"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="dados.pas"/>
@@ -68,11 +65,10 @@
         <ComponentName Value="DtmDrc"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="50"/>
         <CursorPos X="49" Y="113"/>
         <UsageCount Value="210"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="conexao.pas"/>
@@ -80,9 +76,6 @@
         <ComponentName Value="DtmConexao"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="17"/>
-        <TopLine Value="12"/>
         <CursorPos Y="31"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
@@ -105,12 +98,10 @@
         <ComponentName Value="DtmDrcNovo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="226"/>
         <CursorPos Y="228"/>
         <UsageCount Value="201"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="un_novodrc.pas"/>
@@ -118,19 +109,18 @@
         <ComponentName Value="FrmDrcNovo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="66"/>
         <CursorPos X="3" Y="172"/>
         <UsageCount Value="207"/>
-        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="unifuncoes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UniFuncoes"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="7" Y="28"/>
         <UsageCount Value="205"/>
-        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="un_arqret.pas"/>
@@ -160,12 +150,10 @@
         <ComponentName Value="DtmModule2"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="91"/>
         <CursorPos X="19" Y="98"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit13>
       <Unit14>
         <Filename Value="C:\lazarus\ZEOSDBO-7.1.4-stable\src\component\ZAbstractRODataset.pas"/>
@@ -176,11 +164,10 @@
       </Unit14>
       <Unit15>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="3528"/>
         <CursorPos Y="3545"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus\lcl\include\buttoncontrol.inc"/>
@@ -204,28 +191,25 @@
       </Unit18>
       <Unit19>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="7412"/>
         <CursorPos Y="7436"/>
         <UsageCount Value="103"/>
-        <Loaded Value="True"/>
       </Unit19>
       <Unit20>
         <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="93"/>
         <CursorPos Y="116"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2647"/>
         <CursorPos Y="2680"/>
         <UsageCount Value="104"/>
-        <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="C:\lazarus\zeosdbo-7.2.4-stable\src\dbc\ZDbcPostgreSqlUtils.pas"/>
@@ -263,232 +247,99 @@
       </Unit26>
       <Unit27>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractRODataset.pas"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="3053"/>
         <CursorPos Y="3061"/>
         <UsageCount Value="117"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit27>
       <Unit28>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcPostgreSqlUtils.pas"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="688"/>
         <CursorPos Y="696"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit28>
       <Unit29>
         <Filename Value="C:\lazarus\componentes\fpspreadsheet-1.10.1\fpspreadsheet-1.10.1\source\common\fpspreadsheet.pas"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="8891"/>
         <CursorPos Y="8905"/>
         <UsageCount Value="102"/>
-        <Loaded Value="True"/>
       </Unit29>
       <Unit30>
         <Filename Value="C:\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1693"/>
         <CursorPos X="14" Y="1715"/>
         <UsageCount Value="101"/>
-        <Loaded Value="True"/>
       </Unit30>
       <Unit31>
         <Filename Value="C:\lazarus\lcl\include\menuitem.inc"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="270"/>
         <CursorPos Y="282"/>
         <UsageCount Value="112"/>
-        <Loaded Value="True"/>
       </Unit31>
       <Unit32>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcConnection.pas"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1237"/>
         <CursorPos Y="1249"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit32>
       <Unit33>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcCachedResultSet.pas"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2116"/>
         <CursorPos Y="2124"/>
         <UsageCount Value="84"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit33>
       <Unit34>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractDataset.pas"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="436"/>
         <CursorPos Y="457"/>
         <UsageCount Value="84"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit34>
       <Unit35>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsforms.pp"/>
         <UnitName Value="Win32WSForms"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="366"/>
         <CursorPos Y="388"/>
         <UsageCount Value="82"/>
-        <Loaded Value="True"/>
       </Unit35>
       <Unit36>
         <Filename Value="C:\lazarus\lcl\include\customedit.inc"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="570"/>
         <CursorPos Y="596"/>
         <UsageCount Value="81"/>
-        <Loaded Value="True"/>
       </Unit36>
       <Unit37>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsstdctrls.pp"/>
         <UnitName Value="Win32WSStdCtrls"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1317"/>
         <CursorPos X="110" Y="1316"/>
         <UsageCount Value="81"/>
-        <Loaded Value="True"/>
       </Unit37>
       <Unit38>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcCache.pas"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1514"/>
         <CursorPos Y="1522"/>
         <UsageCount Value="80"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit38>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="578" Column="22" TopLine="569"/>
-      </Position1>
-      <Position2>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="580" TopLine="569"/>
-      </Position2>
-      <Position3>
-        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <Caret Line="3545" TopLine="3528"/>
-      </Position3>
-      <Position4>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="600" TopLine="569"/>
-      </Position4>
-      <Position5>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="575" TopLine="567"/>
-      </Position5>
-      <Position6>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="594" TopLine="570"/>
-      </Position6>
-      <Position7>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="575" TopLine="567"/>
-      </Position7>
-      <Position8>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="580" TopLine="567"/>
-      </Position8>
-      <Position9>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="600" TopLine="567"/>
-      </Position9>
-      <Position10>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="601" Column="155" TopLine="570"/>
-      </Position10>
-      <Position11>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="600" Column="155" TopLine="585"/>
-      </Position11>
-      <Position12>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="601" Column="155" TopLine="586"/>
-      </Position12>
-      <Position13>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="600" Column="155" TopLine="585"/>
-      </Position13>
-      <Position14>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="599" Column="155" TopLine="584"/>
-      </Position14>
-      <Position15>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="598" Column="155" TopLine="583"/>
-      </Position15>
-      <Position16>
-        <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcConnection.pas"/>
-        <Caret Line="1249" TopLine="1237"/>
-      </Position16>
-      <Position17>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="509" Column="121" TopLine="492"/>
-      </Position17>
-      <Position18>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="514" Column="150" TopLine="500"/>
-      </Position18>
-      <Position19>
-        <Filename Value="conexao.pas"/>
-        <Caret Line="31" TopLine="12"/>
-      </Position19>
-      <Position20>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="572" TopLine="572"/>
-      </Position20>
-      <Position21>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="583" TopLine="583"/>
-      </Position21>
-      <Position22>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="323" Column="3" TopLine="320"/>
-      </Position22>
-      <Position23>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="212" Column="21" TopLine="202"/>
-      </Position23>
-      <Position24>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="349" Column="3" TopLine="345"/>
-      </Position24>
-      <Position25>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="350" Column="3" TopLine="346"/>
-      </Position25>
-      <Position26>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="9" Column="83"/>
-      </Position26>
-      <Position27>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="260" Column="11" TopLine="252"/>
-      </Position27>
-      <Position28>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="350" Column="3" TopLine="346"/>
-      </Position28>
-      <Position29>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="576" Column="3" TopLine="587"/>
-      </Position29>
-      <Position30>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="575" Column="3" TopLine="575"/>
-      </Position30>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode="default"/>

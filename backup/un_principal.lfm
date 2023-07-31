@@ -1156,13 +1156,13 @@ object Frmdsps: TFrmdsps
     TabOrder = 3
   end
   object Panel2: TPanel
-    Left = 1072
+    Left = 1080
     Height = 50
     Top = 744
-    Width = 551
+    Width = 543
     ClientHeight = 50
-    ClientWidth = 551
-    Color = 306619
+    ClientWidth = 543
+    Color = clAqua
     ParentColor = False
     TabOrder = 6
     Wordwrap = True
