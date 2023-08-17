@@ -3420,7 +3420,7 @@ object Frmdsps: TFrmdsps
         Font.Color = clBlack
         ParentFont = False
         TabOrder = 1
-        Text = 'B'
+        Text = '8'
       end
       object Label53: TLabel
         Left = 232
@@ -3486,10 +3486,10 @@ object Frmdsps: TFrmdsps
         Top = 59
         Width = 80
         Font.Color = clBlack
-        MaxLength = 8
+        MaxLength = 11
         ParentFont = False
         TabOrder = 4
-        Text = '00000000'
+        Text = '00000000000'
       end
       object Label56: TLabel
         Left = 560

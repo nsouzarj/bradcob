@@ -29,10 +29,11 @@
         <ComponentName Value="DtmDsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="570"/>
-        <CursorPos Y="594"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="323"/>
+        <CursorPos X="84" Y="344"/>
         <UsageCount Value="210"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="un_principal.pas"/>
@@ -40,10 +41,12 @@
         <ComponentName Value="Frmdsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="447"/>
-        <CursorPos X="102" Y="637"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="391"/>
+        <CursorPos X="20" Y="400"/>
         <UsageCount Value="210"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="unprincipal.pas"/>
@@ -73,8 +76,7 @@
         <ComponentName Value="DtmConexao"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos Y="31"/>
+        <CursorPos X="3" Y="35"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -253,10 +255,12 @@
       </Unit27>
       <Unit28>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcPostgreSqlUtils.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="688"/>
-        <CursorPos Y="696"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="665"/>
+        <CursorPos Y="688"/>
         <UsageCount Value="100"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit28>
       <Unit29>
@@ -337,7 +341,24 @@
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit38>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="conexao.pas"/>
+        <Caret Line="31"/>
+      </Position1>
+      <Position2>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="452" Column="76" TopLine="447"/>
+      </Position2>
+      <Position3>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="400" Column="20" TopLine="391"/>
+      </Position3>
+      <Position4>
+        <Filename Value="un_modulo.pas"/>
+        <Caret Line="344" Column="84" TopLine="323"/>
+      </Position4>
+    </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes Count="0" ActiveMode="default"/>

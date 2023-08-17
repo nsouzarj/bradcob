@@ -4,8 +4,8 @@ object Frmdsps: TFrmdsps
   Top = 59
   Width = 1627
   Caption = 'CADASTRO DE ACORDO REMESSA/RETORNO'
-  ClientHeight = 802
-  ClientWidth = 1627
+  ClientHeight = 0
+  ClientWidth = 0
   Color = 15000804
   DefaultMonitor = dmPrimary
   OnCreate = FormCreate
@@ -1197,8 +1197,8 @@ object Frmdsps: TFrmdsps
     Height = 472
     Top = 32
     Width = 1618
-    ActivePage = TabSheet3
-    TabIndex = 0
+    ActivePage = TabSheet4
+    TabIndex = 1
     TabOrder = 7
     OnChange = PageControl2Change
     object TabSheet3: TTabSheet
@@ -1228,6 +1228,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 55
         Width = 80
+        MaxLength = 11
         ParentFont = False
         TabOrder = 1
         Text = '0'
@@ -1307,6 +1308,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 56
         Width = 80
+        MaxLength = 4
         ParentFont = False
         TabOrder = 3
         Text = '0'
@@ -1331,6 +1333,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 56
         Width = 80
+        MaxLength = 4
         ParentFont = False
         TabOrder = 4
         Text = '1'
@@ -1370,6 +1373,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 56
         Width = 80
+        MaxLength = 4
         ParentFont = False
         TabOrder = 7
         Text = '0000'
@@ -1405,6 +1409,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 57
         Width = 80
+        MaxLength = 5
         ParentFont = False
         TabOrder = 9
         Text = '0'
@@ -1430,6 +1435,7 @@ object Frmdsps: TFrmdsps
         Top = 57
         Width = 80
         Color = 4227327
+        MaxLength = 9
         ParentFont = False
         TabOrder = 10
         Text = '0'
@@ -1863,7 +1869,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 232
         Width = 40
-        MaxLength = 3
+        MaxLength = 4
         ParentFont = False
         TabOrder = 24
         Text = '00'
@@ -1888,6 +1894,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 232
         Width = 80
+        MaxLength = 9
         ParentFont = False
         TabOrder = 25
         Text = '00000000'
@@ -1980,6 +1987,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 232
         Width = 59
+        MaxLength = 4
         ParentFont = False
         TabOrder = 28
         Text = '0'
@@ -2029,7 +2037,7 @@ object Frmdsps: TFrmdsps
         Height = 23
         Top = 287
         Width = 141
-        MaxLength = 9
+        MaxLength = 4
         ParentFont = False
         TabOrder = 30
         Text = '0'
@@ -2280,7 +2288,7 @@ object Frmdsps: TFrmdsps
         Text = '000000000'
       end
       object EdtNomeAvalista2: TEdit
-        Left = 560
+        Left = 559
         Height = 23
         Top = 390
         Width = 274
@@ -3412,7 +3420,7 @@ object Frmdsps: TFrmdsps
         Font.Color = clBlack
         ParentFont = False
         TabOrder = 1
-        Text = 'B'
+        Text = '8'
       end
       object Label53: TLabel
         Left = 232
@@ -3478,10 +3486,10 @@ object Frmdsps: TFrmdsps
         Top = 59
         Width = 80
         Font.Color = clBlack
-        MaxLength = 8
+        MaxLength = 11
         ParentFont = False
         TabOrder = 4
-        Text = '00000000'
+        Text = '00000000000'
       end
       object Label56: TLabel
         Left = 560
@@ -5182,8 +5190,8 @@ object Frmdsps: TFrmdsps
   end
   object OpenDialog1: TOpenDialog
     OnSelectionChange = OpenDialog1SelectionChange
-    Left = 1000
-    Top = 408
+    Left = 1016
+    Top = 376
   end
   object ArquivoArq: TOpenDialog
     Left = 1136
