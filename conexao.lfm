@@ -2,8 +2,8 @@ object DtmConexao: TDtmConexao
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 349
-  HorizontalOffset = 262
-  VerticalOffset = 126
+  HorizontalOffset = 263
+  VerticalOffset = 127
   Width = 1009
   object DbConexaoPg: TZConnection
     ControlsCodePage = cCP_UTF8
