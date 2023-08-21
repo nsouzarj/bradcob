@@ -219,6 +219,7 @@ type
     PageControl1: TPageControl;
     PageControl2: TPageControl;
     Panel2: TPanel;
+    grlayout: TRadioGroup;
     SelectDirectoryDialog1: TSelectDirectoryDialog;
     StaticText1: TStaticText;
     TabSheet1: TTabSheet;
@@ -385,6 +386,7 @@ end;
 procedure TFrmdsps.BitBtn1Click(Sender: TObject);
 Var
   datatexto:String;
+  tipolayout:Integer;
 
 
 begin
@@ -395,9 +397,11 @@ begin
 
        ArquivoArq.FileName:=arquivo;
        ArquivoArq.Title:='SALVE O ARQUIVO NO LOCAL ESCOLHIDO';
+       tipolayout:=grlayout.ItemIndex;
+
        ArquivoArq.Execute;
 
-       DtmDsps.GravarArquivo(ArquivoArq.FileName);
+       DtmDsps.GravarArquivo(ArquivoArq.FileName,tipolayout);
 
         ShowMessage('Arquivo gerado com sucesso !!!');
      except

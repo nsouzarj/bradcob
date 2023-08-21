@@ -406,10 +406,10 @@ object Frmdsps: TFrmdsps
     TabOrder = 4
   end
   object BitBtn1: TBitBtn
-    Left = 6
+    Left = 240
     Height = 36
     Hint = 'Gera o arquivo de envio ao ski line.'
-    Top = 736
+    Top = 751
     Width = 172
     Caption = 'GERAR ARQUIVO TEXTO'
     Color = clMoneyGreen
@@ -849,10 +849,10 @@ object Frmdsps: TFrmdsps
     TabOrder = 0
   end
   object BitBtn4: TBitBtn
-    Left = 184
+    Left = 424
     Height = 36
     Hint = 'Aqui abre o arquivo de retorno e lê seu conteúdo. '
-    Top = 736
+    Top = 751
     Width = 173
     Caption = 'LER ARQ. RETORNO'
     Color = clMoneyGreen
@@ -5197,6 +5197,32 @@ object Frmdsps: TFrmdsps
         Text = 'SELECIONE O PORTE DO VEÌCULO'
       end
     end
+  end
+  object grlayout: TRadioGroup
+    Left = 8
+    Height = 49
+    Top = 739
+    Width = 233
+    AutoFill = True
+    Caption = 'Escolha o Tipo de Layout'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 29
+    ClientWidth = 229
+    Columns = 2
+    Font.Style = [fsBold]
+    ItemIndex = 0
+    Items.Strings = (
+      'Layout Antigo'
+      'Layout Novo'
+    )
+    ParentFont = False
+    TabOrder = 8
   end
   object DataSource1: TDataSource
     DataSet = DtmDsps.ZQtabela

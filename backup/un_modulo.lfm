@@ -3,7 +3,7 @@ object DtmDsps: TDtmDsps
   OldCreateOrder = False
   Height = 309
   HorizontalOffset = 0
-  VerticalOffset = 332
+  VerticalOffset = 337
   Width = 675
   object ZQtabela: TZQuery
     Connection = DtmConexao.DbConexaoPg

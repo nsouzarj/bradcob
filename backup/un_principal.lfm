@@ -1,7 +1,7 @@
 object Frmdsps: TFrmdsps
-  Left = 143
+  Left = 144
   Height = 802
-  Top = 59
+  Top = 60
   Width = 1627
   Caption = 'CADASTRO DE ACORDO REMESSA/RETORNO'
   ClientHeight = 802

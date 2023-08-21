@@ -225,7 +225,7 @@ type
     procedure abrir;
     procedure DataModuleCreate(Sender: TObject);
     procedure ZConnection1AfterConnect(Sender: TObject);
-    procedure GravarArquivo(nome:String);
+    procedure GravarArquivo(nome:String;tipolayout:Integer);
   //  function LPad(S: string; Ch: Char; Len: Integer):string;
   //  function RPad(S: string; Ch: Char; Len: Integer): string;
    procedure SalvarRegistro(ato: String; numacordo: Integer;
@@ -306,11 +306,12 @@ begin
 
 end;
 
-procedure TDtmDsps.GravarArquivo(nome:String);
+procedure TDtmDsps.GravarArquivo(nome:String;tipolayout:Integer);
 Var
   arq:TextFile;
   i,c,tb,n:integer;
   recebe:String;
+  tipo:Integer;
   cpf_escritorio,nome_escritorio,ddd_escritorio,tel_escritorio,cpf_adm_esc:String;
 begin
    cpf_escritorio:='071149144000159';
@@ -318,6 +319,7 @@ begin
    nome_escritorio:='CAVALCANTE RAMOS ADVOGADOS';
    ddd_escritorio:='0021';
    tel_escritorio:='022033250';
+   tipo:=tipolayout;
   try
 
    AssignFile(arq,nome);
@@ -330,67 +332,90 @@ begin
 
      begin
 
-           WriteLn(arq,'A'+ZQtabelaato.AsString+ cpf_adm_esc+Func.RPad(IntToStr(ZQtabelanumacordo.AsInteger),'0',11)+  StringReplace(ZQtabeladataacordo.AsString,'/','.',[rfReplaceAll]),
-           Func.RPad(IntToStr(ZQtabelaquantped.AsInteger),'0',4)+ Func.Rpad(IntToStr(ZQtabelaquantparc.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacodjun.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontacorrente.AsInteger),'0',7)+
-           Func.RPad(ZQtabelanumcarteira.AsString,'0',5)+Func.RPad(IntToStr(ZQtabelanumcontrato.AsInteger),'0',9)+StringReplace(ZQtabeladatavecimento.AsString,'/','.',[rfReplaceAll])+StringReplace(ZQtabeladatavencparc.AsString,'/','.',[rfReplaceAll])+
-           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalparc.AsCurrency) ,',','',[rfReplaceAll]),'0',17) +Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalhonor.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelataxaref.AsString+Func.Lpad(' ',' ',104)+Func.LPad(nome_escritorio,' ',40)+ddd_escritorio+tel_escritorio+
-           Func.LPad(ZQtabelanomecliente.AsString,' ',40)+Func.LPad(ZQtabelaendcliente.AsString,' ',40)+Func.LPad(ZQtabelanum.AsString,' ',7)+Func.LPad(ZQtabelacomplemnto.AsString,' ',20)+Func.LPad(ZQtabelabairro.AsString,' ',20)+Func.LPad(ZQtabelamunicipio.AsString,' ',30)+
-           Func.LPad(ZQtabelaunidadefed.AsString,' ',2)+Func.RPad(IntToStr(ZQtabelacepcliente.AsInteger),'0',5)+Func.RPad(IntToStr(ZQtabelacomplecep.AsInteger),'0',3)+Func.LPad(ZQtabeladddcliente.AsString,'0',4)+Func.LPad(IntToStr(ZQtabelatelcliente.AsInteger),'0',9)+
-           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloracordo.AsCurrency),',','',[rfReplaceAll]),'0',17)+ StringReplace(ZQtabeladatavencult.AsString,'/','.',[rfReplaceAll])+Func.Rpad(InttoStr(ZQtabelaparcelaplanoultimopag.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacpfcnpjcliente.AsInteger),'0',9)+
-           Func.RPad(IntToStr(ZQtabelacpfcnpjfilialcliente.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontrolecpfcnpjcliente.AsInteger),'0',2)+Func.RPad(IntToStr(ZQtabelacodmeiopagamento.AsInteger),'0',3)+ Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloriof.AsCurrency),',','',[rfReplaceAll]),'0',17)+
-           Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelataxajuros.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelaacordoaprovadopelodarc.AsString+StringReplace(ZQtabeladataaprovacao.AsString,'/','.',[rfReplaceAll])+Func.LPad(ZQtabelanomeoperador.AsString,' ',15),
-           Func.LPad(ZQtabelanomeavalista1.AsString,' ',40),  Func.LPad(ZQtabelanomeavalista2.AsString,' ',40),  Func.LPad(ZQtabelacpfavalista1.AsString,'0',9),Func.RPad(ZQtabelafilav1.AsString,'0',4),Func.LPad(ZQtabelactrlav1.AsString,'0',2),
-           Func.LPad(ZQtabelacpfavalista2.AsString,'0',9),Func.LPad(ZQtabelafilav2.AsString,'0',4),Func.LPad(ZQtabelactrlav2.AsString,'0',2), Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17),Func.RPad(IntToStr(ZQtabelaindacordo.AsInteger),'0',2)+
-           Func.LPad(IntToStr(ZQtabelaquantidadedegarantias.AsInteger),'0',2)+
+          if (tipo = 1) then
+               begin
+                   WriteLn(arq,'A'+ZQtabelaato.AsString+ cpf_adm_esc+Func.RPad(IntToStr(ZQtabelanumacordo.AsInteger),'0',11)+  StringReplace(ZQtabeladataacordo.AsString,'/','.',[rfReplaceAll]),
+                   Func.RPad(IntToStr(ZQtabelaquantped.AsInteger),'0',4)+ Func.Rpad(IntToStr(ZQtabelaquantparc.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacodjun.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontacorrente.AsInteger),'0',7)+
+                   Func.RPad(ZQtabelanumcarteira.AsString,'0',5)+Func.RPad(IntToStr(ZQtabelanumcontrato.AsInteger),'0',9)+StringReplace(ZQtabeladatavecimento.AsString,'/','.',[rfReplaceAll])+StringReplace(ZQtabeladatavencparc.AsString,'/','.',[rfReplaceAll])+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalparc.AsCurrency) ,',','',[rfReplaceAll]),'0',17) +Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalhonor.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelataxaref.AsString+Func.Lpad(' ',' ',104)+Func.LPad(nome_escritorio,' ',40)+ddd_escritorio+tel_escritorio+
+                   Func.LPad(ZQtabelanomecliente.AsString,' ',40)+Func.LPad(ZQtabelaendcliente.AsString,' ',40)+Func.LPad(ZQtabelanum.AsString,' ',7)+Func.LPad(ZQtabelacomplemnto.AsString,' ',20)+Func.LPad(ZQtabelabairro.AsString,' ',20)+Func.LPad(ZQtabelamunicipio.AsString,' ',30)+
+                   Func.LPad(ZQtabelaunidadefed.AsString,' ',2)+Func.RPad(IntToStr(ZQtabelacepcliente.AsInteger),'0',5)+Func.RPad(IntToStr(ZQtabelacomplecep.AsInteger),'0',3)+Func.LPad(ZQtabeladddcliente.AsString,'0',4)+Func.LPad(IntToStr(ZQtabelatelcliente.AsInteger),'0',9)+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloracordo.AsCurrency),',','',[rfReplaceAll]),'0',17)+ StringReplace(ZQtabeladatavencult.AsString,'/','.',[rfReplaceAll])+Func.Rpad(InttoStr(ZQtabelaparcelaplanoultimopag.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacpfcnpjcliente.AsInteger),'0',9)+
+                   Func.RPad(IntToStr(ZQtabelacpfcnpjfilialcliente.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontrolecpfcnpjcliente.AsInteger),'0',2)+Func.RPad(IntToStr(ZQtabelacodmeiopagamento.AsInteger),'0',3)+ Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloriof.AsCurrency),',','',[rfReplaceAll]),'0',17)+
+                   Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelataxajuros.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelaacordoaprovadopelodarc.AsString+StringReplace(ZQtabeladataaprovacao.AsString,'/','.',[rfReplaceAll])+Func.LPad(ZQtabelanomeoperador.AsString,' ',15),
+                   Func.LPad(ZQtabelanomeavalista1.AsString,' ',40),  Func.LPad(ZQtabelanomeavalista2.AsString,' ',40),  Func.LPad(ZQtabelacpfavalista1.AsString,'0',9),Func.RPad(ZQtabelafilav1.AsString,'0',4),Func.LPad(ZQtabelactrlav1.AsString,'0',2),
+                   Func.LPad(ZQtabelacpfavalista2.AsString,'0',9),Func.LPad(ZQtabelafilav2.AsString,'0',4),Func.LPad(ZQtabelactrlav2.AsString,'0',2), Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17),Func.RPad(IntToStr(ZQtabelaindacordo.AsInteger),'0',2));
+                     //Recebe total
+                   recebe:=  Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17); //Func.RPad(StringReplace(FormatCurr('0.00',Round(ZQtabelavalparc.AsCurrency)) ,',','',[rfReplaceAll]),'0',17);
+                   ZQtabela.Next;
+               end;
 
-           //Veiculo
-           ZQtabelacodigoregistroveiculo.AsString+Func.Rpad(IntToStr(ZQtabelacgarntveic.AsInteger),'0',3)+
-           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantveic.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
-           Func.RPad(IntToStr(ZQtabelarenanveic.AsInteger),'0',11)+
-           Func.LPad(ZQtabelaplacaveic.AsString,' ',7)+
-           ZQtabelauffabveic.AsString+Func.RPad(IntToStr(ZQtabelaanofabveic.AsInteger),'0',4)+
-           Func.RPad(IntToStr(ZQtabelaanomodveic.AsInteger),'0',4)+
-           ZQtabelauflicveic.AsString+
-           Func.Lpad(IntToStr(ZQtabelachassirmarc.AsInteger),'0',1)+
-           Func.LPad(ZQtabelachassiveic.AsString,' ',20)+
-           Func.Lpad(IntToStr(ZQtabelaantprodtveic.AsInteger),'0',3)+
-           Func.Lpad(IntToStr(ZQtabelacontrantveic.AsInteger),'0',9)+
-           Func.LPad(ZQtabelamarcaveic.AsString,' ',20)+
-           Func.LPad(ZQtabelamodeloveic.AsString,' ',20)+
-           Func.LPad(ZQtabelacorveic.AsString,' ',20)+
-           Func.Lpad(IntToStr(ZQtabelaporteveic.AsInteger),'0',1)+
+          if (tipo = 1) then
+               begin
 
-           //Imoveis
-           ZQtabelacodigoregistroimoveis.AsString+
-           Func.Lpad(IntToStr(ZQtabelacgarntimov.AsInteger),'0',3)+
-           Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelavgarntimov.AsCurrency),',','',[rfReplaceAll]),'0',18)+
-           Func.LPad(ZQtabelagarntlogdr.AsString,' ',38)+
-           Func.Lpad(IntToStr(ZQtabelagarntnrologdr.AsInteger),'0',5)+
-           Func.LPad(ZQtabelagarntcompllogdr.AsString,' ',10)+
-           Func.LPad(ZQtabelagarntbairrologdr.AsString,' ',20)+
-           Func.Lpad(IntToStr(ZQtabelagarntcepimov.AsInteger),'0',8)+
-           Func.Lpad(IntToStr(ZQtabelamcircunsimov.AsInteger),'0',3)+
-           Func.LPad(ZQtabelacomarcaimov.AsString,' ',41)+
-           Func.Lpad(IntToStr(ZQtabelanmatrimov.AsInteger),'0',7)+
-           Func.Lpad(IntToStr(ZQtabelanregimov.AsInteger),'0',10)+
-           Func.LPad(ZQtabelaaverbacaoimov.AsString,' ',11)+
-           Func.LPad(ZQtabelanlivroimov.AsString,' ',5)+
-           Func.LPad(ZQtabelanfolhaimov.AsString,' ',3)+
-           Func.LPad(ZQtabeladregimov.AsString,' ',8)+
+                   WriteLn(arq,'A'+ZQtabelaato.AsString+ cpf_adm_esc+Func.RPad(IntToStr(ZQtabelanumacordo.AsInteger),'0',11)+  StringReplace(ZQtabeladataacordo.AsString,'/','.',[rfReplaceAll]),
+                   Func.RPad(IntToStr(ZQtabelaquantped.AsInteger),'0',4)+ Func.Rpad(IntToStr(ZQtabelaquantparc.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacodjun.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontacorrente.AsInteger),'0',7)+
+                   Func.RPad(ZQtabelanumcarteira.AsString,'0',5)+Func.RPad(IntToStr(ZQtabelanumcontrato.AsInteger),'0',9)+StringReplace(ZQtabeladatavecimento.AsString,'/','.',[rfReplaceAll])+StringReplace(ZQtabeladatavencparc.AsString,'/','.',[rfReplaceAll])+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalparc.AsCurrency) ,',','',[rfReplaceAll]),'0',17) +Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalhonor.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelataxaref.AsString+Func.Lpad(' ',' ',104)+Func.LPad(nome_escritorio,' ',40)+ddd_escritorio+tel_escritorio+
+                   Func.LPad(ZQtabelanomecliente.AsString,' ',40)+Func.LPad(ZQtabelaendcliente.AsString,' ',40)+Func.LPad(ZQtabelanum.AsString,' ',7)+Func.LPad(ZQtabelacomplemnto.AsString,' ',20)+Func.LPad(ZQtabelabairro.AsString,' ',20)+Func.LPad(ZQtabelamunicipio.AsString,' ',30)+
+                   Func.LPad(ZQtabelaunidadefed.AsString,' ',2)+Func.RPad(IntToStr(ZQtabelacepcliente.AsInteger),'0',5)+Func.RPad(IntToStr(ZQtabelacomplecep.AsInteger),'0',3)+Func.LPad(ZQtabeladddcliente.AsString,'0',4)+Func.LPad(IntToStr(ZQtabelatelcliente.AsInteger),'0',9)+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloracordo.AsCurrency),',','',[rfReplaceAll]),'0',17)+ StringReplace(ZQtabeladatavencult.AsString,'/','.',[rfReplaceAll])+Func.Rpad(InttoStr(ZQtabelaparcelaplanoultimopag.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacpfcnpjcliente.AsInteger),'0',9)+
+                   Func.RPad(IntToStr(ZQtabelacpfcnpjfilialcliente.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontrolecpfcnpjcliente.AsInteger),'0',2)+Func.RPad(IntToStr(ZQtabelacodmeiopagamento.AsInteger),'0',3)+ Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavaloriof.AsCurrency),',','',[rfReplaceAll]),'0',17)+
+                   Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelataxajuros.AsCurrency),',','',[rfReplaceAll]),'0',17)+ZQtabelaacordoaprovadopelodarc.AsString+StringReplace(ZQtabeladataaprovacao.AsString,'/','.',[rfReplaceAll])+Func.LPad(ZQtabelanomeoperador.AsString,' ',15),
+                   Func.LPad(ZQtabelanomeavalista1.AsString,' ',40),  Func.LPad(ZQtabelanomeavalista2.AsString,' ',40),  Func.LPad(ZQtabelacpfavalista1.AsString,'0',9),Func.RPad(ZQtabelafilav1.AsString,'0',4),Func.LPad(ZQtabelactrlav1.AsString,'0',2),
+                   Func.LPad(ZQtabelacpfavalista2.AsString,'0',9),Func.LPad(ZQtabelafilav2.AsString,'0',4),Func.LPad(ZQtabelactrlav2.AsString,'0',2), Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17),Func.RPad(IntToStr(ZQtabelaindacordo.AsInteger),'0',2)+
 
-           //Bens
-           ZQtabelacodigoregistrobens.AsString+
-           Func.LPad(IntToStr(ZQtabelacgarntbens.AsInteger),'0',3)+
-           Func.RPad(ZQtabelagarntdescrbens.AsString,' ',50)+
-           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantbens.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
+                   //Veiculo
+                   Func.LPad(IntToStr(ZQtabelaquantidadedegarantias.AsInteger),'0',2)+
+                   ZQtabelacodigoregistroveiculo.AsString+Func.Rpad(IntToStr(ZQtabelacgarntveic.AsInteger),'0',3)+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantveic.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
+                   Func.RPad(IntToStr(ZQtabelarenanveic.AsInteger),'0',11)+
+                   Func.LPad(ZQtabelaplacaveic.AsString,' ',7)+
+                   ZQtabelauffabveic.AsString+Func.RPad(IntToStr(ZQtabelaanofabveic.AsInteger),'0',4)+
+                   Func.RPad(IntToStr(ZQtabelaanomodveic.AsInteger),'0',4)+
+                   ZQtabelauflicveic.AsString+
+                   Func.Lpad(IntToStr(ZQtabelachassirmarc.AsInteger),'0',1)+
+                   Func.LPad(ZQtabelachassiveic.AsString,' ',20)+
+                   Func.Lpad(IntToStr(ZQtabelaantprodtveic.AsInteger),'0',3)+
+                   Func.Lpad(IntToStr(ZQtabelacontrantveic.AsInteger),'0',9)+
+                   Func.LPad(ZQtabelamarcaveic.AsString,' ',20)+
+                   Func.LPad(ZQtabelamodeloveic.AsString,' ',20)+
+                   Func.LPad(ZQtabelacorveic.AsString,' ',20)+
+                   Func.Lpad(IntToStr(ZQtabelaporteveic.AsInteger),'0',1)+
 
-           //Outros
-           ZQtabelacodigoregistrooutros.AsString+
-           Func.LPad(IntToStr(ZQtabelacgarntoutros.AsInteger),'0',3)+
-           Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelagarntvgarntoutros.AsCurrency) ,',','',[rfReplaceAll]),'0',18));
-           //Recebe total
-           recebe:=  Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17); //Func.RPad(StringReplace(FormatCurr('0.00',Round(ZQtabelavalparc.AsCurrency)) ,',','',[rfReplaceAll]),'0',17);
-           ZQtabela.Next;
+                   //Imoveis
+                   ZQtabelacodigoregistroimoveis.AsString+
+                   Func.Lpad(IntToStr(ZQtabelacgarntimov.AsInteger),'0',3)+
+                   Func.RPad(StringReplace(FormatCurr('0.0000000',ZQtabelavgarntimov.AsCurrency),',','',[rfReplaceAll]),'0',18)+
+                   Func.LPad(ZQtabelagarntlogdr.AsString,' ',38)+
+                   Func.Lpad(IntToStr(ZQtabelagarntnrologdr.AsInteger),'0',5)+
+                   Func.LPad(ZQtabelagarntcompllogdr.AsString,' ',10)+
+                   Func.LPad(ZQtabelagarntbairrologdr.AsString,' ',20)+
+                   Func.Lpad(IntToStr(ZQtabelagarntcepimov.AsInteger),'0',8)+
+                   Func.Lpad(IntToStr(ZQtabelamcircunsimov.AsInteger),'0',3)+
+                   Func.LPad(ZQtabelacomarcaimov.AsString,' ',41)+
+                   Func.Lpad(IntToStr(ZQtabelanmatrimov.AsInteger),'0',7)+
+                   Func.Lpad(IntToStr(ZQtabelanregimov.AsInteger),'0',10)+
+                   Func.LPad(ZQtabelaaverbacaoimov.AsString,' ',11)+
+                   Func.LPad(ZQtabelanlivroimov.AsString,' ',5)+
+                   Func.LPad(ZQtabelanfolhaimov.AsString,' ',3)+
+                   Func.LPad(ZQtabeladregimov.AsString,' ',8)+
+
+                   //Bens
+                   ZQtabelacodigoregistrobens.AsString+
+                   Func.LPad(IntToStr(ZQtabelacgarntbens.AsInteger),'0',3)+
+                   Func.RPad(ZQtabelagarntdescrbens.AsString,' ',50)+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavgrantbens.AsCurrency) ,',','',[rfReplaceAll]),'0',18)+
+
+                   //Outros
+                   ZQtabelacodigoregistrooutros.AsString+
+                   Func.LPad(IntToStr(ZQtabelacgarntoutros.AsInteger),'0',3)+
+                   Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelagarntvgarntoutros.AsCurrency) ,',','',[rfReplaceAll]),'0',18));
+                   //Recebe total
+                   recebe:=  Func.RPad(StringReplace(FormatCurr('0.00',ZQtabelavalorconfessado.AsCurrency) ,',','',[rfReplaceAll]),'0',17); //Func.RPad(StringReplace(FormatCurr('0.00',Round(ZQtabelavalparc.AsCurrency)) ,',','',[rfReplaceAll]),'0',17);
+                   ZQtabela.Next;
+           end;
+
      end;
 
    //Fecha o arquivo
