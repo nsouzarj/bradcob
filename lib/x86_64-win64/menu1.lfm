@@ -3,20 +3,20 @@ object FrmMenu: TFrmMenu
   Height = 925
   Top = -8
   Width = 1906
-  Caption = 'DSPS - DRC v.1.2'
-  ClientHeight = 905
-  ClientWidth = 1906
+  Caption = 'DSPS - DRC v.1.2.2'
+  ClientHeight = 0
+  ClientWidth = 0
   FormStyle = fsMDIForm
   Menu = MainMenu1
   OnCreate = FormCreate
   Position = poDesktopCenter
-  LCLVersion = '1.8.4.0'
+  LCLVersion = '2.0.10.0'
   WindowState = wsMaximized
   object StatusBar1: TStatusBar
     Left = 0
     Height = 23
-    Top = 882
-    Width = 1906
+    Top = -23
+    Width = 0
     Color = clHighlight
     Panels = <    
       item
@@ -29,7 +29,7 @@ object FrmMenu: TFrmMenu
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 1906
+    Width = 0
     Caption = 'ToolBar1'
     Color = clTeal
     ParentColor = False
@@ -47,9 +47,9 @@ object FrmMenu: TFrmMenu
   end
   object Image1: TImage
     Left = 0
-    Height = 850
-    Top = 32
-    Width = 1906
+    Height = 0
+    Top = 0
+    Width = 0
     Align = alClient
     OnClick = Image1Click
     Picture.Data = {
@@ -5885,8 +5885,8 @@ object FrmMenu: TFrmMenu
   end
   object MainMenu1: TMainMenu
     ParentBidiMode = False
-    left = 64
-    top = 48
+    Left = 64
+    Top = 48
     object MenuItem1: TMenuItem
       Caption = 'OPÇÔES DO SISTEMA'
       OnClick = MenuItem1Click
@@ -6558,8 +6558,8 @@ object FrmMenu: TFrmMenu
     end
   end
   object ActionList1: TActionList
-    left = 536
-    top = 208
+    Left = 536
+    Top = 208
     object Action1: TAction
       Caption = 'Action1'
       OnExecute = Action1Execute
