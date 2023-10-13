@@ -2,8 +2,8 @@ object DtmConexao: TDtmConexao
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 349
-  HorizontalOffset = 262
-  VerticalOffset = 126
+  HorizontalOffset = 263
+  VerticalOffset = 127
   Width = 1009
   object DbConexaoPg: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -14,9 +14,9 @@ object DtmConexao: TDtmConexao
       'controls_cp=CP_UTF8'
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
+    DesignConnection = True
     AfterConnect = DbConexaoPgAfterConnect
-    HostName = '172.16.48.11'
+    HostName = '192.168.1.7'
     Port = 5432
     Database = 'dbcob'
     User = 'postgres'

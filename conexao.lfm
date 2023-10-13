@@ -14,7 +14,7 @@ object DtmConexao: TDtmConexao
       'controls_cp=CP_UTF8'
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
+    DesignConnection = True
     AfterConnect = DbConexaoPgAfterConnect
     HostName = '172.16.48.11'
     Port = 5432

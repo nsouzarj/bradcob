@@ -18,14 +18,11 @@
         <ComponentName Value="FrmMenu"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="81"/>
         <CursorPos X="6" Y="88"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="un_modulo.pas"/>
@@ -81,6 +78,7 @@
         <ComponentName Value="DtmConexao"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="3" Y="35"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
