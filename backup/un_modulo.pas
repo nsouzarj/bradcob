@@ -332,7 +332,7 @@ begin
 
      begin
 
-          if (tipo = 1) then
+          if (tipo = 0) then
                begin
                    WriteLn(arq,'A'+ZQtabelaato.AsString+ cpf_adm_esc+Func.RPad(IntToStr(ZQtabelanumacordo.AsInteger),'0',11)+  StringReplace(ZQtabeladataacordo.AsString,'/','.',[rfReplaceAll]),
                    Func.RPad(IntToStr(ZQtabelaquantped.AsInteger),'0',4)+ Func.Rpad(IntToStr(ZQtabelaquantparc.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacodjun.AsInteger),'0',4)+Func.RPad(IntToStr(ZQtabelacontacorrente.AsInteger),'0',7)+

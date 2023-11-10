@@ -18,11 +18,13 @@
         <ComponentName Value="FrmMenu"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="81"/>
         <CursorPos X="6" Y="88"/>
+        <ComponentState Value="1"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="un_modulo.pas"/>
@@ -30,9 +32,9 @@
         <ComponentName Value="DtmDsps"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="325"/>
-        <CursorPos X="23" Y="335"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="484"/>
+        <CursorPos X="58" Y="497"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -44,8 +46,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="393"/>
-        <CursorPos X="6" Y="393"/>
+        <TopLine Value="656"/>
+        <CursorPos Y="671"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -67,10 +69,12 @@
         <ComponentName Value="DtmDrc"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="50"/>
         <CursorPos X="49" Y="113"/>
         <UsageCount Value="210"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="conexao.pas"/>
@@ -91,7 +95,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SobreMenu"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="7"/>
         <CursorPos X="57" Y="29"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
@@ -114,10 +118,11 @@
         <ComponentName Value="FrmDrcNovo"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="66"/>
         <CursorPos X="3" Y="172"/>
         <UsageCount Value="207"/>
+        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="unifuncoes.pas"/>
@@ -260,7 +265,7 @@
       </Unit27>
       <Unit28>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcPostgreSqlUtils.pas"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="665"/>
         <CursorPos Y="688"/>
         <UsageCount Value="100"/>
@@ -291,10 +296,11 @@
       </Unit31>
       <Unit32>
         <Filename Value="C:\Users\nelson\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcConnection.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1237"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="1249"/>
         <CursorPos Y="1249"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="99"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit32>
       <Unit33>
@@ -345,103 +351,127 @@
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit38>
     </Units>
-    <JumpHistory Count="24" HistoryIndex="23">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="conexao.pas"/>
-        <Caret Line="31"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="582" TopLine="566"/>
       </Position1>
       <Position2>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="452" Column="76" TopLine="447"/>
+        <Filename Value="un_modulo.pas"/>
+        <Caret Line="618" TopLine="608"/>
       </Position2>
       <Position3>
-        <Filename Value="un_principal.pas"/>
-        <Caret Line="400" Column="20" TopLine="391"/>
+        <Filename Value="un_modulo.pas"/>
+        <Caret Line="619" TopLine="608"/>
       </Position3>
       <Position4>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="344" Column="84" TopLine="323"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="586" TopLine="566"/>
       </Position4>
       <Position5>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="400" Column="20" TopLine="391"/>
+        <Caret Line="610" TopLine="595"/>
       </Position5>
       <Position6>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="359" Column="3" TopLine="356"/>
+        <Caret Line="646" Column="49" TopLine="627"/>
       </Position6>
       <Position7>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="400" Column="23" TopLine="389"/>
+        <Caret Line="656" Column="42" TopLine="656"/>
       </Position7>
       <Position8>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="401" Column="23" TopLine="401"/>
+        <Caret Line="352" Column="3" TopLine="352"/>
       </Position8>
       <Position9>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="400" Column="23" TopLine="400"/>
+        <Caret Line="616" Column="17" TopLine="607"/>
       </Position9>
       <Position10>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="401" Column="23" TopLine="401"/>
+        <Caret Line="233" Column="15" TopLine="218"/>
       </Position10>
       <Position11>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="285" Column="3" TopLine="285"/>
+        <Caret Line="632" Column="63" TopLine="614"/>
       </Position11>
       <Position12>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="389" Column="16" TopLine="386"/>
+        <Caret Line="312" Column="3" TopLine="300"/>
       </Position12>
       <Position13>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="404" Column="60" TopLine="388"/>
+        <Caret Line="625" Column="25" TopLine="617"/>
       </Position13>
       <Position14>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="228" Column="40" TopLine="205"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="266" Column="54" TopLine="251"/>
       </Position14>
       <Position15>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="404" Column="60" TopLine="388"/>
+        <Caret Line="471" Column="85" TopLine="446"/>
       </Position15>
       <Position16>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="228" Column="19" TopLine="219"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="472" Column="85" TopLine="447"/>
       </Position16>
       <Position17>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="346" Column="16" TopLine="299"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="381" Column="80" TopLine="362"/>
       </Position17>
       <Position18>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="345" Column="28" TopLine="337"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="513" Column="45" TopLine="493"/>
       </Position18>
       <Position19>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="346" Column="29" TopLine="338"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="500" Column="48" TopLine="478"/>
       </Position19>
       <Position20>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="347" Column="19" TopLine="336"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="507" Column="39" TopLine="461"/>
       </Position20>
       <Position21>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="322" Column="83" TopLine="318"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="497" Column="53" TopLine="493"/>
       </Position21>
       <Position22>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="347" TopLine="339"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="489" Column="63" TopLine="482"/>
       </Position22>
       <Position23>
-        <Filename Value="un_modulo.pas"/>
-        <Caret Line="355" Column="3" TopLine="330"/>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="491" Column="53" TopLine="483"/>
       </Position23>
       <Position24>
         <Filename Value="un_principal.pas"/>
-        <Caret Line="393" Column="6" TopLine="393"/>
+        <Caret Line="490" Column="53" TopLine="482"/>
       </Position24>
+      <Position25>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="491" Column="53" TopLine="483"/>
+      </Position25>
+      <Position26>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="366" Column="3" TopLine="362"/>
+      </Position26>
+      <Position27>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="495" Column="27" TopLine="484"/>
+      </Position27>
+      <Position28>
+        <Filename Value="conexao.pas"/>
+        <Caret Line="35" Column="3"/>
+      </Position28>
+      <Position29>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="614" TopLine="598"/>
+      </Position29>
+      <Position30>
+        <Filename Value="un_principal.pas"/>
+        <Caret Line="642" TopLine="627"/>
+      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -449,7 +479,7 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="3">
+    <BreakPoints Count="5">
       <Item1>
         <Kind Value="bpkData"/>
         <WatchData Value="QueryRegistros.FieldByName('valorecebidocli').AsInteger"/>
@@ -462,7 +492,7 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="un_principal.pas"/>
-        <Line Value="483"/>
+        <Line Value="515"/>
       </Item2>
       <Item3>
         <Kind Value="bpkSource"/>
@@ -471,6 +501,20 @@
         <Source Value="un_modulo.pas"/>
         <Line Value="614"/>
       </Item3>
+      <Item4>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="un_principal.pas"/>
+        <Line Value="642"/>
+      </Item4>
+      <Item5>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="un_principal.pas"/>
+        <Line Value="671"/>
+      </Item5>
     </BreakPoints>
     <Watches Count="1">
       <Item1>

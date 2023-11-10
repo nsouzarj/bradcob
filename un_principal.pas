@@ -19,6 +19,7 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn5: TBitBtn;
+    BitBtn7: TBitBtn;
     btAdioionar: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
@@ -228,6 +229,7 @@ type
     TabSheet4: TTabSheet;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
     procedure btAlterarGeralClick(Sender: TObject);
     procedure btCancelarGeralClick(Sender: TObject);
     procedure btAdioionarClick(Sender: TObject);
@@ -249,6 +251,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure GroupBox1Click(Sender: TObject);
     procedure Label15Click(Sender: TObject);
+    procedure MkValorParcelaDblClick(Sender: TObject);
+    procedure MkValorParcelaExit(Sender: TObject);
     procedure OpenDialog1FolderChange(Sender: TObject);
     procedure OpenDialog1SelectionChange(Sender: TObject);
     procedure PageControl1Change(Sender: TObject);
@@ -259,6 +263,8 @@ type
     procedure ProgressBar1ContextPopup(Sender: TObject; MousePos: TPoint;
       var Handled: Boolean);
     procedure StaticText2Click(Sender: TObject);
+    procedure TabSheet3ContextPopup(Sender: TObject; MousePos: TPoint;
+      var Handled: Boolean);
     procedure TabSheet4ContextPopup(Sender: TObject; MousePos: TPoint;
       var Handled: Boolean);
     procedure ZQtabelaCalcFields(DataSet: TDataSet);
@@ -304,6 +310,16 @@ begin
 
 end;
 
+procedure TFrmdsps.MkValorParcelaDblClick(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.MkValorParcelaExit(Sender: TObject);
+begin
+
+end;
+
 procedure TFrmdsps.OpenDialog1FolderChange(Sender: TObject);
 begin
 
@@ -340,6 +356,12 @@ begin
 end;
 
 procedure TFrmdsps.StaticText2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmdsps.TabSheet3ContextPopup(Sender: TObject; MousePos: TPoint;
+  var Handled: Boolean);
 begin
 
 end;
@@ -466,6 +488,16 @@ begin
       btAdioionar.Visible:=false;;
 
 
+end;
+
+procedure TFrmdsps.BitBtn7Click(Sender: TObject);
+var
+  valparc,valor,valorparc:Real;
+begin
+   valparc:=(StrToFloat(MkValorTotalAcordo.Text)/StrToInt(EdtQunatParcela.Text));
+   valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));
+   valparc:=valparc+valor;
+   MkValorParcela.EditText:=CurrToStr(valparc);
 end;
 
 procedure TFrmdsps.btAlterarGeralClick(Sender: TObject);
@@ -603,7 +635,7 @@ begin
          // Calcular a parcela com o percentual
          //Insere na tabela os dados capturados da tela de entrada
          
-         valparc:=(StrToFloat(MkValorTotalAcordo.Text)/cont);   //A Valor da parcela e Valor total do acordo divido pelo numero de parcelas
+         valparc:=(StrToCurr(MkValorTotalAcordo.Text)/cont);   //A Valor da parcela e Valor total do acordo divido pelo numero de parcelas
          valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));    //A Taxa de juros e valor da parcela nultiplicado pela taxa de juros dividido por 100
          valparc:=valparc+valor; //O valor encontrado na taxa de juros e acrescentado no valor de cada parcela para correcao das mesma
 
@@ -632,7 +664,7 @@ begin
          mes:=mes+1;
          dataproxima:=IncMonth(DtaDataVencParc.Date,mes);
          valparc:=(StrToFloat(MkValorTotalAcordo.Text)/cont);
-         valor:=(valparc*(StrToFloat(EdtTaxaJuros.text)/100));
+         valor:=(valparc*(StrToCurr(EdtTaxaJuros.text)/100));
          valparc:=valparc+valor;
 
          //Insere na tabela os dados capturados da tela de entrada

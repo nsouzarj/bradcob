@@ -2,11 +2,12 @@ object DtmDsps: TDtmDsps
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 309
-  HorizontalOffset = 0
-  VerticalOffset = 337
+  HorizontalOffset = 329
+  VerticalOffset = 362
   Width = 675
   object ZQtabela: TZQuery
     Connection = DtmConexao.DbConexaoPg
+    SortType = stIgnored
     AutoCalcFields = False
     OnCalcFields = ZQtabelaCalcFields
     UpdateObject = ZUpdateSQL1
@@ -25,7 +26,7 @@ object DtmDsps: TDtmDsps
       ' garntcompllogdr, garntbairrologdr, garntcepimov, mcircunsimov, comarcaimov, nmatrimov, '
       'nregimov, averbacaoimov, nlivroimov, nfolhaimov, dregimov, codigoregistrobens, cgarntbens, '
       'garntdescrbens, vgrantbens, codigoregistrooutros, cgarntoutros, garntvgarntoutros'
-      '   FROM "TB_CAD_REM" '
+      '   FROM "TB_CAD_REM"  order by  chaveprim desc'
     )
     Params = <>
     WhereMode = wmWhereAll

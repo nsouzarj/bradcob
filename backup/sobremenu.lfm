@@ -1,0 +1,39 @@
+object SobreMenu: TSobreMenu
+  Left = 523
+  Height = 246
+  Top = 155
+  Width = 478
+  HorzScrollBar.Page = 1
+  HorzScrollBar.Visible = False
+  VertScrollBar.Increment = 22
+  VertScrollBar.Page = 223
+  VertScrollBar.Range = 1406
+  VertScrollBar.Visible = False
+  AlphaBlend = True
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'SobreMenu'
+  ClientHeight = 246
+  ClientWidth = 478
+  OnClose = FormClose
+  Position = poMainFormCenter
+  LCLVersion = '1.6.4.0'
+  object Label1: TLabel
+    Left = 16
+    Height = 68
+    Top = 72
+    Width = 444
+    Caption = 'Sistema de geração de arquivos'#13#10'Feito sobre medida    N S S'
+    Color = clMenu
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clTeal
+    Font.Height = -29
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+end

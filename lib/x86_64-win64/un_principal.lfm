@@ -1,7 +1,7 @@
 object Frmdsps: TFrmdsps
-  Left = 144
+  Left = 145
   Height = 802
-  Top = 60
+  Top = 62
   Width = 1627
   Caption = 'CADASTRO DE ACORDO REMESSA/RETORNO'
   ClientHeight = 802
@@ -20,388 +20,486 @@ object Frmdsps: TFrmdsps
     Columns = <    
       item
         Title.Caption = 'ID'
+        Width = 26
         FieldName = 'chaveprim'
       end    
       item
         Title.Caption = 'ATO'
+        Width = 39
         FieldName = 'ato'
       end    
       item
         Title.Caption = 'NUM ACORDO'
+        Width = 95
         FieldName = 'numacordo'
       end    
       item
         Title.Caption = 'DATA ACORDO'
+        Width = 98
         FieldName = 'dataacordo'
       end    
       item
         Title.Caption = 'QUANT PEND'
+        Width = 89
         FieldName = 'quantped'
       end    
       item
         Title.Caption = 'QUANT PARC'
+        Width = 89
         FieldName = 'quantparc'
       end    
       item
         Title.Caption = 'AGENCAI'
+        Width = 65
         FieldName = 'codjun'
       end    
       item
         Title.Caption = 'CONTA CORR'
+        Width = 90
         FieldName = 'contacorrente'
       end    
       item
         Title.Caption = 'NUM CARTEIRA'
+        Width = 100
         FieldName = 'numcarteira'
       end    
       item
         Title.Caption = 'NUM CONTRATO'
+        Width = 110
         FieldName = 'numcontrato'
       end    
       item
+        MaxSize = 60
         Title.Caption = 'DT VENC'
+        Width = 63
         FieldName = 'datavecimento'
       end    
       item
+        MaxSize = 60
         Title.Caption = 'DT VENC PARC'
+        Width = 96
         FieldName = 'datavencparc'
       end    
       item
         Title.Caption = 'VL PARC'
+        Width = 61
         FieldName = 'valparc'
       end    
       item
         Title.Caption = 'VL HONO'
+        Width = 67
         FieldName = 'valhonor'
       end    
       item
         Title.Caption = 'TAXA'
+        Width = 45
         FieldName = 'taxaref'
       end    
       item
         Title.Caption = 'OBS'
+        Width = 37
         FieldName = 'obs'
       end    
       item
         Title.Caption = 'ESCRITORIO'
+        Width = 80
         FieldName = 'nomeescritorio'
       end    
       item
         Title.Caption = 'DD'
+        Width = 31
         FieldName = 'dddescritorio'
       end    
       item
         Title.Caption = 'TELEFONE'
+        Width = 70
         FieldName = 'telescritorio'
       end    
       item
         Title.Caption = 'CLIENTE'
+        Width = 60
         FieldName = 'nomecliente'
       end    
       item
         Title.Caption = 'END CLIENTE'
+        Width = 86
         FieldName = 'endcliente'
       end    
       item
         Title.Caption = 'NUMERO'
+        Width = 65
         FieldName = 'num'
       end    
       item
         Title.Caption = 'COMPLEMNTO'
+        Width = 98
         FieldName = 'complemnto'
       end    
       item
         Title.Caption = 'BAIRRO'
+        Width = 56
         FieldName = 'bairro'
       end    
       item
         Title.Caption = 'CIDADE'
+        Width = 56
         FieldName = 'municipio'
       end    
       item
         Title.Caption = 'UF'
+        Width = 29
         FieldName = 'unidadefed'
       end    
       item
         Title.Caption = 'CEP CLIENTE'
+        Width = 84
         FieldName = 'cepcliente'
       end    
       item
         Title.Caption = 'COMPCEP'
+        Width = 71
         FieldName = 'complecep'
       end    
       item
         Title.Caption = 'DD CLI'
+        Width = 51
         FieldName = 'dddcliente'
       end    
       item
         Title.Caption = 'TELEFONE CLI'
+        Width = 90
         FieldName = 'telcliente'
       end    
       item
         Title.Caption = 'VAL ACORDO'
+        Width = 88
         FieldName = 'valoracordo'
       end    
       item
         Title.Caption = 'DT VENC ULT PARC'
+        Width = 120
         FieldName = 'datavencult'
       end    
       item
         Title.Caption = 'PLANO PARC ULT PAG'
+        Width = 137
         FieldName = 'parcelaplanoultimopag'
       end    
       item
         Title.Caption = 'CPF CPJ CLI'
+        Width = 78
         FieldName = 'cpfcnpjcliente'
       end    
       item
         Title.Caption = 'CPF CNPJ CLI'
+        Width = 87
         FieldName = 'cpfcnpjfilialcliente'
       end    
       item
         Title.Caption = 'DIG CPF CLI'
+        Width = 78
         FieldName = 'controlecpfcnpjcliente'
       end    
       item
         Title.Caption = 'COD MEIO PAG'
+        Width = 98
         FieldName = 'codmeiopagamento'
       end    
       item
         Title.Caption = 'VL IOF'
+        Width = 49
         FieldName = 'valoriof'
       end    
       item
         Title.Caption = 'TX JUROS'
+        Width = 66
         FieldName = 'taxajuros'
       end    
       item
         Title.Caption = 'ACORD APR DRC'
+        Width = 106
         FieldName = 'acordoaprovadopelodarc'
       end    
       item
         Title.Caption = 'DT APROVACAO'
+        Width = 104
         FieldName = 'dataaprovacao'
       end    
       item
         Title.Caption = 'NOME OPER'
+        Width = 82
         FieldName = 'nomeoperador'
       end    
       item
         Title.Caption = 'AVALISTA 1'
+        Width = 77
         FieldName = 'nomeavalista1'
       end    
       item
         Title.Caption = 'AVALISTA 2'
+        Width = 77
         FieldName = 'nomeavalista2'
       end    
       item
         Title.Caption = 'camporetarq'
+        Width = 83
         FieldName = 'camporetarq'
       end    
       item
         Title.Caption = 'CPF AVALISTA1'
+        Width = 98
         FieldName = 'cpfavalista1'
       end    
       item
         Title.Caption = 'CPF AVALISTA2'
+        Width = 98
         FieldName = 'cpfavalista2'
       end    
       item
         Title.Caption = 'VAL CONFESSADO'
+        Width = 114
         FieldName = 'valorconfessado'
       end    
       item
         Title.Caption = 'IND ACORDO'
+        Width = 87
         FieldName = 'indacordo'
       end    
       item
         Title.Caption = 'CRTL CPF1'
+        Width = 73
         FieldName = 'ctrlav1'
       end    
       item
         Title.Caption = 'CRTL CPF2'
+        Width = 73
         FieldName = 'ctrlav2'
       end    
       item
         Title.Caption = 'FILIAL AV1'
+        Width = 71
         FieldName = 'filav1'
       end    
       item
         Title.Caption = 'FILIAL AV2'
+        Width = 71
         FieldName = 'filav2'
       end    
       item
         Title.Caption = 'TOTAL'
+        Width = 52
         FieldName = 'total'
       end    
       item
         Title.Caption = 'QUANT GARANTIAS'
+        Width = 123
         FieldName = 'quantidadedegarantias'
       end    
       item
         Title.Caption = 'COD REG VEICULO'
+        Width = 114
         FieldName = 'codigoregistroveiculo'
       end    
       item
         Title.Caption = 'TIPO GARANTIA'
+        Width = 102
         FieldName = 'cgarntveic'
       end    
       item
         Title.Caption = 'VAL GARNTIA VEIC'
+        Width = 116
         FieldName = 'vgrantveic'
       end    
       item
         Title.Caption = 'RENAVAN'
+        Width = 69
         FieldName = 'renanveic'
       end    
       item
         Title.Caption = 'PLACA VEIC'
+        Width = 79
         FieldName = 'placaveic'
       end    
       item
         Title.Caption = 'UF VEIC'
+        Width = 56
         FieldName = 'uffabveic'
       end    
       item
         Title.Caption = 'ANO FAB VEIC'
+        Width = 92
         FieldName = 'anofabveic'
       end    
       item
         Title.Caption = 'ANO MOD VEIC'
+        Width = 99
         FieldName = 'anomodveic'
       end    
       item
         Title.Caption = 'UF LINC VEIC'
+        Width = 85
         FieldName = 'uflicveic'
       end    
       item
         Title.Caption = 'CHASSI'
+        Width = 55
         FieldName = 'chassirmarc'
       end    
       item
         Title.Caption = 'NUM CHASSI'
+        Width = 86
         FieldName = 'chassiveic'
       end    
       item
         Title.Caption = 'ANT PROD VEIC'
+        Width = 100
         FieldName = 'antprodtveic'
       end    
       item
         Title.Caption = 'CONTRATO NEGOC'
+        Width = 122
         FieldName = 'contrantveic'
       end    
       item
         Title.Caption = 'MARCA VEIC'
+        Width = 84
         FieldName = 'marcaveic'
       end    
       item
         Title.Caption = 'MODELO VEIC'
+        Width = 91
         FieldName = 'modeloveic'
       end    
       item
         Title.Caption = 'COR VEIC'
+        Width = 66
         FieldName = 'corveic'
       end    
       item
         Title.Caption = 'PORTE VEIC'
+        Width = 78
         FieldName = 'porteveic'
       end    
       item
         Title.Caption = 'COD REG IMOVEL'
+        Width = 109
         FieldName = 'codigoregistroimoveis'
       end    
       item
         Title.Caption = 'TIPO GARANT'
+        Width = 91
         FieldName = 'cgarntimov'
       end    
       item
         Title.Caption = 'VALOR GARNT'
+        Width = 94
         FieldName = 'vgarntimov'
       end    
       item
         Title.Caption = 'END IMOVEL'
+        Width = 83
         FieldName = 'garntlogdr'
       end    
       item
         Title.Caption = 'NUM IMOVEL'
+        Width = 88
         FieldName = 'garntnrologdr'
       end    
       item
         Title.Caption = 'COMPL IMOVEL'
+        Width = 101
         FieldName = 'garntcompllogdr'
       end    
       item
         Title.Caption = 'BAIRRO'
+        Width = 56
         FieldName = 'garntbairrologdr'
       end    
       item
         Title.Caption = 'CEP IMOVEL'
+        Width = 81
         FieldName = 'garntcepimov'
       end    
       item
         Title.Caption = 'CIRUNS IMOVEL'
+        Width = 101
         FieldName = 'mcircunsimov'
       end    
       item
         Title.Caption = 'COMARCA'
+        Width = 74
         FieldName = 'comarcaimov'
       end    
       item
         Title.Caption = 'MAT IMOVEL'
+        Width = 86
         FieldName = 'nmatrimov'
       end    
       item
         Title.Caption = 'NUM REGISTRO'
+        Width = 99
         FieldName = 'nregimov'
       end    
       item
         Title.Caption = 'AVERVACAO'
+        Width = 83
         FieldName = 'averbacaoimov'
       end    
       item
         Title.Caption = 'LIVRO'
+        Width = 47
         FieldName = 'nlivroimov'
       end    
       item
         Title.Caption = 'NUM FOLHA'
+        Width = 84
         FieldName = 'nfolhaimov'
       end    
       item
         Title.Caption = 'REGIAO IMOVEL'
+        Width = 101
         FieldName = 'dregimov'
       end    
       item
         Title.Caption = 'COD REGISTRO BENS'
+        Width = 127
         FieldName = 'codigoregistrobens'
       end    
       item
         Title.Caption = 'TIPO GARANT'
+        Width = 91
         FieldName = 'cgarntbens'
       end    
       item
         MaxSize = 100
         Title.Caption = 'DESC BEM'
+        Width = 70
         FieldName = 'garntdescrbens'
       end    
       item
         Title.Caption = 'VAL BENS'
+        Width = 67
         FieldName = 'vgrantbens'
       end    
       item
         Title.Caption = 'COD REGISTRO'
+        Width = 96
         FieldName = 'codigoregistrooutros'
       end    
       item
         Title.Caption = 'TIPO GARANT OUTROS'
+        Width = 140
         FieldName = 'cgarntoutros'
       end    
       item
         Title.Caption = 'VAL GARANT OUTROS'
+        Width = 135
         FieldName = 'garntvgarntoutros'
       end>
     DataSource = DataSource1
     DragMode = dmAutomatic
     HeaderHotZones = []
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
     ParentFont = False
     TabOrder = 4
   end
@@ -553,7 +651,7 @@ object Frmdsps: TFrmdsps
     TabOrder = 2
   end
   object btAdioionar: TBitBtn
-    Left = 153
+    Left = 152
     Height = 35
     Hint = 'Adiciona um registro na tabela'
     Top = 504
@@ -1207,6 +1305,7 @@ object Frmdsps: TFrmdsps
       ClientWidth = 1610
       Font.Color = clScrollBar
       Font.Height = -20
+      OnContextPopup = TabSheet3ContextPopup
       ParentFont = False
       object CbAto: TComboBox
         Left = 16
@@ -1536,9 +1635,9 @@ object Frmdsps: TFrmdsps
         ParentFont = False
       end
       object Label11: TLabel
-        Left = 288
+        Left = 373
         Height = 16
-        Top = 323
+        Top = 320
         Width = 86
         Caption = 'Valor Parcela'
         Font.CharSet = ANSI_CHARSET
@@ -1551,17 +1650,19 @@ object Frmdsps: TFrmdsps
         ParentFont = False
       end
       object MkValorParcela: TMaskEdit
-        Left = 288
+        Left = 373
         Height = 23
-        Top = 343
+        Top = 341
         Width = 80
         CharCase = ecNormal
         Color = clOlive
         MaxLength = 0
         ParentBiDiMode = False
         ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 13
-        Text = '0'
+        OnExit = MkValorParcelaExit
         SpaceChar = '_'
       end
       object Label12: TLabel
@@ -2105,9 +2206,9 @@ object Frmdsps: TFrmdsps
         ParentFont = False
       end
       object MkValorIof: TMaskEdit
-        Left = 394
+        Left = 477
         Height = 23
-        Top = 343
+        Top = 340
         Width = 80
         CharCase = ecNormal
         Color = clOlive
@@ -2118,9 +2219,9 @@ object Frmdsps: TFrmdsps
         SpaceChar = '_'
       end
       object Label33: TLabel
-        Left = 394
+        Left = 479
         Height = 16
-        Top = 323
+        Top = 320
         Width = 59
         Caption = 'Valor IOF'
         Font.CharSet = ANSI_CHARSET
@@ -3375,6 +3476,21 @@ object Frmdsps: TFrmdsps
             ParentFont = False
           end
         end
+      end
+      object BitBtn7: TBitBtn
+        Left = 277
+        Height = 30
+        Hint = 'Clacula o valor da parcela com a taxa de juros.'
+        Top = 333
+        Width = 88
+        Caption = 'Cal. Parc.'
+        Font.Color = clBackground
+        Font.Height = -20
+        OnClick = BitBtn7Click
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 51
       end
     end
     object TabSheet4: TTabSheet
