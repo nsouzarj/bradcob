@@ -463,8 +463,7 @@ begin
          formatodata:=DateToStr(StrtoInt(ci));
          QueryRegistros.FieldByName('dtvencimento').AsDateTime:= StrToDate(formatodata);
 
-
-         ci:=PlanilhaLeitura.Worksheet.ReadAsText(contador,5);
+                  ci:=PlanilhaLeitura.Worksheet.ReadAsText(contador,5);
          formatodata:=DateToStr(StrtoInt(ci));
          QueryRegistros.FieldByName('dtremessa').AsDateTime:=StrToDate(formatodata);
 

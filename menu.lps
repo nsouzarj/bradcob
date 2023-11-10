@@ -21,7 +21,6 @@
         <EditorIndex Value="8"/>
         <TopLine Value="81"/>
         <CursorPos X="6" Y="88"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="210"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -110,9 +109,10 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="453"/>
-        <CursorPos X="3" Y="437"/>
+        <CursorPos X="10" Y="466"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="un_novodrc.pas"/>
@@ -123,7 +123,6 @@
         <EditorIndex Value="6"/>
         <TopLine Value="409"/>
         <CursorPos X="3" Y="409"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
